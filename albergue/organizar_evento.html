@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Formulario para Organizar un Evento Benéfico</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/aditional.css">
+		<link rel="stylesheet" href="assets/css/popup-window.css">
+		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+		<style>
+			#charCount {
+				font-size: 12px;
+				color: #888;
+				float: right;
+			}
+
+			/* Estilos para centrar el modal */
+			.modal {
+				display: none; /* Mantener oculto inicialmente */
+				position: fixed; /* Fijar en la pantalla */
+				z-index: 1; /* Asegurar que esté encima de otros elementos */
+				left: 0;
+				top: 0;
+				width: 100%; /* Ancho completo de la pantalla */
+				height: 100%; /* Alto completo de la pantalla */
+				background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+			}
+
+			.modal-content {
+				background-color: #fff;
+				margin: auto; /* Centrar el modal horizontalmente */
+				padding: 20px;
+				border-radius: 10px;
+				width: 80%; /* Ancho del modal */
+				max-width: 500px; /* Máximo ancho para pantallas grandes */
+				position: relative;
+				top: 50%; /* Posicionarlo a la mitad verticalmente */
+				transform: translateY(-50%); /* Ajuste para centrar verticalmente */
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+
+					<!-- Header -->
+					<header id="header">
+						<h1 class="logo"><strong>Formulario para Organizar un Evento Benéfico</strong></h1>
+						<a href="perfil.html" class="user-profile">
+							<span class="ocultar">Huellitas PUCP</span> <img src="images/logo_huellitas.png" style="border-radius: 100%; height: 45px; width: 45px;object-fit: cover;"></img>
+						</a>
+					</header>
+
+					<!-- Banner -->
+					<section class="banner">
+						<div class="content">
+							<header>
+								<img src="images/form.png" class="icons">
+								<h2>Detalles del Evento</h2>
+							</header>
+							<p><strong>Descripción:</strong> Completa el formulario para registrar tu evento benéfico. Incluye la fecha, lugar, aforo y otros detalles importantes.</p>
+
+							<div class="row gtr-uniform">
+
+								<!-- Día del evento -->
+								<div class="col-6 col-12-xsmall">
+									<label for="diaEvento" class="input-label">Día del evento</label>
+									<input type="date" id="diaEvento" name="diaEvento" min="2024-01-01" required />
+								</div>
+
+								<div class="col-6 col-12-xsmall">
+									<label for="horaEvento" class="input-label">Hora de inicio del evento</label>
+									<input type="time" id="horaEvento" name="horaEvento" required style="appearance: none;
+									border-radius: 0.375em;
+									border: none;
+									border: solid 1px rgba(210, 215, 217, 0.75);
+									color: inherit;
+									display: block;
+									outline: 0;
+									padding: 0 1em;
+									text-decoration: none;
+									width: 100%;
+									background: #ffffff;
+									padding-top: 7.5px;
+									padding-bottom: 7.5px;"/>
+								</div>
+
+								<div class="col-6 col-12-xsmall">
+									<label for="horaEvento" class="input-label">Hora final del evento</label>
+									<input type="time" id="horaEvento" name="horaEvento" required style="appearance: none;
+									border-radius: 0.375em;
+									border: none;
+									border: solid 1px rgba(210, 215, 217, 0.75);
+									color: inherit;
+									display: block;
+									outline: 0;
+									padding: 0 1em;
+									text-decoration: none;
+									width: 100%;
+									background: #ffffff;
+									padding-top: 7.5px;
+									padding-bottom: 7.5px;"/>
+								</div>
+
+								<!--Entrada para el evento-->
+								<div class="col-12">
+									<label for="entrada" class="input-label">Entrada para el evento</label>
+									<input type="text" id="entrada" name="entrada" required>
+								</div>
+
+								<!-- Lugar del evento -->
+								<div class="col-12">
+									<label for="lugarEvento" class="input-label">Lugar del evento</label>
+									<select id="distrito">
+										<option value="">Seleccione el lugar</option>
+										<option value="1">Estadio Monumental</option>
+										<option value="2">Plaza Cocalenos</option>
+										<option value="3">Centro Cultural</option>
+									</select>
+								</div>
+
+								<!-- Descripción del evento -->
+								<div class="col-12">
+									<label for="descripcionEvento" class="input-label">Descripción del evento (máximo 500 caracteres)</label>
+									<textarea id="descripcionEvento" name="descripcionEvento" class="text-area" maxlength="500" placeholder="" required></textarea>
+									<span id="charCount">0/500</span>
+								</div>
+
+								<!-- Artistas o proveedores invitados -->
+								<div class="col-12">
+									<label for="artistasInvitados" class="input-label">Artistas o proveedores invitados (Opcional)</label>
+									<input type="text" id="artistasInvitados" name="artistasInvitados" placeholder="" />
+								</div>
+
+								<!-- Razón del evento -->
+								<div class="col-12">
+									<label for="razonEvento" class="input-label">Razón del evento</label>
+									<input type="text" id="razonEvento" name="razonEvento" placeholder="" required />
+								</div>
+
+								<!-- Botones -->
+								<div class="col-12">
+									<ul class="actions form-buttons">
+										<li><a href="#" class="button primary big" id="openModal">Publicar</a></li>
+										<li><a href="javascript:history.back()" class="button big">Cancelar</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</section>
+
+				</div>
+			</div>
+
+			<!-- Sidebar -->
+			<div id="sidebar">
+				<div class="inner">
+					
+					<!-- Logo -->
+					<section class="alt" id="sidebar-header">
+						<img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+						<p id="sidebar-title">PetLink</p>
+					</section>
+					
+					<!-- Perfil -->
+					<section class="perfil">
+						<div class="mini-posts">
+							<article>
+								<img src="images/logo_huellitas.png" alt="" id="image-perfil">
+								<h2 id="usuario">HUELLITAS PUCP</h2>
+							</article>
+						</div>
+					</section>
+
+					<!-- Menu -->
+					<nav id="menu">
+						<header class="major">
+							<h2>Menu</h2>
+						</header>
+						<ul>
+							<li><a href="perfil.html">Perfil</a></li>
+							<li>
+								<span class="opener">Publicaciones</span>
+								<ul>
+									<li><a href="EventoBenéfico.html">Eventos benéficos</a></li>
+									<li><a href="adopciones.html">Adopciones</a></li>
+									<li><a href="donaciones.html">Donaciones</a></li>
+								</ul>
+							</li>
+							<li><a href="hogar_temporal.html">Hogar Temporal</a></li>
+						</ul>
+					</nav>
+
+					<!-- Logout -->	
+					<nav id="logout">
+						<a href="#" id="cerrar-sesion">Cerrar Sesión</a>
+					</nav>
+
+				</div>
+			</div>
+
+		</div>
+
+		<!--Modal-->
+		<div id="modal" class="modal">
+			<div class="modal-content">          
+				<p>Se ha publicado el post con éxito.</p>
+				<ul class="actions modal-buttons">
+					<li><a href="EventoBenéfico.html" class="button primary big" id="acceptButton">Aceptar</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<!-- Validaciones -->
+		<script>
+			// Validar que solo se ingresen números en aforo y entrada
+			function validarSoloNumeros(input) {
+				input.value = input.value.replace(/[^0-9]/g, '');
+			}
+
+			// Validar que la hora de fin sea mayor que la hora de inicio
+			function validarHoraFinal() {
+				const horaInicio = document.getElementById('horaInicioEvento').value;
+				const horaFin = document.getElementById('horaFinEvento').value;
+
+				if (horaFin <= horaInicio) {
+					alert('La hora final debe ser posterior a la hora de inicio.');
+					document.getElementById('horaFinEvento').value = ''; // Limpiar campo
+				}
+			}
+
+			// Aplicar validaciones
+			document.getElementById('aforoMaximo').addEventListener('input', function() {
+				validarSoloNumeros(this);
+			});
+
+			document.getElementById('entrada').addEventListener('input', function() {
+				validarSoloNumeros(this);
+			});
+
+			document.getElementById('horaFinEvento').addEventListener('change', validarHoraFinal);
+		</script>
+
+		<!-- Contador de caracteres para la descripción -->
+		<script>
+			const textarea = document.getElementById('descripcionEvento');
+			const charCount = document.getElementById('charCount');
+
+			textarea.addEventListener('input', function() {
+				const currentLength = textarea.value.length;
+				charCount.textContent = `${currentLength}/500`;
+			});
+		</script>
+
+		<!-- Modal Scripts -->
+		<script>
+			// Obtener los elementos del modal y el botón
+			const modal = document.getElementById('modal');
+			const openModalButton = document.getElementById('openModal');
+			const acceptButton = document.getElementById('acceptButton');
+
+			// Mostrar el modal cuando se hace clic en el botón "Publicar"
+			openModalButton.addEventListener('click', function(event) {
+				event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+				modal.style.display = 'block'; // Mostrar el modal
+			});
+
+			// Ocultar el modal cuando se hace clic en "Aceptar"
+			acceptButton.addEventListener('click', function() {
+				modal.style.display = 'none'; // Ocultar el modal
+			});
+
+			// Cerrar el modal si el usuario hace clic fuera del contenido del modal
+			window.addEventListener('click', function(event) {
+				if (event.target === modal) {
+					modal.style.display = 'none'; // Ocultar el modal
+				}
+			});
+		</script>
+	</body>
+</html>
+
+
+
+
+
+

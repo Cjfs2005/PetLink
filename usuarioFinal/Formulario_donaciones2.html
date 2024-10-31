@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>PetLink</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/aditional.css">
+		<link rel="stylesheet" href="assets/css/popup-window.css">
+		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<h1 class="logo"><strong>Donación de dinero</strong></h1>
+								</header>
+								
+							<!-- Banner -->
+								<section class="banner">
+									<div class="content">
+										<header>
+											<img src="images/donation.png" class="icons">
+											<h2>Complete el siguiente formulario</h2>
+										</header>
+										<p><strong>Albergue solicitante:</strong> Huellitas PUCP</p>
+										<p><strong>Motivo:</strong> Este dinero será destinado para cubrir la operación de Trufa, una perrita que presenta una hernia inguinal por la cual debe ser operada de urgencia.</p>
+										<p style="margin-bottom: 1.5em;"><strong>Monto recaudado:</strong> S/400 de S/1000</p>
+										
+										<form style="margin: 0;">
+											<div class="row gtr-uniform">
+												<div class="col-6 col-12-xsmall">
+													<label for="monto" class="input-label">Ingresa el monto donado (S/)</label>
+													<input type="text" id="monto" placeholder="" maxlength="10" inputmode="numeric" required/>
+												</div>
+												<div class="col-6 col-12-xsmall">
+													<label for="apellidos" class="input-label">Foto de donación</label>
+													<input type="file" id="archivo" name="archivo" class="contenedor-archivo" accept="image/png" required/>
+												</div>
+											</div>
+
+											<div class="contenedor-imagenes">
+												<img src="images/yape.jpg" alt="Imagen 2" class="img-unica">
+											</div>
+
+											<div class="row gtr-uniform">
+												<div class="col-12">
+													<ul class="actions form-buttons">
+														<li><button type="button" class="button primary big" id="openModal">DONAR</button></li>
+														<li><a href="Donaciones2.html" class="button big">REGRESAR</a></li>
+													</ul>
+												</div>
+												
+											</div>
+										</form>										
+									</div>
+								</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							
+							<!-- Logo -->
+									<section class="alt" id="sidebar-header">
+										<img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+										<p id ="sidebar-title">PetLink</p>
+									</section>
+							
+							<!-- Perfil -->
+		
+								<section class="perfil">
+													
+									<div class="mini-posts">
+										<article>
+											<img src="images/foto_perfil.jpg" alt="" id="image-perfil">
+											<h2 id="usuario">Ander Vilchez</h2>
+										</article>
+									</div>
+									
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="perfil_usuario.html">PERFIL</a></li>
+										<li>
+											<span class="opener">ALBERGUES</span>
+											<ul>
+												<li><a href="albergue_usuario.html">LISTA DE ALBERGUES</a></li>
+												<li><a href="eventos.html">EVENTOS BENÉFICOS</a></li>
+												<li><a href="Donaciones1.html">SOLICITUDES DE DONACIÓN</a></li>
+												<li><a href="Donaciones_historial.html">HISTORIAL DE DONACIONES</a></li>
+												<li><a href="adopciones_usuario.html">MASCOTAS EN ADOPCIÓN</a></li>
+												<li><a href="adopciones_historial_usuario.html">HISTORIAL DE ADOPCIONES</a></li>
+											</ul>
+										</li>
+										<li><a href="Hogar_temporal.html">HOGAR TEMPORAL</a></li>
+										<li><a href="denuncias_usuario.html">DENUNCIAS POR MALTRATO ANIMAL</a></li>
+										<li><a href="mascotas_perdidas_usuario.html">MASCOTAS PERDIDAS</a></li>
+									</ul>
+								</nav>
+							<!-- Logout -->	
+
+							<nav id="logout">
+								<a href="../bienvenidos.html" id="cerrar-sesion">Cerrar Sesión</a>
+							</nav>
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<!-- Modal -->
+			<div id="modal" class="modal">
+				<div class="modal-content">
+					<!-- Botón cerrar -->
+					<span class="close-btn">&times;</span>
+					<p>¿Está seguro de su intención de donar?</p>
+					<!-- Botones de Aceptar y Cancelar -->
+					<ul class="actions modal-buttons">
+						<li><a href="Donaciones2.html" class="button primary big" id="acceptButton">Sí</a></li>
+						<li><a href="#" class="button big" id="cancelButton">No</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- Script dentro del mismo HTML -->
+			<script>
+				document.addEventListener('DOMContentLoaded', function() {
+				  // Obtener los elementos del DOM
+				  const openModalButton = document.getElementById('openModal'); // Botón que abre el modal
+				  const modal = document.getElementById('modal');               // El modal
+				  const closeModalButton = document.querySelector('.close-btn'); // Botón para cerrar el modal (X)
+				  const acceptButton = document.getElementById('acceptButton'); // Botón de Aceptar
+				  const cancelButton = document.getElementById('cancelButton'); // Botón de Cancelar
+				  
+				  // Campos que deben ser validados
+				  const montoInput = document.getElementById('monto');
+				  const archivoInput = document.getElementById('archivo');
+			
+				  // Función para validar los campos y mostrar el modal solo si todos están completos
+				  function validarYMostrarModal(event) {
+					// Verificar si los campos están completos
+					if (montoInput.checkValidity() && archivoInput.checkValidity()) {
+					  // Si todo está bien, mostrar el modal
+					  modal.classList.add('show');
+					} else {
+					  // Mostrar mensajes de error nativos del navegador
+					  document.querySelector('form').reportValidity();
+					}
+				  }
+			
+				  // Función para cerrar el modal al hacer clic en la "X"
+				  closeModalButton.addEventListener('click', function() {
+					modal.classList.remove('show'); // Ocultar el modal
+				  });
+			
+				  // Redirigir cuando el usuario haga clic en el botón de Aceptar dentro del modal
+				  acceptButton.addEventListener('click', function() {
+					window.location.href = 'Donaciones1.html';
+				  });
+			
+				  // Función para cerrar el modal al hacer clic en el botón "Cancelar"
+				  cancelButton.addEventListener('click', function() {
+					modal.classList.remove('show'); // Ocultar el modal
+				  });
+			
+				  // Agregar la validación y abrir el modal solo si todo está bien
+				  openModalButton.addEventListener('click', validarYMostrarModal);
+				});
+			</script>
+	</body>
+</html>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+	  const montoInput = document.getElementById('monto');
+  
+	  montoInput.addEventListener('input', function() {
+		// Solo permitir números, eliminando cualquier otro carácter
+		this.value = this.value.replace(/\D/g, ''); // \D es todo lo que no es un dígito
+	  });
+	});
+  </script>

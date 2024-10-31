@@ -1,0 +1,287 @@
+/* Resetear algunos estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3f4f6;
+    padding: 20px;
+}
+
+/* Encabezado con el logo */
+.encabezado {
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.logo_imagen_registro {
+    width: 300px;
+    height: auto;
+}
+
+/* Contenedor principal */
+.contenedor_principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 1400px;
+}
+
+/* Columna izquierda con imagen */
+.lado_izquierdo {
+    flex: 0 0 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.recuadro-imagen-texto {
+    width: 100%;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.imagen_main {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+}
+
+.mensaje_izquierda {
+    padding: 25px;
+    text-align: left;
+}
+
+.mensaje_izquierda h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.mensaje_izquierda p {
+    font-size: 22px;
+    color: #666;
+}
+
+/* Columna derecha con el formulario */
+.lado_derecho {
+    flex: 0 0 40%;
+    background-color: #fff;
+    padding: 35px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.lado_derecho h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el formulario */
+.form-group {
+    margin-bottom: 25px;
+}
+
+/* Contenedor para inputs con íconos */
+.input-container {
+    position: relative;
+}
+
+.input-container i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
+    font-size: 18px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 14px 14px 14px 40px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: block;
+    margin-top: 10px;
+}
+
+.form-group label {
+    font-size: 18px;
+    border-bottom: 50px;
+}
+
+.olvide_contrasena {
+    display: block;
+    margin-left: auto;
+    font-size: 18px;
+    color: #3730a3;
+    margin-bottom: 0;
+    text-decoration: none;
+}
+
+.olvide_contrasena:hover{
+    text-decoration: underline;
+}
+
+.contenedor_olvide {
+    display: flex;
+    align-items: right;
+}
+
+.login-button {
+    width: 200px;
+    padding: 15px;
+    background-color: #3730a3;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.login-button:hover {
+    background-color: #3730a3;
+}
+
+.registro-texto {
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+.registro-texto a {
+    color: #3730a3;
+    text-decoration: none;
+}
+
+/* Botones de registro adicionales */
+.registro-usuario, .registro-albergue {
+    width: 100%;
+    padding: 22px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.registro-usuario {
+    background-color: transparent;
+    color: #333;
+    border: 2px solid #333;
+}
+
+.registro-albergue {
+    background-color: #b2e4dc;
+    color: #333;
+}
+
+.registro-usuario:hover {
+    background-color: #f3f4f6;
+}
+
+.registro-albergue:hover {
+    background-color: #a3d3cc;
+}
+
+@media (max-width: 1180px) {
+    .lado_izquierdo {
+        display: none; /* Oculta la columna izquierda */
+    }
+
+    .lado_derecho {
+        flex: 1 1 100%; /* La columna derecha ocupará el 100% del ancho */
+        max-width: 100%; /* Aseguramos que la columna derecha use todo el espacio */
+    }
+
+    .contenedor_principal {
+        flex-direction: column; /* Apilamos los elementos en pantallas pequeñas */
+        align-items: center;
+    }
+    .login-button{
+        margin-right: auto;
+        margin-left: auto;
+        width: auto;
+    }
+}
+
+/* ---- Media queries para dispositivos pequeños ---- */
+@media (max-width: 768px) {
+    .contenedor_principal {
+        flex-direction: column; /* Apilamos los elementos en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .lado_derecho {
+        padding: 25px;
+    }
+
+    .lado_derecho h2 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .login-button {
+        padding: 14px;
+        font-size: 18px;
+    }
+
+    .olvide_contrasena {
+        margin-bottom: 15px;
+    }
+
+    .registro-texto {
+        margin: 15px 0;
+    }
+
+    .registro-usuario, .registro-albergue {
+        padding: 18px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lado_derecho {
+        padding: 20px;
+    }
+
+    .lado_derecho h2 {
+        font-size: 28px;
+    }
+
+    .login-button {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .registro-usuario, .registro-albergue {
+        padding: 16px;
+        font-size: 18px;
+    }
+}

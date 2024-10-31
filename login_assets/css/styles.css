@@ -1,0 +1,180 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #4f46e5;
+}
+
+.form-group select {
+    background-color: #fff;
+}
+
+.login-button {
+    margin-bottom: 0px;
+}
+
+/* Fondo oscurecido cuando el modal está activo */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+/* Estilo del modal */
+#notificationModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 25px;
+    max-width: 450px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Icono de campana en el modal */
+#notificationModal .fa-bell {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Botón de cierre */
+#closeModal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Título del modal */
+#notificationModal h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Texto del modal */
+#notificationModal p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Botón de Aceptar */
+#acceptBtn {
+    background-color: #4f46e5;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 16px 30px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+#acceptBtn:hover {
+    background-color: #3730a3;
+}
+/* --- Responsive design for styles.css --- */
+
+/* Para pantallas medianas (menos de 768px) */
+@media (max-width: 768px) {
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group input, .form-group select {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .contenedor_principal{
+        align-items: center !important;
+    }
+
+}
+
+/* Para pantallas pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+
+    .form-group input, .form-group select {
+        padding: 8px;
+        font-size: 12px;
+    }
+    .contenedor_principal{
+        align-items: center !important;
+    }
+}
+
+@media (max-width: 1180px) {
+    .iniciar_sesion_alt{
+     
+        display: none !important;
+    }
+
+    .contenedor_principal{
+        align-items: center !important;
+    }
+
+}
+
+.iniciar_sesion_alt {
+    width: 200px;
+    padding: 15px 40px;
+    background-color: #17a589;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.iniciar_sesion_alt:hover {
+    background-color: #17a589;
+}

@@ -1,0 +1,366 @@
+/* Resetear algunos estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3f4f6;
+    padding: 20px;
+}
+/* Botón largo de Aceptar */
+.boton_aceptar_largo {
+    width:30%; /* Ocupa el ancho completo */
+    padding: 15px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: bold; /* Texto en negrita */
+    color: white; /* Texto blanco */
+    background-color: #4f46e5; /* Fondo azul */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Indicador de botón interactivo */
+    transition: background-color 0.3s ease; /* Transición suave del color */
+}
+
+/* Hover del botón */
+.boton_aceptar_largo:hover {
+    background-color: #3730a3; /* Cambio de color cuando se pasa el ratón */
+}
+
+
+/* Encabezado */
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: transparent;
+    margin-bottom: 25px;
+}
+
+.logo_recuperar {
+    display: flex;
+    align-items: center;
+}
+
+.logo_imagen_recuperar {
+    width: 250px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+/* Botones del encabezado */
+.botones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.botones a {
+    width: 200px;
+    padding: 15px;
+    background-color: #4f46e5;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Roboto';
+}
+
+.botones a:hover {
+    background-color: #3730a3;
+}
+
+.registrarme {
+    background-color: #b3c2bf;
+}
+
+.iniciar_sesion {
+    background-color: #4f46e5;
+}
+
+.botones a:hover {
+    opacity: 0.9;
+}
+
+/* Contenedor principal */
+.contenedor_recuperar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px 40px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+/* Imagen lado izquierdo */
+.imagen_lado_izquierdo img {
+    width: 600px;
+}
+
+/* Formulario lado derecho */
+.formulario_recuperar {
+    max-width: 600px;
+    padding: 0 10px;
+}
+
+.formulario_recuperar h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.formulario_recuperar p {
+    font-size: 25px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #4f46e5;
+    border-radius: 5px;
+}
+
+/* Botón de Aceptar en el formulario */
+.boton_aceptar {
+    width: 200px;
+    padding: 15px;
+    background-color: #4f46e5;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Roboto';
+}
+
+.boton_aceptar:hover {
+    background-color: #3730a3;
+}
+
+/* Fondo oscurecido cuando el modal está activo */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+/* Estilo del modal */
+#notificationModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 25px;
+    max-width: 450px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Icono de campana en el modal */
+#notificationModal .fa-bell {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Botón de cierre */
+#closeModal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Título del modal */
+#notificationModal h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Texto del modal */
+#notificationModal p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Botón de Aceptar en el modal */
+#acceptBtn {
+    background-color: #4f46e5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+#acceptBtn:hover {
+    background-color: #3730a3;
+}
+/* --- Responsive design --- */
+
+
+@media (max-width: 1180px) {
+    .imagen_lado_izquierdo {
+        display: none; /* Oculta la columna izquierda */
+    }
+
+    .formulario_recuperar {
+        flex: 1 1 100%; /* La columna derecha ocupará el 100% del ancho */
+        max-width: 100%; /* Aseguramos que la columna derecha use todo el espacio */
+    }
+
+    .contenedor_recuperar {
+        flex-direction: column; /* Apilamos los elementos en pantallas pequeñas */
+        align-items: center;
+        max-width: 500px;
+    }
+    .boton_aceptar{
+        margin-right: auto;
+        margin-left: auto;
+        width: auto;
+    }
+}
+
+/* Para pantallas medianas (menos de 768px) */
+@media (max-width: 768px) {
+    .encabezado {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo_recuperar {
+        display: flex;
+        justify-content: center; /* Centramos el logo en pantallas pequeñas */
+        align-items: center;
+        margin-bottom: 20px; /* Espacio entre logo y botones */
+    }
+
+    .logo_imagen_recuperar {
+        width: 200px; /* Ajustamos el tamaño del logo para pantallas pequeñas */
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .botones {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .botones a {
+        width: 90%;
+        padding: 15px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .boton_aceptar {
+        font-size: 18px;
+    }
+
+    .contenedor_recuperar {
+        flex-direction: column; /* Cambiar a columna */
+        padding: 20px;
+    }
+
+    .imagen_lado_izquierdo img {
+        width: 100%; /* Ajustar la imagen al 100% del contenedor */
+        max-width: 400px; /* Limitar el tamaño */
+        margin-bottom: 20px;
+    }
+
+    .formulario_recuperar h2 {
+        font-size: 40px;
+    }
+
+    .formulario_recuperar p {
+        font-size: 24px;
+    }
+
+    .iniciar_sesion {
+        display: none;
+    }
+}
+
+/* Para pantallas pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+    .logo_recuperar {
+        display: flex;
+        justify-content: center; /* Centramos el logo */
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .logo_imagen_recuperar {
+        width: 150px; /* Más pequeño en pantallas muy pequeñas */
+    }
+
+    .botones a {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .formulario_recuperar h2 {
+        font-size: 32px;
+    }
+
+    .formulario_recuperar p {
+        font-size: 18px;
+    }
+
+    .imagen_lado_izquierdo img {
+        max-width: 100%;
+        height: auto;
+    }
+}

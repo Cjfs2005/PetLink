@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>PetLink</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/aditional.css">
+		<link rel="stylesheet" href="assets/css/popup-window.css">
+		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<!-- Header -->
+								<header id="header">
+									<h1 class="logo"><strong>Detalles de la mascota en adopción</strong></h1>
+
+									<!-- Sección para el nombre y enlace al perfil -->
+									<a href="perfil_usuario.html" class="user-profile">
+										<span class="ocultar">Ander Vilchez</span> <img src="images/foto_perfil.jpg" style="border-radius: 100%; height: 45px; width: 45px;object-fit: cover;"></img>
+									</a>
+								</header>
+
+							<!-- Banner -->
+								<section class="banner">
+									<div class="content">
+										<header>
+											<img src="images/form.png" class="icons">
+											<h2>Ficha de datos de Lovecraft</h2>
+										</header>
+
+                                        <div class="contenedor-imagenes">
+											<img src="images/mascota1.png" alt="Imagen 1" class="img-unica">
+											
+										</div>
+
+                                        <p><strong>Raza:</strong> Perro - Golden retriever</p>
+										<p><strong>Lugar en el que fue encontrado:</strong> Parque de las Américas, Pueblo Libre</p>
+										<p><strong>Descripción:</strong> Lovecraft es un perro muy alegre. 
+											Fue encontrado en el parque de las Américas en muy mal estado, 
+											por lo que ha recibido tratamiento durante el último mes. 
+											Actualmente se encuentra saludable y a espera de una familia.</p>
+										<p><strong>Edad aproximada:</strong> 2 años</p>
+										<p><strong>Género:</strong> Macho</p>
+										<p><strong>¿Está en un hogar temporal?:</strong> No</p>
+										<p><strong>Condiciones para la adopción:</strong> Para adoptar a Lovecraft necesitas un hogar con espacio para jugar, tiempo para ejercitarlo diariamente, y mucho amor para ofrecer. Es un perro muy activo y sociable, ideal para familias comprometidas y dispuestas a brindar atención constante.</p>
+									</div>
+								</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							
+							<!-- Logo -->
+								
+								<section class="alt" id="sidebar-header">
+									<img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+									<p id ="sidebar-title">PetLink</p>
+								</section>
+								<!-- Perfil -->
+	
+							<section class="perfil">
+										
+								<div class="mini-posts">
+									<article>
+										<img src="images/foto_perfil.jpg" alt="" id="image-perfil">
+										<h2 id="usuario">Ander Vilchez</h2>
+									</article>
+								</div>
+								
+							</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="perfil_usuario.html">PERFIL</a></li>
+										<li>
+											<span class="opener">ALBERGUES</span>
+											<ul>
+												<li><a href="albergue_usuario.html">LISTA DE ALBERGUES</a></li>
+												<li><a href="eventos.html">EVENTOS BENÉFICOS</a></li>
+												<li><a href="Donaciones1.html">SOLICITUDES DE DONACIÓN</a></li>
+												<li><a href="Donaciones_historial.html">HISTORIAL DE DONACIONES</a></li>
+												<li><a href="adopciones_usuario.html">MASCOTAS EN ADOPCIÓN</a></li>
+												<li><a href="adopciones_historial_usuario.html">HISTORIAL DE ADOPCIONES</a></li>
+											</ul>
+										</li>
+										<li><a href="Hogar_temporal.html">HOGAR TEMPORAL</a></li>
+										<li><a href="denuncias_usuario.html">DENUNCIAS POR MALTRATO ANIMAL</a></li>
+										<li><a href="mascotas_perdidas_usuario.html">MASCOTAS PERDIDAS</a></li>
+									</ul>
+								</nav>
+							<!-- Logout -->	
+
+							<nav id="logout">
+								<a href="../bienvenidos.html" id="cerrar-sesion">Cerrar Sesión</a>
+							</nav>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+		<!--Modal-->
+			<div id="modal" class="modal">
+				<div class="modal-content">
+					<!-- Botón cerrar -->
+					<span class="close-btn">&times;</span>
+					<p>¿Estás seguro de que quieres postular para la adopción de Lovecraft?</p>
+					<!-- Botones de Aceptar y Cancelar -->
+					<ul class="actions modal-buttons">
+						<li><a href="#" class="button primary big" id="acceptButton">Sí</a></li>
+						<li><a href="#" class="button big" id="cancelButton">No</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- Script dentro del mismo HTML -->
+			<script>
+				// Esperamos a que todo el DOM esté cargado
+				document.addEventListener('DOMContentLoaded', function() {
+					// Obtener los elementos del DOM
+					const openModalButton = document.getElementById('openModal'); // Botón que abre el modal
+					const modal = document.getElementById('modal');               // El modal
+					const closeModalButton = document.querySelector('.close-btn'); // Botón para cerrar el modal (X)
+					const acceptButton = document.getElementById('acceptButton'); // Botón de Aceptar
+					const cancelButton = document.getElementById('cancelButton'); // Botón de Cancelar
+		
+					// Función para abrir el modal
+					openModalButton.addEventListener('click', function() {
+						modal.classList.add('show'); // Mostrar el modal
+					});
+		
+					// Función para cerrar el modal al hacer clic en la "X"
+					closeModalButton.addEventListener('click', function() {
+						modal.classList.remove('show'); // Ocultar el modal
+					});
+		
+					// Deben modificar el link para que redirija afuera del formulario
+					acceptButton.addEventListener('click', function() {
+						window.location.href = 'adopciones_usuario.html';
+					});
+		
+					// Función para cerrar el modal al hacer clic en el botón "Cancelar"
+					cancelButton.addEventListener('click', function() {
+						modal.classList.remove('show'); // Ocultar el modal
+					});
+				});
+			</script>
+	</body>
+</html>

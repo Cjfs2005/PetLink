@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>PetLink</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/aditional.css">
+    <link rel="stylesheet" href="assets/css/popup-window.css">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <img src="images/cjfs.png" class="icons">
+                    <h1 class="logo" style="display: inline-block;"><strong>GESTIÓN DE USUARIOS</strong></h1>
+                </header>
+
+                <!-- Formulario de Coordinador Zonal -->
+                <section class="banner">
+                    <div class="content">
+                        <header>
+                            <img src="images/form.png" class="icons">
+                            <h2>Formulario de Coordinador Zonal</h2>
+                        </header>
+                        <p>Complete el siguiente formulario para registrar un nuevo coordinador zonal. Asegúrese de proporcionar todos los detalles solicitados de manera correcta.</p>
+
+                        <div class="row gtr-uniform">
+                            <!-- Nombre -->
+                            <div class="col-6 col-12-xsmall">
+                                <label for="nombre" class="input-label">Nombre <span class="required">*</span></label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required />
+                            </div>
+
+                            <!-- Apellido -->
+                            <div class="col-6 col-12-xsmall">
+                                <label for="apellido" class="input-label">Apellido <span class="required">*</span></label>
+                                <input type="text" id="apellido" name="apellido" placeholder="Apellido" required />
+                            </div>
+
+                            <!-- DNI -->
+                            <div class="col-6 col-12-xsmall">
+                                <label for="dni" class="input-label">DNI <span class="required">*</span></label>
+                                <input type="text" id="dni" name="dni" placeholder="DNI" required />
+                            </div>
+
+                            <!-- Teléfono -->
+                            <div class="col-6 col-12-xsmall">
+                                <label for="telefono" class="input-label">Teléfono <span class="required">*</span></label>
+                                <input type="text" id="telefono" name="telefono" placeholder="Teléfono" required />
+                            </div>
+
+                            <!-- Correo Electrónico -->
+                            <div class="col-12">
+                                <label for="correo" class="input-label">Correo Electrónico <span class="required">*</span></label>
+                                <input type="email" id="correo" name="correo" placeholder="Correo Electrónico" required />
+                            </div>
+
+                            <!-- Zona Asignada -->
+                            <div class="col-6 col-12-xsmall">
+                                <label for="zonaAsignada" class="input-label">Zona Asignada <span class="required">*</span></label>
+                                <select id="zonaAsignada" name="zonaAsignada" required>
+                                    <option value="">Seleccione una zona</option>
+                                    <option value="Norte">Norte</option>
+                                    <option value="Sur">Sur</option>
+                                    <option value="Este">Este</option>
+                                    <option value="Oeste">Oeste</option>
+                                </select>
+                            </div>
+
+                            <!-- Fecha de Nacimiento -->
+                            <div class="col-6 col-12-xsmall">
+                                <label for="fechaNacimiento" class="input-label">Fecha de Nacimiento <span class="required">*</span></label>
+                                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required />
+                            </div>
+
+                            <!-- Botones -->
+                            <div class="col-12">
+                                <ul class="actions form-buttons">
+                                    <li><a href="#" class="button primary big" id="creationButton">Aceptar</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section class="alt" id="sidebar-header">
+                    <img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+                    <p id="sidebar-title">PetLink</p>
+                </section>
+
+                <!-- Perfil -->
+                <section class="perfil">
+                    <div class="mini-posts">
+                        <article>
+                            <img src="images/aa.png" alt="" id="image-perfil">
+                            <h2 id="usuario">Administrador</h2>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li>
+                            <span class="opener">Gestión de Usuarios</span>
+                            <ul>
+                                <li><a href="gestion_usuarios.html">Formulario Coordinador Zonal</a></li>
+                                <li><a href="lista_usuarios.html">Lista de Usuarios</a></li>
+                                <li><a href="solicitud_albergue.html">Solicitudes de Albergue</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="historial.html">Gestión de Eventos</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Logout -->    
+                <nav id="logout">
+                    <a href="../bienvenidos.html" id="cerrar-sesion">Cerrar Sesión</a>
+                </nav>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal para creación de lugar -->
+    <div id="creationModal" class="modal">
+        <div class="modal-content">
+            <p>¡Se creó con éxito!</p>
+            <ul class="actions modal-buttons">
+                <li><a href="gestion_usuarios.html" class="button primary big" id="closeCreationModal">Aceptar</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Script de manejo de modales -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const creationButton = document.getElementById('creationButton');
+            const creationModal = document.getElementById('creationModal');
+            const closeCreationModalButton = document.getElementById('closeCreationModal');
+
+            // Abrir modal de "Creación de lugar"
+            creationButton.addEventListener('click', function(e) {
+                e.preventDefault(); // Evitar la recarga
+                creationModal.classList.add('show');
+            });
+
+            // Redirigir al hacer clic en "Aceptar" en el modal de creación
+            closeCreationModalBuhtton.addEventListener('click', function() {
+                window.location.href = 'historial.html'; // Cambia 'historial.html' si quieres redirigir a otro lado
+            });
+        });
+    </script>
+
+</body>
+</html>

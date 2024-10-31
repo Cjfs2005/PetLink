@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>PetLink</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/aditional.css">
+    <link rel="stylesheet" href="assets/css/popup-window.css">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <style>
+        /* Cambiar el color de la letra a negro solo en el banner */
+        .banner, .banner p, .banner ul, .banner li {
+            color: black; /* Cambié el color a negro */
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+                    <h1 class="logo"><strong>Detalles sobre el albergue</strong></h1>
+                </header>
+
+                <!-- Banner -->
+                <section class="banner">
+                    <div class="content">
+                        <header>
+                            <img src="images/form.png" class="icons">
+                            <h2>Información sobre el albergue</h2>
+                        </header>
+
+                        <p><strong>Descripción: </strong>El objetivo principal de este albergue es proporcionar un refugio seguro y temporal para mascotas que han sido rescatadas. Buscamos encontrar hogares responsables y amorosos para estos animales, ofreciéndoles una nueva oportunidad de vida. Cada adopción puede marcar una diferencia significativa en la vida de estos pequeños, ayudándolos a encontrar una familia que les brinde el cariño y el cuidado que merecen. ¡Ven y forma parte de nuestra misión de cambiar vidas a través de la adopción!</strong></p>
+                        <p><strong>Información General:</strong></p>
+                        <ul>
+                            <li><strong>Nombre del Albergue:</strong> Escipión</li>
+                            <li><strong>Redes sociales:</strong>  
+                                <!-- Redes sociales con emojis -->
+                                <a href="#" class="icon brands fa-instagram"><span class="label">Instagram 📷</span></a>
+                            </li>
+                            <li><strong>Dirección: </strong>Av. Josué Saladino 845 (Detrás de Donofrio)</li>
+                            <li><strong>Distrito: </strong>San Miguel</li>
+                        </ul>
+
+                        <!-- Break -->
+                        <div class="row gtr-uniform">
+                            <div class="col-12">
+                                <ul class="actions form-buttons">
+                                    <li><a href="#" class="button primary big" id="openModal">Aceptar</a></li>
+                                    <li><a href="#" class="button big" id="rejectButton">Rechazar</a></li> <!-- Añadimos id="rejectButton" -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section class="alt" id="sidebar-header">
+                    <img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+                    <p id="sidebar-title">PetLink</p>
+                </section>
+                <!-- Perfil -->
+                <section class="perfil">
+                    <div class="mini-posts">
+                        <article>
+                            <img src="images/pic07.jpg" alt="" id="image-perfil">
+                            <h2 id="usuario">Ander Vilchez</h2>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li>
+                            <span class="opener">Gestión de Usuarios</span>
+                            <ul>
+                                <li><a href="gestion_usuarios.html">Formulario Coordinador Zonal</a></li>
+                                <li><a href="lista_usuarios.html">Lista de Usuarios</a></li>
+                                <li><a href="solicitud_albergue.html">Solicitudes de Albergue</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="historial.html">Gestión de Eventos</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Logout -->
+                <nav id="logout">
+                    <a href="../bienvenidos.html" id="cerrar-sesion">Cerrar Sesión</a>
+                </nav>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Modal Aceptar -->
+    <div id="acceptModal" class="modal">
+        <div class="modal-content">
+            <!-- Botón cerrar -->
+            <span class="close-btn">&times;</span>
+            <p>¿Estás seguro de que quieres aceptar la solicitud?</p>
+            <!-- Botones de Aceptar y Cancelar -->
+            <ul class="actions modal-buttons">
+                <li><a href="solicitud_albergue.html" class="button primary big" id="acceptButton">Sí</a></li>
+                <li><a href="#" class="button big" id="cancelAcceptButton">No</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal Rechazar -->
+    <div id="rejectModal" class="modal">
+        <div class="modal-content">
+            <!-- Botón cerrar -->
+            <span class="close-btn">&times;</span>
+            <p>Se rechazó la solicitud con éxito</p>
+            <!-- Botones de Rechazar y Cancelar -->
+            <ul class="actions modal-buttons">
+                <li><a href="solicitud_albergue.html" class="button primary big" id="rejectConfirmButton">Aceptar</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Script para el manejo de los modales -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener los elementos para el modal de aceptar
+            const openModalButton = document.getElementById('openModal');
+            const acceptModal = document.getElementById('acceptModal');
+            const closeModalButton = acceptModal.querySelector('.close-btn');
+            const cancelAcceptButton = document.getElementById('cancelAcceptButton');
+            const acceptButton = document.getElementById('acceptButton');
+
+            // Obtener los elementos para el modal de rechazar
+            const rejectButton = document.getElementById('rejectButton');
+            const rejectModal = document.getElementById('rejectModal');
+            const closeRejectModalButton = rejectModal.querySelector('.close-btn');
+            const cancelRejectButton = document.getElementById('cancelRejectButton');
+            const rejectConfirmButton = document.getElementById('rejectConfirmButton');
+
+            // Abrir el modal de aceptar
+            openModalButton.addEventListener('click', function() {
+                acceptModal.classList.add('show');
+            });
+
+            // Cerrar el modal de aceptar
+            closeModalButton.addEventListener('click', function() {
+                acceptModal.classList.remove('show');
+            });
+
+            // Cerrar modal de aceptar con "No"
+            cancelAcceptButton.addEventListener('click', function() {
+                acceptModal.classList.remove('show');
+            });
+
+            // Redirigir al hacer clic en aceptar
+            acceptButton.addEventListener('click', function() {
+                window.location.href = 'solicitud_albergue.html';
+            });
+
+            // Abrir el modal de rechazar
+            rejectButton.addEventListener('click', function() {
+                rejectModal.classList.add('show');
+            });
+
+            // Cerrar el modal de rechazar
+            closeRejectModalButton.addEventListener('click', function() {
+                rejectModal.classList.remove('show');
+            });
+
+            // Cerrar modal de rechazar con "No"
+            cancelRejectButton.addEventListener('click', function() {
+                rejectModal.classList.remove('show');
+            });
+
+            // Redirigir al hacer clic en rechazar
+            rejectConfirmButton.addEventListener('click', function() {
+                window.location.href = 'solicitud_albergue.html';
+            });
+        });
+    </script>
+
+</body>
+</html>

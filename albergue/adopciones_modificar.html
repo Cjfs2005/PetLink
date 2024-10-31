@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Formulario de Adopción de Mascota</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/aditional.css">
+        <link rel="stylesheet" href="assets/css/popup-window.css">
+		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+		<style>
+			#charCount {
+				font-size: 12px;
+				color: #888;
+				float: right;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+
+					<!-- Header -->
+					<header id="header">
+						<h1 class="logo"><strong>Formulario de Adopción de Mascota</strong></h1>
+						<!-- Sección para el nombre y enlace al perfil -->
+						<a href="perfil_usuario.html" class="user-profile">
+							<span class="ocultar">Huellitas PUCP</span> <img src="images/logo_huellitas.png" style="border-radius: 100%; height: 45px; width: 45px;object-fit: cover;"></img>
+						</a>
+					</header>
+					
+					<!-- Banner -->
+					<section class="banner">
+						<div class="content">
+							<header>
+								<img src="images/form.png" class="icons">
+								<h2>Detalles de la Mascota</h2>
+							</header>
+							<p><strong>Términos y Condiciones:</strong> Completa el formulario con los detalles de la mascota que deseas dar en adopción. Asegúrate de incluir toda la información relevante. La adopción debe cumplir con los requisitos legales y éticos para el bienestar de la mascota.</p>
+
+							<div class="row gtr-uniform">
+
+								<!-- Tipo de raza -->
+								<div class="col-12 col-12-xsmall">
+									<label for="tipoRaza" class="input-label">Tipo de raza</label>
+									<input type="text" id="tipoRaza" name="tipoRaza" placeholder="" value="Perro-Golder retriever" required />
+								</div>
+
+								<!-- Dirección donde fue encontrado -->
+								<div class="col-12">
+									<label for="direccionEncontrado" class="input-label">Dirección donde fue encontrado</label>
+									<input type="text" id="direccionEncontrado" name="direccionEncontrado" placeholder="" value="Parque Las Américas" required />
+								</div>
+
+								<!-- Adjuntar fotos de la mascota -->
+								<div class="col-12">
+									<label for="fotosMascota" class="input-label">Adjuntar fotos de la mascota (Máximo 3 fotos)</label>
+									<input type="file" id="fotosMascota" name="fotosMascota" accept="image/*" multiple max="3" required />
+								</div>
+
+								<!-- Descripción general -->
+								<div class="col-12">
+									<label for="descripcionGeneral" class="input-label">Descripción general (máximo 300 caracteres)</label>
+									<textarea id="descripcionGeneral" name="descripcionGeneral" class="text-area" maxlength="300" placeholder="" required>Lovecraft es un perro muy alegre. Fue encontrado en el parque de las Américas en muy mal estado, por lo que ha recibido tratamiento durante el último mes. Actualmente se encuentra saludable y a espera de una familia.</textarea>
+									<span id="charCount">0/300</span>
+								</div>
+
+								<!-- Género -->
+								<div class="col-6 col-12-xsmall">
+									<label for="generoMascota" class="input-label">Género</label>
+									<select id="generoMascota" name="generoMascota" required>
+										<option value="">- Selecciona un género -</option>	
+                                        <option value="Macho" selected>Macho</option>			
+										<option value="Hembra">Hembra</option>
+									</select>
+								</div>
+
+								<!-- Edad aproximada -->
+								<div class="col-6 col-12-xsmall">
+									<label for="edadAproximada" class="input-label">Edad aproximada</label>
+									<input type="text" id="edadAproximada" name="edadAproximada" placeholder="" value="2" maxlength="2" required />
+								</div>
+
+								<!-- Se encuentra en un hogar temporal -->
+								<div class="col-12">
+									<label class="input-label">¿Se encuentra en un hogar temporal?</label>
+									<ul class="actions">
+										<li><input type="radio" id="hogarTemporalSi" name="hogarTemporal" value="Si" required checked>
+											<label for="hogarTemporalSi">Sí</label>
+										</li>
+										<li><input type="radio" id="hogarTemporalNo" name="hogarTemporal" value="No">
+											<label for="hogarTemporalNo">No</label>
+										</li>
+									</ul>
+								</div>
+
+								<!-- Condiciones para la adopción -->
+								<div class="col-12">
+									<label for="condicionesAdopcion" class="input-label">Condiciones para la adopción</label>
+									<textarea id="condicionesAdopcion" name="condicionesAdopcion" class="text-area" maxlength="300" placeholder="" required>Se necesita que sea un dueño que ame a los animales y pueda tener paciencia con este animalito ya que es un poco compulsivo.</textarea>
+								</div>
+
+								<!-- Botones -->
+								<div class="col-12">
+									<ul class="actions form-buttons">
+										<li><a href="#" class="button primary big" id="openModal">Modificar</a></li>
+										<li><a href="javascript:history.back()" class="button big">Cancelar</a></li> <!-- Botón Cancelar -->
+									</ul>
+								</div>
+
+							</div>
+						</div>
+					</section>
+
+				</div>
+			</div>
+
+			<!-- Sidebar -->
+			<div id="sidebar">
+				<div class="inner">
+					
+					<!-- Logo -->
+					<section class="alt" id="sidebar-header">
+						<img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+						<p id="sidebar-title">PetLink</p>
+					</section>
+
+					<!-- Perfil -->
+					<section class="perfil">
+						<div class="mini-posts">
+							<article>
+								<img src="images/logo_huellitas.png" alt="" id="image-perfil">
+								<h2 id="usuario">HUELLITAS PUCP</h2>
+							</article>
+						</div>
+					</section>
+
+					<!-- Menu -->
+					<nav id="menu">
+						<header class="major">
+							<h2>Menu</h2>
+						</header>
+						<ul>
+							<li><a href="perfil.html">Perfil</a></li>
+							<li>
+								<span class="opener">Publicaciones</span>
+								<ul>
+									<li><a href="EventoBenéfico.html">Eventos benéficos</a></li>
+									<li><a href="adopciones.html">Adopciones</a></li>
+									<li><a href="donaciones.html">Donaciones</a></li>
+								</ul>
+							</li>
+							<li><a href="hogar_temporal.html">Hogar Temporal</a></li>
+						</ul>
+					</nav>
+
+					<!-- Logout -->	
+					<nav id="logout">
+						<a href="#" id="cerrar-sesion">Cerrar Sesión</a>
+					</nav>
+
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+        <!--Modal-->
+        <div id="modal" class="modal">
+            <div class="modal-content">          
+                <p>Se ha modificado el post con éxito.</p>
+                <!-- Botones de Aceptar y Cancelar -->
+                <ul class="actions modal-buttons">
+                    <li><a href="adopciones.html" class="button primary big" id="acceptButton">Aceptar</a></li>
+                </ul>
+            </div>
+        </div>
+		
+		<!-- Contador de caracteres para el campo "Sobre nosotros" -->
+		<script>
+			const textarea = document.getElementById('descripcionGeneral');
+			const charCount = document.getElementById('charCount');
+
+			textarea.addEventListener('input', function() {
+			const currentLength = textarea.value.length;
+				charCount.textContent = `${currentLength}/300`;
+			});
+		</script>
+
+        <script>
+            // Esperamos a que todo el DOM esté cargado
+            document.addEventListener('DOMContentLoaded', function() {
+                // Obtener los elementos del DOM
+                const openModalButton = document.getElementById('openModal'); // Botón que abre el modal
+                const modal = document.getElementById('modal');               // El modal
+                const acceptButton = document.getElementById('acceptButton'); // Botón de Aceptar
+
+                // Función para abrir el modal
+                openModalButton.addEventListener('click', function() {
+                    modal.classList.add('show'); // Mostrar el modal
+                });
+
+                // Función para cerrar el modal al hacer clic en el botón "Aceptar"
+                acceptButton.addEventListener('click', function() {
+                    window.location.href = 'adopciones.html';
+                });
+            });
+        </script>
+	</body>
+</html>

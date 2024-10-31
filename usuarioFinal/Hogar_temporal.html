@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>PetLink</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/aditional.css">
+		<script src="assets/js/pagination_bigbanner.js"></script>
+		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+		<!-- CSS embebido -->
+		<style>
+			/* Estilo para el banner de la propuesta de "Ramsés" */
+			.banner-orange {
+			    background-color: #dab61398; /* Color anaranjado */
+			    border-radius: 10px; /* Mantén el mismo borde redondeado que otros banners */
+			    padding: 20px; /* Añade algo de espacio interno */
+			    color: rgb(48, 48, 48); /* Cambia el texto a blanco para que sea más legible */
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+
+					<!-- Header -->
+					<header id="header">
+						<img src="images/hogarTemporal.png" class="icons">
+						<h1 class="logo"><strong>HOGAR TEMPORAL</strong></h1>
+
+						<!-- Sección para el nombre y enlace al perfil -->
+						<a href="perfil_usuario.html" class="user-profile">
+							<span class="ocultar">Ander Vilchez</span> <img src="images/foto_perfil.jpg" style="border-radius: 100%; height: 45px; width: 45px;object-fit: cover;"></img>
+						</a>
+					</header>
+
+					<!-- Search -->
+
+					<section class="seccionPrueba">
+						<div class="search-filter-container" style="display: flex; align-items: center;">
+							<section id="search" class="alt">
+								<h3 style="margin-bottom: 0.1em;">ESTADO DEL USUARIO: <span style="color:green;">APROBADO</span></h3>
+								<p style="margin-bottom: 0.1em;"><strong>PERIODO DE HOGAR TEMPORAL:</strong></p>
+								<p style="margin-bottom: 0.1em;">29/08/2024 - 12/09/2024</p>
+							</section>
+							
+							<section class="filter-menu">
+								<a href="formulario_hogar_temporal.html" class="button primary big" style="max-width: fit-content;align-self: self-end;line-height: 3.4;display: none;">POSTULAR PARA SER HOGAR TEMPORAL</a>
+								<a href="formulario_hogar_temporal_mod.html" class="button primary big" style="max-width: fit-content;align-self: self-end;line-height: 3.4;">MODIFICAR POSTULACIÓN</a>
+							</section>
+						</div>
+					</section>
+
+					<style>
+						@media screen and (max-width: 768px) {
+
+							.filter-menu a{
+								width: 100%;
+								max-width: 100% !important;
+							}
+							}
+					</style>
+
+					<!-- Primera Propuesta -->
+					<section class="banner">
+						<div class="content">
+							<header>
+								<img src="images/hogarTemporalLogo.png" class="icons">
+								<h1>Solicitud del albergue "Patitas"</h1>
+							</header>
+							<p><h3>Estado de la solicitud: <span style="color: orange;">PENDIENTE</span></h3></p>
+							<p><strong>Nombre de la mascota:</strong> Alejandro</p>
+							<p><strong>Descripción de la mascota:</strong> Alejandro es un perro lleno de energía y cariño, siempre dispuesto a hacer nuevos amigos. Con una personalidad juguetona y leal, disfruta de largos paseos, tiempo de juego y, sobre todo, la compañía de su familia. Es un compañero perfecto, lleno de amor y siempre listo para dar lo mejor de sí mismo.</p>
+							<p><strong>Periodo solicitado:</strong> 05/09/2024 - 07/09/2024</p>
+							<ul class="actions">
+								<li><a href="#" class="button primary big">ACEPTAR</a></li>
+								<li><a href="#" class="button big">RECHAZAR</a></li>
+							</ul>
+						</div>
+						<span class="image object">
+							<img src="images/apolo.jpg" alt="Imagen de mascota" />
+						</span>
+					</section>
+
+					<!-- Segunda Propuesta -->
+					<section class="banner banner-orange"> <!-- Usamos la clase banner-orange aquí -->
+						<div class="content">
+							<header>
+								<img src="images/hogarTemporalLogo.png" class="icons">
+								<h1>Solicitud del albergue "Huellitas PUCP"</h1>
+							</header>
+							<p><h3>Estado de la solicitud: <span style="color: red;">RECHAZADA</span></h3></p>
+							<p><strong>Nombre de la mascota:</strong> Gianmarco</p>
+							<p><strong>Descripción de la mascota:</strong> Gianmarco es un perro lleno de energía y cariño, siempre dispuesto a hacer nuevos amigos. Con una personalidad juguetona y leal, disfruta de largos paseos, tiempo de juego y, sobre todo, la compañía de su familia. Es un compañero perfecto, lleno de amor y siempre listo para dar lo mejor de sí mismo.</p>
+							<p><strong>Periodo solicitado:</strong> 04/09/2024 - 06/09/2024</p>
+
+						</div>
+						<span class="image object">
+							<img src="images/golden.jpg" alt="Imagen de mascota" />
+						</span>
+					</section>
+
+					<div class="pagination-container" style="display: flex; justify-content: center;">
+						<ul class="pagination"></ul>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- Sidebar -->
+			<div id="sidebar">
+				<div class="inner">
+					
+					<!-- Logo -->
+					<section class="alt" id="sidebar-header">
+						<img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+						<p id ="sidebar-title">PetLink</p>
+					</section>
+				
+					<!-- Perfil -->
+	
+					<section class="perfil">
+										
+						<div class="mini-posts">
+							<article>
+								<img src="images/foto_perfil.jpg" alt="" id="image-perfil">
+								<h2 id="usuario">Ander Vilchez</h2>
+							</article>
+						</div>
+						
+					</section>
+
+					<!-- Menu -->
+						<nav id="menu">
+							<header class="major">
+								<h2>Menu</h2>
+							</header>
+							<ul>
+								<li><a href="perfil_usuario.html">PERFIL</a></li>
+								<li>
+									<span class="opener">ALBERGUES</span>
+									<ul>
+										<li><a href="albergue_usuario.html">LISTA DE ALBERGUES</a></li>
+										<li><a href="eventos.html">EVENTOS BENÉFICOS</a></li>
+										<li><a href="Donaciones1.html">SOLICITUDES DE DONACIÓN</a></li>
+										<li><a href="Donaciones_historial.html">HISTORIAL DE DONACIONES</a></li>
+										<li><a href="adopciones_usuario.html">MASCOTAS EN ADOPCIÓN</a></li>
+										<li><a href="adopciones_historial_usuario.html">HISTORIAL DE ADOPCIONES</a></li>
+									</ul>
+								</li>
+								<li><a href="Hogar_temporal.html">HOGAR TEMPORAL</a></li>
+								<li><a href="denuncias_usuario.html">DENUNCIAS POR MALTRATO ANIMAL</a></li>
+								<li><a href="mascotas_perdidas_usuario.html">MASCOTAS PERDIDAS</a></li>
+							</ul>
+						</nav>
+							<!-- Logout -->	
+
+							<nav id="logout">
+								<a href="../bienvenidos.html" id="cerrar-sesion">Cerrar Sesión</a>
+							</nav>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

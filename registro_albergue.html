@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login_assets/css/bienvenido.css">
+    <link rel="stylesheet" href="login_assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Registro de albergue</title>
+    <link rel="icon" href="login_images/favicon.png" type="image/x-icon">
+</head>
+<body>
+
+    <div class="contenedor_principal" style="align-items: stretch;">
+        <div class="lado_izquierdo">
+            <div class="recuadro-imagen-texto">
+                <img src="login_images/imagen_registro_mejorado.jpg" alt="Perros jugando" class="imagen_main">
+                <div class="mensaje_izquierda">
+                    <h1>Empieza a ayudar</h1>
+                    <p>Una red social para ayudar animales</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="lado_derecho">
+            <h2>Regístrate como albergue</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="nombres">Nombres del encargado</label>
+                    <input class="form-input" type="text" id="nombres" name="nombres" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellidos del encargado</label>
+                    <input class="form-input" type="text" id="apellido" name="apellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="nombreAlbergue">Nombre del albergue</label>
+                    <input class="form-input" type="text" id="nombreAlbergue" name="nombreAlbergue" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico (Gmail)</label>
+                    <input class="form-input" type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="url">URL de Instagram</label>
+                    <input class="form-input" type="text" id="url" name="email" required>
+                </div>
+                <div class="contenedor_olvide"><a href="bienvenidos.html" id="olvideContrasenaBtn" class="olvide_contrasena">¿Ya tienes una cuenta?</a></div>
+                <button type="submit" class="login-button">Registrarme</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Overlay para oscurecer el fondo -->
+    <div id="overlay"></div>
+
+    <!-- Modal de notificación -->
+    <div id="notificationModal">
+        <i class="fas fa-bell"></i>
+        <span id="closeModal">&times;</span>
+        <h3>Registro Completado</h3>
+        <p>Su solicitud de registro ha sido enviada satisfactoriamente. 
+           Pronto recibirá un correo de aceptación indicándole los pasos a seguir para completar su registro.</p>
+        <button id="acceptBtn">Aceptar</button>
+    </div>
+
+    <script src="usuario_albergue.js"></script>
+</body>
+</html>

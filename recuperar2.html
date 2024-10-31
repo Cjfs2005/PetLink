@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Contraseña</title>
+    <link rel="stylesheet" href="login_assets/css/recuperar_contrasena.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="login_images/favicon.png" type="image/x-icon">
+    <title>Cambia tu contraseña</title>
+</head>
+<body>
+
+    <div class="contenedor_recuperar">
+        <div class="imagen_lado_izquierdo">
+            <img src="login_images/Recuperar_contrasena.jpg" alt="Imagen de recuperación">
+        </div>
+        <div class="formulario_recuperar">
+            <div class="botones">
+                <a href="bienvenidos.html" class="iniciar_sesion">Iniciar sesión</a>
+            </div>
+            <h2>Cambia tu contraseña</h2>
+            <p>Ingresa con tu correo electrónico y con la contraseña temporal enviada a este para proceder con el cambio de contraseña.</p>
+            <form id="change-password-form">
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Ingresa tu correo" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="temp-password" placeholder="Ingresa tu contraseña temporal" required>
+                </div>
+                <button type="submit" class="boton_aceptar">Ingresar</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Vinculamos el archivo JavaScript externo -->
+    <script src="login_assets/js/recuperar2.js"></script>
+</body>
+</html>

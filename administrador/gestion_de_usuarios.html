@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>PetLink</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/aditional.css">
+		<link rel="stylesheet" href="assets/css/popup-window.css">
+		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<h1 class="logo"><strong>Creación de Usuario</strong></h1>
+									
+								</header>
+
+							<!-- Banner -->
+								<section class="banner">
+									<div class="content">
+										<header>
+											<img src="images/form.png" class="icons">
+											<h2>Creación de Usuario del Coordinador Zonal</h2>
+										</header>
+									
+										
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+												<label for="nombres" class="input-label">Nombres</label>
+												<input type="text" id="nombres" value="" placeholder="" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<label for="apellidos" class="input-label">Apellidos</label>
+												<input type="text" id="apellidos" value="" placeholder="" />
+											</div>
+											<!-- Break -->
+											<div class="col-6 col-12-xsmall">
+												<label for="edad" class="input-label">DNI</label>
+												<input type="text" id="edad" value="" placeholder="" />
+											</div>
+											
+											<!-- Break -->
+											<div class="col-6 col-12-xsmall">
+												<label for="telefono" class="input-label">Número de teléfono</label>
+												<input type="text" id="telefono" value="" placeholder="" />
+											</div>
+											
+										
+											<!-- Break -->
+											<div class="col-6 col-12-xsmall">
+												<label for="cuartos" class="input-label">Correo Electrónico</label>
+												<input type="text" id="cuartos" value="" placeholder="" />
+											</div>
+											
+										
+											<!-- Break -->
+											<div class="col-6 col-12-xsmall">
+												<label for="numMascotas" class="input-label">Fecha de nacimiento</label>
+												<input type="text" id="numMascotas" value="" placeholder="" disabled/>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<label for="tipoMascotas" class="input-label">Contraseña temporal asingada</label>
+												<input type="text" id="tipoMascotas" disabled>
+											</div>
+											
+											<div class="col-12">
+												<ul class="actions form-buttons">
+													<li><a href="#" class="button primary big">Aceptar</a></li>
+													<li><a href="#" class="button big" id="openModal">Aceptar</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							
+							<!-- Logo -->
+								
+								<section class="alt" id="sidebar-header">
+									<img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+									<p id ="sidebar-title">PetLink</p>
+								</section>
+							
+							<!-- Perfil -->
+	
+								<section class="perfil">
+										
+									<div class="mini-posts">
+										<article>
+											<img src="images/aa.png" alt="" id="image-perfil">
+											<h2 id="usuario">Administrador</h2>
+										</article>
+									</div>
+									
+								</section>
+
+						 <!-- Menu -->
+						 <nav id="menu">
+							<header class="major">
+								<h2>Menu</h2>
+							</header>
+							<ul>
+								<li><a href="dashboard.html">Dashboard</a></li>
+								<li><span class="opener">Gestión de Usuarios</span>
+									<ul>
+										<li><a href="gestion_usuarios.html">Formulario Coordinador Zonal</a></li>
+										<li><a href="lista_usuarios.html">Lista de Usuarios</a></li>
+										<li><a href="solicitud_albergue.html">Solicitudes de Albergue</a></li>
+									</ul>
+								</li>
+								<li><a href="historial.html">Gestión de Eventos</a></li>
+							</ul>
+						</nav>
+		
+						<!-- Logout -->
+						<nav id="logout">
+							<a href="../bienvenidos.html" id="cerrar-sesion">Cerrar Sesión</a>
+						</nav>
+		
+					</div>
+				</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+		<!-- Modal -->
+			<div id="modal" class="modal">
+				<div class="modal-content">
+					<!-- Botón cerrar -->
+					<span class="close-btn">&times;</span>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur autem, esse hic facere explicabo illo a cumque non sint unde ipsa libero nemo blanditiis quaerat eum pariatur ex tempora labore?</p>
+					<!-- Botones de Aceptar y Cancelar -->
+					<ul class="actions modal-buttons">
+						<li><a href="#" class="button primary big" id="acceptButton">Aceptar</a></li>
+						<li><a href="#" class="button big" id="cancelButton">Cancelar</a></li>
+					</ul>
+				</div>
+			</div>
+		
+			<!-- Script dentro del mismo HTML -->
+			<script>
+				// Esperamos a que todo el DOM esté cargado
+				document.addEventListener('DOMContentLoaded', function() {
+					// Obtener los elementos del DOM
+					const openModalButton = document.getElementById('openModal'); // Botón que abre el modal
+					const modal = document.getElementById('modal');               // El modal
+					const closeModalButton = document.querySelector('.close-btn'); // Botón para cerrar el modal (X)
+					const acceptButton = document.getElementById('acceptButton'); // Botón de Aceptar
+					const cancelButton = document.getElementById('cancelButton'); // Botón de Cancelar
+		
+					// Función para abrir el modal
+					openModalButton.addEventListener('click', function() {
+						modal.classList.add('show'); // Mostrar el modal
+					});
+		
+					// Función para cerrar el modal al hacer clic en la "X"
+					closeModalButton.addEventListener('click', function() {
+						modal.classList.remove('show'); // Ocultar el modal
+					});
+		
+					// Deben modificar el link para que redirija afuera del formulario
+					acceptButton.addEventListener('click', function() {
+						window.location.href = 'https://www.ejemplo.com';
+					});
+		
+					// Función para cerrar el modal al hacer clic en el botón "Cancelar"
+					cancelButton.addEventListener('click', function() {
+						modal.classList.remove('show'); // Ocultar el modal
+					});
+				});
+			</script>
+	</body>
+</html>

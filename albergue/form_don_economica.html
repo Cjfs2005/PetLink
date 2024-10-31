@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Formulario de Solicitud de Donaciones</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/aditional.css">
+        <link rel="stylesheet" href="assets/css/popup-window.css">
+        <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Main -->
+            <div id="main">
+                <div class="inner">
+
+                    <!-- Header -->
+                    <header id="header">
+                        <h1 class="logo"><strong>Formulario de Solicitud de Donaciones</strong></h1>
+                        <a href="perfil.html" class="user-profile">
+                            <span class="ocultar">Huellitas PUCP</span> <img src="images/logo_huellitas.png" style="border-radius: 100%; height: 45px; width: 45px;object-fit: cover;"></img>
+                        </a>
+                    </header>
+
+                    <!-- Banner -->
+                    <section class="banner">
+                        <div class="content">
+                            <header>
+                                <img src="images/form.png" class="icons">
+                                <h2>Detalles de la Donación</h2>
+                            </header>
+                            <p><strong>Términos y Condiciones:</strong> Toda la información proporcionada será utilizada únicamente para fines de la organización de donaciones y será tratada de acuerdo con nuestra política de privacidad. Nos comprometemos a no compartir tus datos con terceros sin tu consentimiento.</p>
+
+                            <div class="row gtr-uniform">
+                                <!-- Monto requerido -->
+                                <div class="col-12">
+                                    <label for="monto" class="input-label">Monto requerido</label>
+                                    <input type="text" id="monto" name="monto" placeholder="" minlength="3" required />
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="motivo" class="input-label">Motivo</label>
+                                    <input type="text" id="motivo" name="motivo" placeholder="" minlength="3" required />
+                                </div>
+
+                                <!-- Botones -->
+                                <div class="col-12">
+                                    <ul class="actions form-buttons">
+                                        <li><a href="#" class="button primary big" id="openModal">Publicar</a></li>
+                                        <li><a href="javascript:history.back()" class="button big">Cancelar</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div id="sidebar">
+                <div class="inner">
+                    
+                    <!-- Logo -->
+                    <section class="alt" id="sidebar-header">
+                        <img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+                        <p id="sidebar-title">PetLink</p>
+                    </section>
+
+                    <!-- Perfil -->
+                    <section class="perfil">
+                        <div class="mini-posts">
+                            <article>
+                                <img src="images/logo_huellitas.png" alt="" id="image-perfil">
+                                <h2 id="usuario">HUELLITAS PUCP</h2>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- Menu -->
+                    <nav id="menu">
+                        <header class="major">
+                            <h2>Menu</h2>
+                        </header>
+                        <ul>
+                            <li><a href="perfil.html">Perfil</a></li>
+                            <li>
+                                <span class="opener">Publicaciones</span>
+                                <ul>
+                                    <li><a href="EventoBenéfico.html">Eventos benéficos</a></li>
+                                    <li><a href="adopciones.html">Adopciones</a></li>
+                                    <li><a href="donaciones.html">Donaciones</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="hogar_temporal.html">Hogar Temporal</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Logout -->    
+                    <nav id="logout">
+                        <a href="#" id="cerrar-sesion">Cerrar Sesión</a>
+                    </nav>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!--Modal-->
+        <div id="modal" class="modal">
+            <div class="modal-content">          
+                <p>Se ha enviado su solicitud con éxito.</p>
+                <ul class="actions modal-buttons">
+                    <li><a href="donaciones.html" class="button primary big" id="acceptButton">Aceptar</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <!-- Lógica para el Modal -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const openModalButton = document.getElementById('openModal'); // Botón que abre el modal
+                const modal = document.getElementById('modal');               // El modal
+                const acceptButton = document.getElementById('acceptButton'); // Botón de Aceptar
+
+                // Función para abrir el modal
+                openModalButton.addEventListener('click', function() {
+                    modal.classList.add('show'); // Mostrar el modal
+                });
+
+                // Redirigir al hacer clic en el botón "Aceptar"
+                acceptButton.addEventListener('click', function() {
+                    window.location.href = 'donaciones.html';
+                });
+            });
+        </script>
+
+        <!-- Validación de solo números para el campo "Monto requerido" -->
+        <script>
+            function validateNumber(event) {
+                var key = event.keyCode || event.which;
+                // Permitir solo números (0-9)
+                if (key < 48 || key > 57) {
+                    event.preventDefault();
+                }
+            }
+
+            // Añade la función al evento keypress del campo monto
+            document.getElementById('monto').addEventListener('keypress', validateNumber);
+        </script>
+
+        <!-- Mostrar campos adicionales según el tipo de donación -->
+        <script>
+            document.getElementById('tipoDonacion').addEventListener('change', function() {
+                var tipoDonacion = this.value;
+                document.getElementById('fondosFields').style.display = tipoDonacion === 'fondos' ? 'block' : 'none';
+            });
+
+            // Mostrar dinámicamente los campos de direcciones según el número seleccionado
+            document.getElementById('numDireccionesAcoplo').addEventListener('change', function() {
+                var numDirecciones = this.value;
+                var direccionesContainer = document.getElementById('direccionesContainer');
+                direccionesContainer.innerHTML = ''; // Limpiar contenido previo
+
+                for (var i = 1; i <= numDirecciones; i++) {
+                    direccionesContainer.innerHTML += `
+                        <div class="col-12">
+                            <label for="direccionAcoplo${i}" class="input-label">Dirección de acoplo ${i}</label>
+                            <input type="text" id="direccionAcoplo${i}" name="direccionAcoplo${i}" placeholder="Dirección ${i}" minlength="5" required />
+                        </div>
+                    `;
+                }
+            });
+        </script>
+    </body>
+</html>

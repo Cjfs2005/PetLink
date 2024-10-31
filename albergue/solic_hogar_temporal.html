@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>PetLink</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/aditional.css">
+		<link rel="stylesheet" href="assets/css/popup-window.css">
+		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+
+					<!-- Header -->
+					<header id="header">
+						<h1 class="logo"><strong>Envío de solicitud de hogar temporal</strong></h1>
+						<a href="perfil.html" class="user-profile">
+							<span class="ocultar">Huellitas PUCP</span> <img src="images/logo_huellitas.png" style="border-radius: 100%; height: 45px; width: 45px;object-fit: cover;"></img>
+						</a>
+					</header>
+
+					<!-- Banner -->
+					<section class="banner">
+						<div class="content">
+							<header>
+								<img src="images/form.png" class="icons">
+								<h2>FORMULARIO</h2>
+							</header>
+							<p><strong>Términos y condiciones:</strong> Toda la información ingresada será enviada al usuario para que confirme su solicitud.</p>
+							<br>
+							
+							<div class="row gtr-uniform">
+
+								<div class="col-12">
+									<label for="nombre_mascota" class="input-label">Nombre de la mascota</label>
+									<input type="text" id="nombre_mascota" value="" placeholder="">
+								</div>
+
+								<div class="col-12">
+									<label for="text-area" class="input-label">Descripción de la mascota</label>
+									<textarea name="text-area" class="text-area" placeholder=""></textarea>
+								</div>
+
+								<div class="col-6 col-12-xsmall">
+									<label for="fechaInicio" class="input-label">Fecha de inicio</label>
+									<input type="date" id="fechaInicio" name="fechaInicio" />
+								</div>
+								  
+								<div class="col-6 col-12-xsmall">
+									<label for="fechaFin" class="input-label">Fecha de fin</label>
+									<input type="date" id="fechaFin" name="fechaFin"  />
+								</div>
+
+								<!--Break-->
+								<div class="col-12">
+									<label for="archivo" class="input-label">Foto de la mascota</label>
+									<input type="file" id="archivo" name="archivo" class="contenedor-archivo"/>
+								</div>
+								
+								<!-- Break -->
+								<div class="col-12">
+									<ul class="actions form-buttons">
+										<li><a href="#" class="button primary big" id="openModal">Enviar</a></li>
+										<li><a href="hogar_temporal.html" class="button big">Cancelar</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</section>
+
+				</div>
+			</div>
+
+			<!-- Sidebar -->
+			<div id="sidebar">
+				<div class="inner">
+					
+					<!-- Logo -->
+					<section class="alt" id="sidebar-header">
+						<img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+						<p id ="sidebar-title">PetLink</p>
+					</section>
+					
+					<!-- Perfil -->
+					<section class="perfil">
+						<div class="mini-posts">
+							<article>
+								<img src="images/logo_huellitas.png" alt="" id="image-perfil">
+								<h2 id="usuario">HUELLITAS PUCP</h2>
+							</article>
+						</div>
+					</section>
+
+					<!-- Menu -->
+					<nav id="menu">
+						<header class="major">
+							<h2>Menu</h2>
+						</header>
+						<ul>
+							<li><a href="perfil.html">Perfil</a></li>
+							<li>
+								<span class="opener">Publicaciones</span>
+								<ul>
+									<li><a href="EventoBenéfico.html">Eventos benéficos</a></li>
+									<li><a href="adopciones.html">Adopciones</a></li>
+									<li><a href="donaciones.html">Donaciones</a></li>
+								</ul>
+							</li>
+							<li><a href="hogar_temporal.html">Hogar Temporal</a></li>
+						</ul>
+					</nav>
+
+					<!-- Logout -->	
+					<nav id="logout">
+						<a href="#" id="cerrar-sesion">Cerrar Sesión</a>
+					</nav>
+
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<!-- Modal -->
+		<div id="modal" class="modal">
+			<div class="modal-content">
+				<!-- Botón cerrar -->
+				<span class="close-btn">&times;</span>
+				<p>Se le enviará la notificación al usuario temporal<br>¿Desea enviar la solicitud?</p>
+				<!-- Botones de Aceptar y Cancelar -->
+				<ul class="actions modal-buttons">
+					<li><a href="hogar_temporal.html" class="button primary big" id="acceptButton">Aceptar</a></li>
+					<li><a href="#" class="button big" id="cancelButton">Cancelar</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<!-- Script dentro del mismo HTML -->
+		<script>
+			// Esperamos a que todo el DOM esté cargado
+			document.addEventListener('DOMContentLoaded', function() {
+				// Obtener los elementos del DOM
+				const openModalButton = document.getElementById('openModal'); // Botón que abre el modal
+				const modal = document.getElementById('modal');               // El modal
+				const closeModalButton = document.querySelector('.close-btn'); // Botón para cerrar el modal (X)
+				const acceptButton = document.getElementById('acceptButton'); // Botón de Aceptar
+				const cancelButton = document.getElementById('cancelButton'); // Botón de Cancelar
+				const fechaInicio = document.getElementById('fechaInicio');   // Campo de fecha de inicio
+				const fechaFin = document.getElementById('fechaFin');         // Campo de fecha de fin
+
+				// Función para abrir el modal con validación de fechas
+				openModalButton.addEventListener('click', function(event) {
+					// Convertir las fechas en objetos Date
+					const inicio = new Date(fechaInicio.value);
+					const fin = new Date(fechaFin.value);
+
+					// Validar que la fecha de fin sea mayor que la de inicio
+					if (fin <= inicio) {
+						alert("La fecha de fin debe ser posterior a la fecha de inicio.");
+						event.preventDefault(); // Evitar que el modal se abra si las fechas no son válidas
+						return;
+					}
+
+					modal.classList.add('show'); // Mostrar el modal si las fechas son válidas
+				});
+
+				// Función para cerrar el modal al hacer clic en la "X"
+				closeModalButton.addEventListener('click', function() {
+					modal.classList.remove('show'); // Ocultar el modal
+				});
+
+				// Redirigir al hacer clic en "Aceptar"
+				acceptButton.addEventListener('click', function() {
+					window.location.href = 'https://www.ejemplo.com';
+				});
+
+				// Función para cerrar el modal al hacer clic en el botón "Cancelar"
+				cancelButton.addEventListener('click', function() {
+					modal.classList.remove('show'); // Ocultar el modal
+				});
+			});
+		</script>
+	</body>
+</html>

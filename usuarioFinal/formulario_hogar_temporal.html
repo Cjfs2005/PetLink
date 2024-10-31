@@ -1,0 +1,340 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>PetLink</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/aditional.css">
+		<link rel="stylesheet" href="assets/css/popup-window.css">
+		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<h1 class="logo"><strong>Postulación para ser hogar temporal</strong></h1>
+								</header>
+
+							<!-- Banner -->
+								<section class="banner">
+									<div class="content">
+										<header>
+											<img src="images/form.png" class="icons">
+											<h2>Complete el siguiente formulario</h2>
+										</header>
+										
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+												<label for="nombres" class="input-label">Nombres</label>
+												<input type="text" id="nombres" value="Ander" placeholder="" disabled/>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<label for="apellidos" class="input-label">Apellidos</label>
+												<input type="text" id="apellidos" value="Vilchez" placeholder="" disabled/>
+											</div>
+											<!-- Break -->
+											<div class="col-6 col-12-xsmall">
+												<label for="edad" class="input-label">Edad</label>
+												<input type="text" id="edad" value="" placeholder="" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<label for="genero" class="input-label">Género</label>
+												<select id="genero">
+													<option value="">Seleccione su género</option>
+													<option value="1">Masculino</option>
+													<option value="2">Femenino</option>
+													<option value="3">Prefiero no decirlo</option>
+												</select>
+											</div>
+											<!-- Break -->
+											<div class="col-6 col-12-xsmall">
+												<label for="telefono" class="input-label">Número de teléfono</label>
+												<input type="text" id="telefono" value="" placeholder="" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<label for="distrito" class="input-label">Distrito</label>
+												<input type="text" id="distrito" value="San Miguel" placeholder="" disabled/>
+											</div>
+											<!-- Break -->
+											<div class="col-12">
+												<label for="direccion" class="input-label">Dirección de residencia</label>
+												<input type="text" id="direccion" value="Av. Universitaria N°5342 " disabled/>
+											</div>
+											<!-- Break -->
+											<div class="col-6 col-12-xsmall">
+												<label for="cuartos" class="input-label">Cantidad de cuartos</label>
+												<input type="text" id="cuartos" value="" placeholder="" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<label for="metraje" class="input-label">Metraje de vivienda</label>
+												<input type="text" id="metraje">
+											</div>
+											<!-- Break -->
+											<div class="col-6 col-12-xsmall">
+												<label for="tieneHijo" class="input-label">¿Tiene hijos?</label>
+												<select id="tieneHijo">
+													<option value="">Seleccione su respuesta</option>
+													<option value="1">Sí tengo hijos</option>
+													<option value="2">No tengo hijos</option>
+												</select>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<label for="tieneMascota" class="input-label">¿Tiene mascotas?</label>
+												<select id="tieneMascota">
+													<option value="">Seleccione su respuesta</option>
+													<option value="1">Sí tengo mascotas</option>
+													<option value="2">No tengo mascotas</option>
+												</select>
+											</div>
+											<!-- Break -->
+											<div class="col-6 col-12-xsmall" id="aparecen-dependientes1" style="display: none;">
+												<label for="numMascotas" class="input-label">Número de mascotas</label>
+												<input type="text" id="numMascotas" value="" placeholder=""/>
+											</div>
+											<div class="col-6 col-12-xsmall" id="aparecen-dependientes2" style="display: none;">
+												<label for="tipoMascotas" class="input-label">Tipo de mascotas</label>
+												<input type="text" id="tipoMascotas" >
+											</div>
+											<script>
+												// Obtén los elementos
+												const selectMascota = document.getElementById('tieneMascota');
+												const inputNumMascotas = document.getElementById('aparecen-dependientes1');
+												const inputTipoMascotas = document.getElementById('aparecen-dependientes2');
+											  
+												// Función que habilita o deshabilita los inputs
+												function toggleInputs() {
+													if (selectMascota.value === '1') { // "Sí tengo mascotas"
+														inputNumMascotas.style.display = 'block'; // Muestra el campo
+														inputTipoMascotas.style.display = 'block'; // Muestra el campo
+													} else {
+														inputNumMascotas.style.display = 'none'; // Oculta el campo
+														inputTipoMascotas.style.display = 'none'; // Oculta el campo
+													}
+												}
+											  
+												// Escucha el evento de cambio en el select
+												selectMascota.addEventListener('change', toggleInputs);
+												window.onload = toggleInputs;
+											</script>
+											<!-- Break -->
+											<div class="col-6 col-12-xsmall">
+												<label for="viveSolo" class="input-label">¿Vive solo o con dependientes?</label>
+												<select id="viveSolo">
+													<option value="">Seleccione su respuesta</option>
+													<option value="1">Vivo solo</option>
+													<option value="2">Vivo con dependientes</option>
+												</select>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<label for="trabajaRemoto" class="input-label">¿Trabaja remoto o presencial?</label>
+												<select id="trabajaRemoto">
+													<option value="">Seleccione su respuesta</option>
+													<option value="1">Trabajo remoto</option>
+													<option value="2">Trabajo presencial</option>
+												</select>
+											</div>
+											<!--Break-->
+											<div class="col-6 col-12-xsmall">
+												<label for="nombreRef" class="input-label">Nombre de persona de referencia</label>
+												<input type="text" id="nombreRef" value="" placeholder="" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<label for="numeroRef" class="input-label">Número de teléfono de referencia</label>
+												<input type="text" id="numeroRef" value="" placeholder="" />
+											</div>
+											<!-- Break -->
+											<!-- Break -->
+											<div class="col-6 col-12-xsmall">
+												<label for="fechaInicio" class="input-label">Fecha de inicio</label>
+												<input type="date" id="fechaInicio" name="fechaInicio" value="2024-10-10"/>
+											</div>
+											  
+											<div class="col-6 col-12-xsmall">
+												<label for="fechaFin" class="input-label">Fecha de fin</label>
+												<input type="date" id="fechaFin" name="fechaFin"  value="2024-10-30"/>
+											</div>
+											<script>
+												// Obtener las fechas mínimas
+												const fechaInicio = document.getElementById('fechaInicio');
+												const fechaFin = document.getElementById('fechaFin');
+											  
+												function calcularFechas() {
+												  // Fecha actual
+												  const fechaActual = new Date();
+												  // Añadir 3 días a la fecha actual
+												  fechaActual.setDate(fechaActual.getDate() + 3);
+												  // Formatear la fecha en formato YYYY-MM-DD
+												  const fechaMinInicio = fechaActual.toISOString().split('T')[0];
+												  
+												  // Asignar la fecha mínima al input de inicio
+												  fechaInicio.min = fechaMinInicio;
+												  
+												  // Evento para cambiar la fecha de fin según la fecha de inicio
+												  fechaInicio.addEventListener('change', function() {
+													// Deshabilitar el input de fin si no hay fecha de inicio
+													if (!fechaInicio.value) {
+													  fechaFin.disabled = true;
+													  return;
+													}
+											  
+													// Habilitar el input de fin
+													fechaFin.disabled = false;
+											  
+													// Calcular la fecha mínima de fin (14 días después de la fecha de inicio)
+													const fechaInicioSeleccionada = new Date(fechaInicio.value);
+													fechaInicioSeleccionada.setDate(fechaInicioSeleccionada.getDate() + 14);
+													const fechaMinFin = fechaInicioSeleccionada.toISOString().split('T')[0];
+											  
+													// Asignar la fecha mínima al input de fin
+													fechaFin.min = fechaMinFin;
+												  });
+												}
+											  
+												// Ejecutar la función al cargar la página
+												window.onload = calcularFechas;
+											  </script>
+											<!--Break-->
+											<div class="col-12">
+												<label for="archivo" class="input-label">Foto del lugar del temporal (Máximo 4 fotos)</label>
+												<input type="file" accept="image/*" multiple="" max="4" id="archivo" name="archivo" class="contenedor-archivo"/>
+											</div>
+											<!-- Break -->
+											<div class="col-12">
+												<ul class="actions form-buttons">
+													<li><a href="#" class="button primary big" id="openModal">ENVIAR</a></li>
+													<li><a href="Hogar_temporal.html" class="button big" id="regresar">REGRESAR</a></li>
+
+												</ul>
+											</div>
+										</div>
+									</div>
+								</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							
+							<!-- Logo -->
+								
+								<section class="alt" id="sidebar-header">
+									<img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+									<p id ="sidebar-title">PetLink</p>
+								</section>
+							
+							<!-- Perfil -->
+	
+							<section class="perfil">
+										
+								<div class="mini-posts">
+									<article>
+										<img src="images/foto_perfil.jpg" alt="" id="image-perfil">
+										<h2 id="usuario">Ander Vilchez</h2>
+									</article>
+								</div>
+								
+							</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="perfil_usuario.html">PERFIL</a></li>
+										<li>
+											<span class="opener">ALBERGUES</span>
+											<ul>
+												<li><a href="albergue_usuario.html">LISTA DE ALBERGUES</a></li>
+												<li><a href="eventos.html">EVENTOS BENÉFICOS</a></li>
+												<li><a href="Donaciones1.html">SOLICITUDES DE DONACIÓN</a></li>
+												<li><a href="Donaciones_historial.html">HISTORIAL DE DONACIONES</a></li>
+												<li><a href="adopciones_usuario.html">MASCOTAS EN ADOPCIÓN</a></li>
+												<li><a href="adopciones_historial_usuario.html">HISTORIAL DE ADOPCIONES</a></li>
+											</ul>
+										</li>
+										<li><a href="Hogar_temporal.html">HOGAR TEMPORAL</a></li>
+										<li><a href="denuncias_usuario.html">DENUNCIAS POR MALTRATO ANIMAL</a></li>
+										<li><a href="mascotas_perdidas_usuario.html">MASCOTAS PERDIDAS</a></li>
+									</ul>
+								</nav>
+							<!-- Logout -->	
+
+							<nav id="logout">
+								<a href="../bienvenidos.html" id="cerrar-sesion">Cerrar Sesión</a>
+							</nav>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+		<!-- Modal -->
+			<div id="modal" class="modal">
+				<div class="modal-content">
+					<!-- Botón cerrar -->
+					<span class="close-btn">&times;</span>
+					<p>¿Estás seguro de postular para ser hogar temporal?</p>
+					<!-- Botones de Aceptar y Cancelar -->
+					<ul class="actions modal-buttons">
+						<li><a href="#" class="button primary big" id="acceptButton">Aceptar</a></li>
+						<li><a href="#" class="button big" id="cancelButton">Cancelar</a></li>
+					</ul>
+				</div>
+			</div>
+		
+			<!-- Script dentro del mismo HTML -->
+			<script>
+				// Esperamos a que todo el DOM esté cargado
+				document.addEventListener('DOMContentLoaded', function() {
+					// Obtener los elementos del DOM
+					const openModalButton = document.getElementById('openModal'); // Botón que abre el modal
+					const modal = document.getElementById('modal');               // El modal
+					const closeModalButton = document.querySelector('.close-btn'); // Botón para cerrar el modal (X)
+					const acceptButton = document.getElementById('acceptButton'); // Botón de Aceptar
+					const cancelButton = document.getElementById('cancelButton'); // Botón de Cancelar
+		
+					// Función para abrir el modal
+					openModalButton.addEventListener('click', function() {
+						modal.classList.add('show'); // Mostrar el modal
+					});
+		
+					// Función para cerrar el modal al hacer clic en la "X"
+					closeModalButton.addEventListener('click', function() {
+						modal.classList.remove('show'); // Ocultar el modal
+					});
+		
+					// Deben modificar el link para que redirija afuera del formulario
+					acceptButton.addEventListener('click', function() {
+						window.location.href = 'Hogar_temporal.html';
+					});
+		
+					// Función para cerrar el modal al hacer clic en el botón "Cancelar"
+					cancelButton.addEventListener('click', function() {
+						modal.classList.remove('show'); // Ocultar el modal
+					});
+				});
+			</script>
+	</body>
+</html>

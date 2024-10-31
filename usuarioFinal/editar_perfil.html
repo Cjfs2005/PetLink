@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>PetLink</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/aditional.css">
+		<link rel="stylesheet" href="assets/css/popup-window.css">
+		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<h1 class="logo"><strong>Editar perfil</strong></h1>
+
+									<!-- Sección para el nombre y enlace al perfil -->
+									<a href="perfil_usuario.html" class="user-profile">
+										<span class="ocultar">Ander Vilchez</span> <img src="images/foto_perfil.jpg" style="border-radius: 100%; height: 45px; width: 45px;object-fit: cover;"></img>
+									</a>
+								</header>
+
+							<!-- Banner -->
+								<section class="banner">
+									<div class="content">
+										<header>
+											<img src="images/form.png" class="icons">
+											<h2>Datos del usuario</h2>
+										</header>
+										<form style="margin-bottom: 0;">
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+												<label for="nombres" class="input-label">Nombres</label>
+												<input type="text" id="nombres" value="Ander" placeholder="" required/>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<label for="apellidos" class="input-label">Apellidos</label>
+												<input type="text" id="apellidos" value="Vilchez" placeholder="" required/>
+											</div>
+											<!-- Break -->
+											<div class="col-6 col-12-xsmall">
+												<label for="dni" class="input-label">DNI</label>
+												<input type="text" id="dni" value="77806467" placeholder="" disabled/>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<label for="distrito" class="input-label">Distrito</label>
+												<select id="distrito" disabled>
+													<option value="">Seleccione su distrito</option>
+													<!-- Norte -->
+													<option value="1">Ancon</option>
+													<option value="2">Santa Rosa</option>
+													<option value="3">Carabayllo</option>
+													<option value="4">Puente Piedra</option>
+													<option value="5">Comas</option>
+													<option value="6">Los Olivos</option>
+													<option value="7">San Martín de Porres</option>
+													<option value="8">Independencia</option>
+	
+													<!-- Sur -->
+													<option value="9">San Juan de Miraflores</option>
+													<option value="10">Villa María del Triunfo</option>
+													<option value="11">Villa el Salvador</option>
+													<option value="12">Pachacamac</option>
+													<option value="13">Lurin</option>
+													<option value="14">Punta Hermosa</option>
+													<option value="15">Punta Negra</option>
+													<option value="16">San Bartolo</option>
+													<option value="17">Santa María del Mar</option>
+													<option value="18">Pucusana</option>
+	
+													<!-- Este -->
+													<option value="19">San Juan de Lurigancho</option>
+													<option value="20">Lurigancho/Chosica</option>
+													<option value="21">Ate</option>
+													<option value="22">El Agustino</option>
+													<option value="23">Santa Anita</option>
+													<option value="24">La Molina</option>
+													<option value="25">Cieneguilla</option>
+	
+													<!-- Oeste -->
+													<option value="26">Rimac</option>
+													<option value="27">Cercado de Lima</option>
+													<option value="28">Breña</option>
+													<option value="29">Pueblo Libre</option>
+													<option value="30">Magdalena</option>
+													<option value="31">Jesus María</option>
+													<option value="32">La Victoria</option>
+													<option value="33">Lince</option>
+													<option value="34">San Isidro</option>
+													<option value="35" selected>San Miguel</option>
+													<option value="36">Surquillo</option>
+													<option value="37">San Borja</option>
+													<option value="38">Santiago de Surco</option>
+													<option value="39">Barranco</option>
+													<option value="40">Chorrillos</option>
+													<option value="41">San Luis</option>
+													<option value="42">Miraflores</option>
+	
+												</select>
+											</div>
+											<!-- Break -->
+											<div class="col-6 col-12-xsmall">
+												<label for="telefono" class="input-label">Dirección</label>
+												<input type="text" id="telefono" value="Av. Universitaria N°5342" placeholder="" disabled/>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<label for="telefono" class="input-label">Correo electrónico</label>
+												<input type="text" id="telefono" value="a.vilchez@gmail.com" placeholder="" disabled/>
+											</div>
+											
+											<!-- Break -->
+											<div class="col-12">
+												<ul class="actions form-buttons">
+													<li><button type="button" class="button primary big" id="openModal">Aceptar</button></li>
+													<li><a href="perfil_usuario.html" class="button big" >Cancelar</a></li>
+												</ul>
+											</div>
+										</div>
+										</form>
+									</div>
+								</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							
+							<!-- Logo -->
+								
+								<section class="alt" id="sidebar-header">
+									<img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+									<p id ="sidebar-title">PetLink</p>
+								</section>
+							
+							<!-- Perfil -->
+	
+							<section class="perfil">
+										
+								<div class="mini-posts">
+									<article>
+										<img src="images/foto_perfil.jpg" alt="" id="image-perfil">
+										<h2 id="usuario">Ander Vilchez</h2>
+									</article>
+								</div>
+								
+							</section>
+
+					<!-- Menu -->
+					<nav id="menu">
+						<header class="major">
+							<h2>Menu</h2>
+						</header>
+						<ul>
+							<li><a href="perfil_usuario.html">PERFIL</a></li>
+							<li>
+								<span class="opener">ALBERGUES</span>
+								<ul>
+									<li><a href="albergue_usuario.html">LISTA DE ALBERGUES</a></li>
+									<li><a href="eventos.html">EVENTOS BENÉFICOS</a></li>
+									<li><a href="Donaciones1.html">SOLICITUDES DE DONACIÓN</a></li>
+									<li><a href="Donaciones_historial.html">HISTORIAL DE DONACIONES</a></li>
+									<li><a href="adopciones_usuario.html">MASCOTAS EN ADOPCIÓN</a></li>
+									<li><a href="adopciones_historial_usuario.html">HISTORIAL DE ADOPCIONES</a></li>
+								</ul>
+							</li>
+							<li><a href="Hogar_temporal.html">HOGAR TEMPORAL</a></li>
+							<li><a href="denuncias_usuario.html">DENUNCIAS POR MALTRATO ANIMAL</a></li>
+							<li><a href="mascotas_perdidas_usuario.html">MASCOTAS PERDIDAS</a></li>
+						</ul>
+					</nav>
+							<!-- Logout -->	
+
+								<nav id="logout">
+									<a href="#" id="cerrar-sesion">Cerrar Sesión</a>
+								</nav>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+		<!-- Modal -->
+			<div id="modal" class="modal">
+				<div class="modal-content">
+					<!-- Botón cerrar -->
+					<span class="close-btn">&times;</span>
+					<p>¿Estás seguro de editar tu perfil?</p>
+					<!-- Botones de Aceptar y Cancelar -->
+					<ul class="actions modal-buttons">
+						<li><a href="#" class="button primary big" id="acceptButton">Sí</a></li>
+						<li><a href="#" class="button big" id="cancelButton">No</a></li>
+					</ul>
+				</div>
+			</div>
+		
+			<!-- Script dentro del mismo HTML -->
+			<!-- Script -->
+			<script>
+				document.addEventListener('DOMContentLoaded', function () {
+				  // Obtener los elementos del DOM
+				  const openModalButton = document.getElementById('openModal');
+				  const modal = document.getElementById('modal');
+				  const closeModalButton = document.querySelector('.close-btn');
+				  const acceptButton = document.getElementById('acceptButton');
+				  const cancelButton = document.getElementById('cancelButton');
+		  
+				  // Seleccionar los campos de entrada
+				  const nombresInput = document.getElementById('nombres');
+				  const apellidosInput = document.getElementById('apellidos');
+		  
+				  // Función para validar los campos y mostrar el modal solo si todos están completos
+				  function validarYMostrarModal(event) {
+					// Verifica si los campos están completos (validación nativa)
+					if (nombresInput.checkValidity() && apellidosInput.checkValidity()) {
+					  // Si todo está bien, mostrar el modal
+					  modal.classList.add('show');
+					} else {
+					  // Mostrar los mensajes de error nativos del navegador
+					  document.querySelector('form').reportValidity();
+					}
+				  }
+		  
+				  // Función para cerrar el modal al hacer clic en la "X"
+				  closeModalButton.addEventListener('click', function () {
+					modal.classList.remove('show');
+				  });
+		  
+				  // Redirigir cuando el usuario haga clic en el botón de Aceptar dentro del modal
+				  acceptButton.addEventListener('click', function () {
+					window.location.href = 'perfil_usuario.html';
+				  });
+		  
+				  // Función para cerrar el modal al hacer clic en el botón "Cancelar"
+				  cancelButton.addEventListener('click', function () {
+					modal.classList.remove('show');
+				  });
+		  
+				  // Agregar la validación y abrir el modal solo si todo está bien
+				  openModalButton.addEventListener('click', validarYMostrarModal);
+				});
+			  </script>
+			  
+	</body>
+</html>
+
+<!--Scrips de valdiación-->
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+	  // Seleccionamos los campos de nombres y apellidos
+	  const nombresInput = document.getElementById('nombres');
+	  const apellidosInput = document.getElementById('apellidos');
+	  
+	  // Función para limitar los caracteres a 45
+	  function limitarCaracteres(event) {
+		const maxLength = 45;
+		const inputField = event.target;
+  
+		if (inputField.value.length > maxLength) {
+		  inputField.value = inputField.value.substring(0, maxLength); // Limita a 45 caracteres
+		}
+	  }
+	  
+	  // Agregar evento "input" a ambos campos para que se ejecute cada vez que se escriba en ellos
+	  nombresInput.addEventListener('input', limitarCaracteres);
+	  apellidosInput.addEventListener('input', limitarCaracteres);
+	});
+  </script>
+
+  

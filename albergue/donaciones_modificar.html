@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Formulario para donación de productos</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/aditional.css">
+		<link rel="stylesheet" href="assets/css/popup-window.css">
+		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+		<style>
+			#charCount {
+				font-size: 12px;
+				color: #888;
+				float: right;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<h1 class="logo"><strong>Donación de productos</strong></h1>
+									<a href="perfil.html" class="user-profile">
+										<span class="ocultar">Huellitas PUCP</span> <img src="images/logo_huellitas.png" style="border-radius: 100%; height: 45px; width: 45px;object-fit: cover;"></img>
+									</a>
+								</header>
+
+							<!-- Banner -->
+								<section class="banner">
+									<div class="content">
+										<header>
+											<img src="images/form.png" class="icons">
+											<h2>Formulario para las donaciones de productos</h2>
+										</header>
+										<p><strong>Descripción:</strong> Complete los detalles sobre la donación.</p>
+
+										<div class="row gtr-uniform">
+
+                                            <!-- Fecha programada para recepción -->
+                                            <div class="col-12">
+                                                <label for="fechaRecepcion" class="input-label">Fecha programada para recepción</label>
+                                                <input type="date" id="fechaRecepcion" name="fechaRecepcion" value="2023-02-14" required />
+                                            </div>
+
+                                            <div class="col-6 col-12-xsmall">
+												<label for="horaEvento" class="input-label">Hora de inicio de recepción</label>
+												<input type="time" id="horaEvento" name="horaEvento" value="18:00" required style="appearance: none;
+												border-radius: 0.375em;
+												border: none;
+												border: solid 1px rgba(210, 215, 217, 0.75);
+												color: inherit;
+												display: block;
+												outline: 0;
+												padding: 0 1em;
+												text-decoration: none;
+												width: 100%;
+												background: #ffffff;
+												padding-top: 7.5px;
+												padding-bottom: 7.5px;"/>
+											</div>
+
+                                            <div class="col-6 col-12-xsmall">
+												<label for="horaEvento" class="input-label">Hora final de recepción</label>
+												<input type="time" id="horaEvento" name="horaEvento" value="19:00" required style="appearance: none;
+												border-radius: 0.375em;
+												border: none;
+												border: solid 1px rgba(210, 215, 217, 0.75);
+												color: inherit;
+												display: block;
+												outline: 0;
+												padding: 0 1em;
+												text-decoration: none;
+												width: 100%;
+												background: #ffffff;
+												padding-top: 7.5px;
+												padding-bottom: 7.5px;"/>
+											</div>	
+
+											<div class="col-12">
+                                                <label for="descripcion" class="input-label">Productos solicitados</label>
+                                                <textarea name="text-area" class="text-area" id="descripcion" maxlength="500">Colchones ortopédicos (2 unidades), collares isabelinos (10 unidades), mantas térmicas (5 unidades), botiquines de primeros auxilios (5 kits), camillas para transporte (3 unidades), cámaras de oxígeno portátiles (1 unidad), medicamentos antiinflamatorios y analgésicos (varios frascos), soluciones intravenosas (10 bolsas), alimentación especializada para convalecencia (varios paquetes).</textarea>
+												<span id="charCount">0/500</span>
+                                                
+                                            </div>
+
+											<!-- Botones -->
+											<div class="col-12">
+												<ul class="actions form-buttons">
+													<li><a href="#" class="button primary big" id="openModal">Publicar</a></li>
+													<li><a href="javascript:history.back()" class="button big">Cancelar</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+				<div id="sidebar">
+					<div class="inner">
+						
+						<!-- Logo -->
+						<section class="alt" id="sidebar-header">
+							<img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+							<p id="sidebar-title">PetLink</p>
+						</section>
+						
+						<!-- Perfil -->
+						<section class="perfil">
+							<div class="mini-posts">
+								<article>
+									<img src="images/logo_huellitas.png" alt="" id="image-perfil">
+									<h2 id="usuario">HUELLITAS PUCP</h2>
+								</article>
+							</div>
+						</section>
+
+						<!-- Menu -->
+						<nav id="menu">
+							<header class="major">
+								<h2>Menu</h2>
+							</header>
+							<ul>
+								<li><a href="perfil.html">Perfil</a></li>
+								<li>
+									<span class="opener">Publicaciones</span>
+									<ul>
+										<li><a href="EventoBenéfico.html">Eventos benéficos</a></li>
+										<li><a href="adopciones.html">Adopciones</a></li>
+										<li><a href="donaciones.html">Donaciones</a></li>
+									</ul>
+								</li>
+								<li><a href="hogar_temporal.html">Hogar Temporal</a></li>
+							</ul>
+						</nav>
+
+						<!-- Logout -->	
+						<nav id="logout">
+							<a href="#" id="cerrar-sesion">Cerrar Sesión</a>
+						</nav>
+
+					</div>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<!--Modal-->
+        <div id="modal" class="modal">
+            <div class="modal-content">          
+                <p>Se ha enviado su publicación con éxito.</p>
+                <ul class="actions modal-buttons">
+                    <li><a href="donaciones_productos.html" class="button primary big" id="acceptButton">Aceptar</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Lógica para el Modal -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				const openModalButton = document.getElementById('openModal'); // Botón que abre el modal
+				const modal = document.getElementById('modal');               // El modal
+				const acceptButton = document.getElementById('acceptButton'); // Botón de Aceptar
+
+				// Función para abrir el modal
+				openModalButton.addEventListener('click', function() {
+					modal.classList.add('show'); // Mostrar el modal
+				});
+
+				// Redirigir al hacer clic en el botón "Aceptar"
+				acceptButton.addEventListener('click', function() {
+					window.location.href = 'donaciones.html';
+				});
+			});
+		</script>
+		<!-- Validaciones -->
+		<script>
+			// Validar que solo se ingresen números en aforo y entrada
+			function validarSoloNumeros(input) {
+				input.value = input.value.replace(/[^0-9]/g, '');
+			}
+
+			// Validar que la hora de fin sea mayor que la hora de inicio
+			function validarHoraFinal() {
+				const horaInicio = document.getElementById('horaInicioEvento').value;
+				const horaFin = document.getElementById('horaFinEvento').value;
+
+				if (horaFin <= horaInicio) {
+					alert('La hora final debe ser posterior a la hora de inicio.');
+					document.getElementById('horaFinEvento').value = ''; // Limpiar campo
+				}
+			}
+
+			// Aplicar validaciones
+			document.getElementById('aforoMaximo').addEventListener('input', function() {
+				validarSoloNumeros(this);
+			});
+
+			document.getElementById('entrada').addEventListener('input', function() {
+				validarSoloNumeros(this);
+			});
+
+			document.getElementById('horaFinEvento').addEventListener('change', validarHoraFinal);
+		</script>
+
+		<!-- Contador de caracteres para la descripción -->
+		<script>
+			const textarea = document.getElementById('descripcion');
+			const charCount = document.getElementById('charCount');
+
+			textarea.addEventListener('input', function() {
+				const currentLength = textarea.value.length;
+				charCount.textContent = `${currentLength}/500`;
+			});
+		</script>
+	</body>
+</html>

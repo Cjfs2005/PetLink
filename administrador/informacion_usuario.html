@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>PetLink</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/aditional.css">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <style>
+        /* Estilos para el botón de menú (tres rayas) */
+        #sidebar .opener {
+            opacity: 1; /* Opacidad normal por defecto */
+            transition: opacity 0.3s; /* Transición suave para cambios de opacidad */
+        }
+
+        /* Clase para aplicar opacidad al botón de menú */
+        .menu-opacity {
+            opacity: 0.5; /* Opacidad reducida cuando el modal está abierto */
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 30%;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-buttons {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .modal-buttons li {
+            display: inline-block;
+        }
+
+        .modal-buttons .button {
+            margin: 0 10px;
+        }
+
+        /* Ajuste del tamaño del nombre de usuario */
+        #usuario {
+            font-size: 18px;
+        }
+
+        /* Estilos para organizar los campos en dos columnas */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+
+        .form-grid .col-12 {
+            grid-column: span 2;
+        }
+
+        /* Estilos del input bloqueado en gris */
+        input[readonly], select[readonly] {
+            background-color: #f0f0f0;
+            color: #555;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <h1 class="logo" style="display: inline-block;"><strong>DATOS DE JUAN PÉREZ</strong></h1>
+                  
+                </header>
+
+                <!-- Información de Juan Pérez -->
+                <section class="banner">
+                    <div class="content">
+                        <header>
+                            <img src="images/form.png" class="icons">
+                            <h2>Información Personal</h2>
+                        </header>
+                        <p>Estos son los detalles personales de Juan Pérez registrados en el sistema.</p>
+
+                        <!-- Organizando los campos en dos columnas -->
+                        <div class="form-grid">
+
+                            <!-- Nombre completo -->
+                            <div>
+                                <label for="nombre" class="input-label">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" value="Juan" readonly />
+                            </div>
+                            <div>
+                                <label for="apellido" class="input-label">Apellido</label>
+                                <input type="text" id="apellido" name="apellido" value="Pérez" readonly />
+                            </div>
+
+                            <!-- DNI -->
+                            <div>
+                                <label for="dni" class="input-label">DNI</label>
+                                <input type="text" id="dni" name="dni" value="12345678" readonly />
+                            </div>
+
+                            <!-- Dirección -->
+                            <div>
+                                <label for="direccion" class="input-label">Dirección</label>
+                                <input type="text" id="direccion" name="direccion" value="Calle Falsa 123, Lima" readonly />
+                            </div>
+
+                            <!-- Distrito (Selector) -->
+                            <div>
+                                <label for="distrito" class="input-label">Distrito</label>
+                                <select id="distrito" name="distrito" disabled>
+                                    <option value="San Miguel" selected>San Miguel</option>
+                                    <option value="Ancon">Ancon</option>
+                                    <option value="Santa Rosa">Santa Rosa</option>
+                                    <option value="Carabayllo">Carabayllo</option>
+                                    <option value="Puente Piedra">Puente Piedra</option>
+                                    <option value="Comas">Comas</option>
+                                    <option value="Los Olivos">Los Olivos</option>
+                                    <option value="San Martín de Porres">San Martín de Porres</option>
+                                    <option value="Independencia">Independencia</option>
+                                    <option value="San Juan de Miraflores">San Juan de Miraflores</option>
+                                    <option value="Villa María del Triunfo">Villa María del Triunfo</option>
+                                    <option value="Villa el Salvador">Villa el Salvador</option>
+                                    <option value="Pachacamac">Pachacamac</option>
+                                    <option value="Lurin">Lurin</option>
+                                    <option value="Punta Hermosa">Punta Hermosa</option>
+                                    <option value="Punta Negra">Punta Negra</option>
+                                    <option value="San Bartolo">San Bartolo</option>
+                                    <option value="Santa María del Mar">Santa María del Mar</option>
+                                    <option value="Pucusana">Pucusana</option>
+                                    <option value="San Juan de Lurigancho">San Juan de Lurigancho</option>
+                                    <option value="Lurigancho/Chosica">Lurigancho/Chosica</option>
+                                    <option value="Ate">Ate</option>
+                                    <option value="El Agustino">El Agustino</option>
+                                    <option value="Santa Anita">Santa Anita</option>
+                                    <option value="La Molina">La Molina</option>
+                                    <option value="Cieneguilla">Cieneguilla</option>
+                                    <option value="Rimac">Rimac</option>
+                                    <option value="Cercado de Lima">Cercado de Lima</option>
+                                    <option value="Breña">Breña</option>
+                                    <option value="Pueblo Libre">Pueblo Libre</option>
+                                    <option value="Magdalena">Magdalena</option>
+                                    <option value="Jesus María">Jesus María</option>
+                                    <option value="La Victoria">La Victoria</option>
+                                    <option value="Lince">Lince</option>
+                                    <option value="San Isidro">San Isidro</option>
+                                    <option value="Surquillo">Surquillo</option>
+                                    <option value="San Borja">San Borja</option>
+                                    <option value="Santiago de Surco">Santiago de Surco</option>
+                                    <option value="Barranco">Barranco</option>
+                                    <option value="Chorrillos">Chorrillos</option>
+                                    <option value="San Luis">San Luis</option>
+                                    <option value="Miraflores">Miraflores</option>
+                                </select>
+                            </div>
+
+                            <!-- Correo electrónico -->
+                            <div>
+                                <label for="correo" class="input-label">Correo electrónico</label>
+                                <input type="email" id="correo" name="correo" value="juan.perez@gmail.com" readonly />
+                            </div>
+
+                            <!-- Botones de acción -->
+                            <div class="col-12">
+                                <ul class="actions form-buttons">
+                                    <li><a href="#" class="button primary big" id="editarBtn">Editar</a></li>
+                                    <li><a href="#" class="button primary big" id="guardarBtn" style="display: none;">Guardar</a></li>
+                                    <li><a href="lista_usuarios.html" class="button big">Regresar</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <section class="alt" id="sidebar-header">
+                    <img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+                    <p id="sidebar-title">PetLink</p>
+                </section>
+
+                <section class="perfil">
+                    <div class="mini-posts">
+                        <article>
+                            <img src="images/aa.png" alt="" id="image-perfil">
+                            <h2 id="usuario">Administrador</h2>
+                        </article>
+                    </div>
+                </section>
+
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li>
+                            <span class="opener">Gestión de Usuarios</span>
+                            <ul>
+                                <li><a href="gestion_usuarios.html">Formulario Coordinador Zonal</a></li>
+                                <li><a href="lista_usuarios.html">Lista de Usuarios</a></li>
+                                <li><a href="solicitud_albergue.html">Solicitudes de Albergue</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="historial.html">Gestión de Eventos</a></li>
+                    </ul>
+                </nav>
+
+                <nav id="logout">
+                    <a href="../bienvenidos.html" id="cerrar-sesion">Cerrar Sesión</a>
+                </nav>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Ventana emergente de confirmación -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p id="modal-message">¿Estás seguro de guardar los cambios?</p>
+            <ul class="actions modal-buttons">
+                <li><a href="#" class="button primary big" id="confirmarGuardar">Sí</a></li>
+                <li><a href="#" class="button big" id="cancelarGuardar">No</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Ventana emergente de creación de lugar -->
+    <div id="creationModal" class="modal">
+        <div class="modal-content">
+            <p id="modal-message">¡Se creó el lugar con éxito!</p>
+            <ul class="actions modal-buttons">
+                <li><a href="#" class="button primary big" id="closeCreationModal">Aceptar</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Script para manejar la ventana emergente y botones -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const editarBtn = document.getElementById('editarBtn');
+            const guardarBtn = document.getElementById('guardarBtn');
+            const modal = document.getElementById('modal');
+            const confirmarGuardar = document.getElementById('confirmarGuardar');
+            const cancelarGuardar = document.getElementById('cancelarGuardar');
+            const creationButton = document.getElementById('creationButton');
+            const creationModal = document.getElementById('creationModal');
+            const closeCreationModalButton = document.getElementById('closeCreationModal');
+
+            // Habilitar edición y mostrar el botón Guardar
+            editarBtn.addEventListener('click', function() {
+                document.querySelectorAll('input').forEach(input => input.removeAttribute('readonly'));
+                document.getElementById('distrito').removeAttribute('disabled'); // Habilitar el selector de distrito
+                guardarBtn.style.display = 'inline-block';
+            });
+
+            // Validación de DNI (máximo 8 dígitos)
+            const dniInput = document.getElementById('dni');
+            dniInput.addEventListener('input', function() {
+                if (dniInput.value.length > 8) {
+                    dniInput.value = dniInput.value.slice(0, 8);
+                }
+            });
+
+            // Mostrar el modal cuando se presiona "Guardar"
+            guardarBtn.addEventListener('click', function(event) {
+                event.preventDefault(); // Evita la acción por defecto
+                modal.style.display = 'block'; // Mostrar el modal
+                document.querySelector('.opener').classList.add('menu-opacity'); // Aplicar opacidad al botón de menú
+            });
+
+            // Confirmar y cerrar el modal al presionar "Sí"
+            confirmarGuardar.addEventListener('click', function() {
+                modal.style.display = 'none';
+                alert('Cambios guardados exitosamente.');
+                // Deshabilitar nuevamente los inputs
+                document.querySelectorAll('input').forEach(input => input.setAttribute('readonly', true));
+                document.getElementById('distrito').setAttribute('disabled', true); // Deshabilitar el selector de distrito
+                guardarBtn.style.display = 'none';
+                document.querySelector('.opener').classList.remove('menu-opacity'); // Remover opacidad al botón de menú
+            });
+
+            // Cancelar guardado y cerrar el modal al presionar "No"
+            cancelarGuardar.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.querySelector('.opener').classList.remove('menu-opacity'); // Remover opacidad al botón de menú
+            });
+
+            // Abrir modal de "Creación de lugar"
+            creationButton.addEventListener('click', function(e) {
+                e.preventDefault(); // Evitar la recarga
+                creationModal.classList.add('show');
+            });
+
+            // Redirigir al hacer clic en "Aceptar" en el modal de creación
+            closeCreationModalButton.addEventListener('click', function() {
+                creationModal.classList.remove('show'); // Cerrar el modal
+                window.location.href = 'historial.html'; // Cambia 'historial.html' si quieres redirigir a otro lado
+            });
+        });
+    </script>
+</body>
+</html>

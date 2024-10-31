@@ -1,0 +1,413 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>PetLink</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/aditional.css">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <style>
+        /* Estilos para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 30%;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-buttons {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .modal-buttons li {
+            display: inline-block;
+        }
+
+        .modal-buttons .button {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <img src="images/GestionDeUsuarios_Transparente.png" class="icons">
+                    <h1 class="logo"><strong>LISTA DE USUARIOS</strong></h1>
+                  
+                </header>
+                <section class="seccionPrueba" style="background-color: transparent !important; flex-wrap: wrap; gap:20px; justify-content: space-evenly;">
+                    <a href="lista_usuarios.html">Usuarios Comunes</a>
+                    <a href="lista_albergue.html">Albergues</a>
+                    <a href="lista_coordinador.html">Coordinador Zonal</a>
+                </section>
+
+                <!-- Tabla con los datos actualizados -->
+                <section style="margin: 0; margin-top: 20px; padding: 0; height: auto; display: flex; align-items: center;">
+                    <ul class="actions" style="list-style: none; margin: 0; padding: 0;">
+                        <!-- Aquí puedes agregar más acciones si es necesario -->
+                    </ul>
+                </section>
+
+                <!-- Banner -->
+                <section class="banner">
+                    <div class="content">
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style="width: 28%;">Fecha de inscripción</th>
+                                        <th style="width: 26%;">Nombre de usuario</th>
+                                        <th style="width: 21%;">Última fecha de acceso</th>
+                                        <th style="width: 15%;">Estado </th>
+                                        <th style="width: 45%;">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td>16/11/24</td>
+                                        <td>Juan Pérez</td>
+                                        <td>10/10/24</td>
+                                        <td>Activo</td>
+                                        <td>
+                                            <ul class="icons tableList">
+                                                <li><a href="informacion_usuario.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver detalles</span></a></li>
+                                                <li><a href="#" class="icon fas fa-times-circle eliminar" title="Eliminar" data-usuario="Juan Pérez"><span class="label">Rechazar</span></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td>18/11/24</td>
+                                        <td>Alejandro Flores</td>
+                                        <td>10/10/24</td>
+                                        <td>Activo</td>
+                                        <td>
+                                            <ul class="icons tableList">
+                                                <li><a href="informacion_usuario.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver detalles</span></a></li>
+                                                <li><a href="#" class="icon fas fa-times-circle eliminar" title="Eliminar" data-usuario="Juan Pérez"><span class="label">Rechazar</span></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td>16/11/24</td>
+                                        <td>Juan Pérez</td>
+                                        <td>10/10/24</td>
+                                        <td>Activo</td>
+                                        <td>
+                                            <ul class="icons tableList">
+                                                <li><a href="informacion_usuario.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver detalles</span></a></li>
+                                                <li><a href="#" class="icon fas fa-times-circle eliminar" title="Eliminar" data-usuario="Juan Pérez"><span class="label">Rechazar</span></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td>18/11/24</td>
+                                        <td>Alejandro Flores</td>
+                                        <td>10/10/24</td>
+                                        <td>Activo</td>
+                                        <td>
+                                            <ul class="icons tableList">
+                                                <li><a href="informacion_usuario.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver detalles</span></a></li>
+                                                <li><a href="#" class="icon fas fa-times-circle eliminar" title="Eliminar" data-usuario="Juan Pérez"><span class="label">Rechazar</span></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td>16/11/24</td>
+                                        <td>Juan Pérez</td>
+                                        <td>10/10/24</td>
+                                        <td>Activo</td>
+                                        <td>
+                                            <ul class="icons tableList">
+                                                <li><a href="informacion_usuario.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver detalles</span></a></li>
+                                                <li><a href="#" class="icon fas fa-times-circle eliminar" title="Eliminar" data-usuario="Juan Pérez"><span class="label">Rechazar</span></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td>18/11/24</td>
+                                        <td>Alejandro Flores</td>
+                                        <td>10/10/24</td>
+                                        <td>Activo</td>
+                                        <td>
+                                            <ul class="icons tableList">
+                                                <li><a href="informacion_usuario.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver detalles</span></a></li>
+                                                <li><a href="#" class="icon fas fa-times-circle eliminar" title="Eliminar" data-usuario="Juan Pérez"><span class="label">Rechazar</span></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td>16/11/24</td>
+                                        <td>Juan Pérez</td>
+                                        <td>10/10/24</td>
+                                        <td>Activo</td>
+                                        <td>
+                                            <ul class="icons tableList">
+                                                <li><a href="informacion_usuario.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver detalles</span></a></li>
+                                                <li><a href="#" class="icon fas fa-times-circle eliminar" title="Eliminar" data-usuario="Juan Pérez"><span class="label">Rechazar</span></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td>18/11/24</td>
+                                        <td>Alejandro Flores</td>
+                                        <td>10/10/24</td>
+                                        <td>Activo</td>
+                                        <td>
+                                            <ul class="icons tableList">
+                                                <li><a href="informacion_usuario.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver detalles</span></a></li>
+                                                <li><a href="#" class="icon fas fa-times-circle eliminar" title="Eliminar" data-usuario="Juan Pérez"><span class="label">Rechazar</span></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td>16/11/24</td>
+                                        <td>Juan Pérez</td>
+                                        <td>10/10/24</td>
+                                        <td>Activo</td>
+                                        <td>
+                                            <ul class="icons tableList">
+                                                <li><a href="informacion_usuario.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver detalles</span></a></li>
+                                                <li><a href="#" class="icon fas fa-times-circle eliminar" title="Eliminar" data-usuario="Juan Pérez"><span class="label">Rechazar</span></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td>18/11/24</td>
+                                        <td>Alejandro Flores</td>
+                                        <td>10/10/24</td>
+                                        <td>Activo</td>
+                                        <td>
+                                            <ul class="icons tableList">
+                                                <li><a href="informacion_usuario.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver detalles</span></a></li>
+                                                <li><a href="#" class="icon fas fa-times-circle eliminar" title="Eliminar" data-usuario="Juan Pérez"><span class="label">Rechazar</span></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td>16/11/24</td>
+                                        <td>Juan Pérez</td>
+                                        <td>10/10/24</td>
+                                        <td>Activo</td>
+                                        <td>
+                                            <ul class="icons tableList">
+                                                <li><a href="informacion_usuario.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver detalles</span></a></li>
+                                                <li><a href="#" class="icon fas fa-times-circle eliminar" title="Eliminar" data-usuario="Juan Pérez"><span class="label">Rechazar</span></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td>18/11/24</td>
+                                        <td>Alejandro Flores</td>
+                                        <td>10/10/24</td>
+                                        <td>Activo</td>
+                                        <td>
+                                            <ul class="icons tableList">
+                                                <li><a href="informacion_usuario.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver detalles</span></a></li>
+                                                <li><a href="#" class="icon fas fa-times-circle eliminar" title="Eliminar" data-usuario="Juan Pérez"><span class="label">Rechazar</span></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td>16/11/24</td>
+                                        <td>Juan Pérez</td>
+                                        <td>10/10/24</td>
+                                        <td>Activo</td>
+                                        <td>
+                                            <ul class="icons tableList">
+                                                <li><a href="informacion_usuario.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver detalles</span></a></li>
+                                                <li><a href="#" class="icon fas fa-times-circle eliminar" title="Eliminar" data-usuario="Juan Pérez"><span class="label">Rechazar</span></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td>18/11/24</td>
+                                        <td>Alejandro Flores</td>
+                                        <td>10/10/24</td>
+                                        <td>Activo</td>
+                                        <td>
+                                            <ul class="icons tableList">
+                                                <li><a href="informacion_usuario.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver detalles</span></a></li>
+                                                <li><a href="#" class="icon fas fa-times-circle eliminar" title="Eliminar" data-usuario="Juan Pérez"><span class="label">Rechazar</span></a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <!-- Puedes agregar más filas con el mismo formato -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Pagination -->
+                <div style="display: flex; justify-content: center;">
+                    <ul class="pagination">
+                        <li><span class="button disabled">&laquo;</span></li>
+                        <li><a href="#" class="page active">1</a></li>
+                        <li><a href="#" class="page">2</a></li>
+                        <li><a href="#" class="page">3</a></li>
+                        <li><span>…</span></li>
+                        <li><a href="#" class="page">8</a></li>
+                        <li><a href="#" class="page">9</a></li>
+                        <li><a href="#" class="page">10</a></li>
+                        <li><a href="#" class="button">&raquo;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section class="alt" id="sidebar-header">
+                    <img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+                    <p id="sidebar-title">PetLink</p>
+                </section>
+
+                <!-- Perfil -->
+                <section class="perfil">
+                    <div class="mini-posts">
+                        <article>
+                            <img src="images/aa.png" alt="" id="image-perfil">
+                            <h2 id="usuario">Administrador</h2>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li>
+                            <span class="opener">Gestión de Usuarios</span>
+                            <ul>
+                                <li><a href="gestion_usuarios.html">Formulario Coordinador Zonal</a></li>
+                                <li><a href="lista_usuarios.html">Lista de Usuarios</a></li>
+                                <li><a href="solicitud_albergue.html">Solicitudes de Albergue</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="historial.html">Gestión de Eventos</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Logout -->    
+                <nav id="logout">
+                    <a href="../bienvenidos.html" id="cerrar-sesion">Cerrar Sesión</a>
+                </nav>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Ventana emergente de confirmación -->
+    <div id="modalEliminar" class="modal">
+        <div class="modal-content">
+            <p id="modal-message">¿Estás seguro de que quieres eliminar a este usuario?</p>
+            <ul class="actions modal-buttons">
+                <li><a href="#" class="button primary big" id="confirmarEliminar">Sí</a></li>
+                <li><a href="#" class="button big" id="cancelarEliminar">No</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Ventana emergente de confirmación de eliminación -->
+    <div id="modalConfirmacion" class="modal">
+        <div class="modal-content">
+            <p id="modal-message-confirmacion">¡Se eliminó correctamente al usuario!</p>
+            <ul class="actions modal-buttons">
+                <li><a href="#" class="button primary big" id="closeConfirmacion">Aceptar</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Script para manejar la ventana emergente y botones -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const eliminarBtns = document.querySelectorAll('.eliminar');
+            const modalEliminar = document.getElementById('modalEliminar');
+            const confirmarEliminar = document.getElementById('confirmarEliminar');
+            const cancelarEliminar = document.getElementById('cancelarEliminar');
+            const modalConfirmacion = document.getElementById('modalConfirmacion');
+            const closeConfirmacion = document.getElementById('closeConfirmacion');
+
+            let usuarioEliminar; // Variable para almacenar el usuario a eliminar
+
+            eliminarBtns.forEach(btn => {
+                btn.addEventListener('click', function(event) {
+                    event.preventDefault(); // Evita la acción por defecto
+                    usuarioEliminar = this.getAttribute('data-usuario'); // Obtener el nombre del usuario
+                    modalEliminar.style.display = 'block'; // Mostrar el modal de eliminación
+                });
+            });
+
+            // Confirmar eliminación
+            confirmarEliminar.addEventListener('click', function() {
+                modalEliminar.style.display = 'none'; // Cerrar el modal de eliminación
+                modalConfirmacion.style.display = 'block'; // Mostrar el modal de confirmación
+                // Aquí puedes agregar la lógica para eliminar al usuario (por ejemplo, una llamada a la API)
+            });
+
+            // Cancelar eliminación
+            cancelarEliminar.addEventListener('click', function() {
+                modalEliminar.style.display = 'none'; // Cerrar el modal de eliminación
+            });
+
+            // Cerrar modal de confirmación
+            closeConfirmacion.addEventListener('click', function() {
+                modalConfirmacion.style.display = 'none'; // Cerrar el modal de confirmación
+                // Aquí puedes realizar una acción adicional, como recargar la lista de usuarios
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+

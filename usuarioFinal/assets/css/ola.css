@@ -1,0 +1,134 @@
+@import url(fontawesome-all.min.css);
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
+
+.perfil-info {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.perfil-info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ecf0f1;
+}
+
+/*
+.seccion-contenido p {
+    color: #7f8c8d;
+}
+*/
+
+.content {
+    flex: 1;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.content h2 {
+    font-size: 32px;
+    margin-bottom: 5px;
+    color: #3d4449;
+    font-weight: 600;
+}
+
+.content p {
+    font: "Roboto Slab", "serif";
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #7f8c8d;
+}
+
+.galeria {
+    width: 100%;
+    height: auto;
+    padding: 8px;
+    background-color: #ecf0f1;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.galeria img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+.seccion {
+    background-color: #fff;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.seccion h3 {
+    font-size: 22px;
+    color: #3d4449;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.seccion-contenido {
+    /*background-color: #ecf0f1;*/
+    border-radius: 10px;
+    min-height: 100px;
+    color: #7f8c8d;
+}
+
+.seccion-contenido ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.seccion-contenido ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+
+
+@media (max-width: 768px) {
+    .content {
+        padding: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 0px;
+    }
+
+    .galeria {
+        padding: 4px;
+    }
+
+    .content h2 {
+        font-size: 24px;
+    }
+
+    .seccion h3 {
+        font-size: 15px;
+    }
+    .content p {
+        font-size: 10px;
+    }
+
+    .seccion-contenido ul li {
+        font-size: 10px;
+    }
+
+    .seccion-contenido {
+        overflow-wrap: break-word;
+    }
+}

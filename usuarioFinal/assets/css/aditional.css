@@ -1,0 +1,604 @@
+.banner h1{
+    font-size: 2em;
+}
+
+.banner header {
+    display: flex; /* Usamos flexbox para alinear los elementos */
+    align-items: center; /* Alinea verticalmente la imagen y el texto */
+    position: relative;
+    gap: 1em;
+}
+  
+.banner header .icons {
+    height: 25px; /* Ajusta el tamaño de la imagen de icono */
+    width: auto; /* Mantén la proporción de la imagen */
+    /*margin-bottom: 1em;*/
+}
+
+.banner p{
+    margin-bottom: 0.5em;
+}
+
+.banner .actions{
+    margin-top: 1em !important;
+    margin-bottom: 0;
+}
+
+.banner {
+    background: #B0CDCE;
+    border-radius: 10px;
+}
+
+#sidebar-header{
+    display: flex;
+    align-items: center;
+    background-color: #40cce4;
+    gap: 10px;
+}
+  
+#sidebar-title{
+    font-size: 30px;
+    color: black;
+    font-weight: 900;
+}
+  
+#sidebar-icon{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+
+.perfil {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .mini-posts article {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Asegura que la imagen y el nombre estén centrados */
+  }
+  
+  #image-perfil {
+    width: 150px;              /* Ajusta el tamaño según sea necesario */
+    height: 150px;             /* Asegura que la imagen sea cuadrada */
+    border-radius: 50%;        /* Hace que la imagen sea circular */
+    object-fit: cover;         /* Ajusta el contenido de la imagen */
+    margin-bottom: 10px;       /* Añade espacio entre la imagen y el nombre */
+  }
+  
+  #usuario {
+    text-align: center;
+    font-size: 1.5em;          /* Ajusta el tamaño del texto según sea necesario */
+}
+
+#sidebar > .inner > .alt {
+    background-color: #B0CDCE;
+}
+
+#logout {
+    margin-top: 20px; /* Espacio superior entre el menú y el enlace */
+    text-align: center; /* Centra el texto de "Cerrar Sesión" */
+}
+
+#cerrar-sesion {
+    font-size: 1em;
+    font-weight: 600;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none; /* Asegúrate de que no haya subrayado */
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    border: none; /* Añade esta línea para eliminar cualquier borde residual */
+    outline: none; /* Elimina los puntos causados por el foco */
+}
+
+#cerrar-sesion:hover {
+    color: black !important;
+    text-decoration: underline;
+}
+
+
+/* Estilo para .seccionPrueba */
+.seccionPrueba {
+    background-color: whitesmoke !important;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100% !important;
+    box-sizing: border-box;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-top: 2em !important;
+}
+
+/* Caja que contiene las barras de búsqueda y filtro */
+.search-filter-container {
+    display: flex;
+    justify-content: space-between; /* Mantiene las barras en los extremos */
+    align-items: flex-start; /* Alinea los textos de los labels arriba de las barras */
+    background-color: white; /* Fondo de la caja */
+    padding: 1.5em;
+    border: 1px solid #ccc; /* Borde rectangular
+    border-radius: 0; /* Sin bordes circulares */
+    width: 100%;
+    /*max-width: 1200px; /* Tamaño máximo */
+    box-sizing: border-box;
+}
+
+/* Secciones de búsqueda y filtro */
+.search-filter-container section {
+    display: flex;
+    flex-direction: column;
+    width: 48%; /* Hace que las dos barras ocupen espacio equitativo */
+}
+
+.label-filter {
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+}
+
+/* Estilo para el input de búsqueda y el select de filtro */
+.seccionPrueba input[type="text"],
+.seccionPrueba select {
+    padding: 0.5em;
+    font-size: 1em;
+    width: 100%;
+    background-color: white; /* Fondo de los inputs */
+    border: 1px solid #ccc;
+    border-radius: 0; /* Bordes rectangulares */
+    box-sizing: border-box;
+}
+
+/* Responsividad para las barras de búsqueda y filtro */
+@media screen and (max-width: 768px) {
+    .search-filter-container {
+        flex-direction: column; /* Apila las barras en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .search-filter-container section {
+        width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+        margin-bottom: 1em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .search-filter-container {
+      padding: 1em; /* Reduce el padding en pantallas más pequeñas */
+    }
+
+    .label-filter {
+      font-size: 1em; /* Reduce ligeramente el tamaño del texto */
+    }
+
+    input[type="text"],
+    select {
+        padding: 0.4em;
+        font-size: 0.9em;
+    }
+}
+
+.toggle{
+    color: #B0CDCE !important;
+}
+
+.toggle:hover{
+    color: #B0CDCE !important;
+}
+
+/*Agregado en la segunda versión*/
+
+.contenedor-imagenes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 1em 0;
+}
+
+.contenedor-imagenes img {
+    width: 400px;
+    height: 300px;
+    object-fit: contain;
+    /*background-color: #ccc;*/
+    border-radius: 10px;
+}
+@media (max-width: 1680px) {
+    .contenedor-imagenes img {
+        width: 360px;
+        height: 270px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .contenedor-imagenes img {
+        width:300px;
+        height: 225px;
+    }
+}
+
+@media (max-width: 736px) {
+    .contenedor-imagenes img {
+        width: 240px;
+        height: 180px;
+    }
+}
+
+.banner ul {
+    margin-bottom: 0.5em;
+}
+
+.form-buttons{
+    justify-content: center;
+}
+
+input[type="file"],
+input[type="date"]{
+    appearance: none;
+    border-radius: 0.375em;
+    border: none;
+    border: solid 1px rgba(210, 215, 217, 0.75);
+    color: inherit;
+    display: block;
+    outline: 0;
+    padding: 0 1em;
+    text-decoration: none;
+    width: 100%;
+    background: #ffffff;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+}
+
+.text-area{
+    width: 100%;
+    height: 140px;
+    resize: none;
+    overflow: auto;
+    padding: 10px;
+}
+
+/*Agregado en la tercera versión*/
+
+/*table thead th{
+    background-color: rgb(182, 182, 182);
+    color: black;
+}
+
+table{
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+}
+
+table th{
+    padding-top: 0.75em !important;
+}*/
+
+/*Agregado en la cuarta versión*/
+
+#main {
+    -moz-flex-grow: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-grow: 1;
+    flex-grow: 1;
+    -moz-flex-shrink: 1;
+    -webkit-flex-shrink: 1;
+    -ms-flex-shrink: 1;
+    flex-shrink: 1;
+    width: 100%; }
+    #main > .inner {
+      padding: 0 6em 0.1em 6em ;
+      margin: 0 auto;
+      max-width: 110em; }
+      #main > .inner >.contenedor-banner > section {
+        margin: 0em 0;
+        padding: 2em 2em 2em 2em ;
+        /*border-top: solid 2px rgba(210, 215, 217, 0.75);*/ }
+        /*#main > .inner section:first-of-type {
+          border-top: 0 !important; }*/
+    @media screen and (max-width: 1680px) {
+      #main > .inner {
+        padding: 0 5em 0.1em 5em ; }
+        #main > .inner >.contenedor-banner > section {
+          margin: 0em 0;
+          padding: 2em 2em 2em 2em ; } }
+    @media screen and (max-width: 1280px) {
+      #main > .inner {
+        padding: 0 4em 0.1em 4em ; }
+        #main > .inner >.contenedor-banner > section {
+          margin: 0em 0;
+          padding: 2em 2em 2em 2em ; } }
+    @media screen and (max-width: 736px) {
+      #main > .inner {
+        padding: 0 2em 0.1em 2em ; }
+        #main > .inner >.contenedor-banner > section {
+          margin: 0em 0;
+          padding: 2em 2em 2em 2em ; } }
+
+.contenedor-banner>.banner{
+    width: 420px;
+}
+
+.contenedor-banner{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    row-gap: 2em;
+    column-gap: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.contenedor-banner>.banner {
+    -moz-flex-direction: column-reverse;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse; 
+    justify-content: space-between;}
+    .contenedor-banner>.banner h1 br {
+      display: none; }
+    .contenedor-banner>.banner .content {
+      -moz-flex-grow: 0;
+      -webkit-flex-grow: 0;
+      -ms-flex-grow: 0;
+      flex-grow: 0;
+      -moz-flex-shrink: 0;
+      -webkit-flex-shrink: 0;
+      -ms-flex-shrink: 0;
+      flex-shrink: 0;
+      width: 100%; }
+    .contenedor-banner>.banner .image {
+      -moz-flex-grow: 0;
+      -webkit-flex-grow: 0;
+      -ms-flex-grow: 0;
+      flex-grow: 0;
+      -moz-flex-shrink: 0;
+      -webkit-flex-shrink: 0;
+      -ms-flex-shrink: 0;
+      flex-shrink: 0;
+      margin: 0 0 1em 0;
+      height: 13em;
+      max-height: 50vh;
+      /*min-height: 18em;*/
+      width: 100%; 
+      max-width:600px;
+      margin-right:auto;
+      margin-left: auto;}
+
+.contenedor-banner>.banner > .content > .actions{
+    justify-content: center;
+}
+
+#header {
+    padding-top: 1em !important;
+}
+
+.contenedor-banner>.banner header .icons{
+    margin-bottom: 0 !important;
+}
+
+.contenedor-banner>.banner header h2{
+    margin-bottom: 0 !important;
+    font-size: 1.5em;
+}
+
+
+/*Corección para imagen única*/
+
+.contenedor-imagenes .img-unica {
+    width: 500px;
+    height: 300px;
+    object-fit: contain;
+    /*background-color: #ccc;*/
+    border-radius: 10px;
+}
+@media (max-width: 1680px) {
+    .contenedor-imagenes .img-unica {
+        width: 500px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 736px) {
+    .contenedor-imagenes .img-unica {
+        width: 370px;
+        height: 249px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-imagenes .img-unica {
+        width: 240px;
+        height: 180px;
+    }
+}
+
+/*Última versión*/
+
+#header strong{
+    color: black;
+    font-size: 30px;
+}
+
+.contenedor-banner:only-child {
+    justify-content: center;
+}
+
+#header .icons {
+    height: 35px;
+    width: auto;
+    margin-right: 1em;
+}
+
+#header h1 {
+    line-height: 1; 
+}
+
+#header h1 strong {
+    vertical-align: top; /* Alinea verticalmente el strong al centro */
+    line-height: inherit; /* Hereda el line-height del h1 */
+}
+
+.banner {
+    background-color: #B0CDCE; /* Color del padding exterior */
+    background-clip: padding-box; /* Hace que el fondo no cubra el borde */
+    position: relative;
+}
+  
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    right: 1em;
+    bottom: 1em;
+    background-color: rgba(255, 255, 255, 0.693); /* Color del padding interior */
+    z-index: 0; /* Para que se mantenga detrás del contenido */
+    border-radius: 10px;
+  }
+
+.banner .content {
+    z-index: 1;
+}
+
+#header .logo{
+    margin-top: 0.25em;
+}
+
+.user-profile {
+    margin-left: auto; /* Empuja el enlace a la derecha */
+    font-size: 1.2em; /* Aumenta el tamaño del texto */
+    font-weight: 600;
+    color: black; /* Cambia el color del texto */
+    text-decoration: none; /* Elimina subrayado del enlace */
+    display: flex; /* Flex para alinear el texto e ícono */
+    align-items: center; /* Alinea verticalmente el ícono con el texto */
+    gap: 0.5em; /* Espacio entre el texto y el ícono */
+  }
+  
+  .user-profile i {
+    font-size: 1.5em; /* Aumenta el tamaño del icono */
+  }
+  
+  .user-profile:hover {
+    color: #007bff; /* Cambia el color cuando se pasa el cursor */
+    text-decoration: none; /* Asegura que no aparezca subrayado en hover */
+  }
+  
+  /* Asegúrate de que el enlace no tenga subrayado en ningún estado */
+  a.user-profile {
+    text-decoration: none; /* Elimina cualquier subrayado */
+    border-bottom: none; /* Evita cualquier borde adicional */
+  }
+  
+  a.user-profile:focus,
+  a.user-profile:active {
+    outline: none; /* Elimina el contorno cuando se enfoca */
+    text-decoration: none; /* Asegura que no haya subrayado en estado de enfoque */
+  }
+@media (max-width: 1280px){
+    .ocultar {
+        display:none;
+    }
+}
+
+input:disabled, 
+textarea:disabled, 
+select:disabled {
+  background-color: #eeeeee; /* Un gris claro */
+  cursor: not-allowed; /* Cambia el cursor a uno de no permitido */
+  border-color: #acacac; /* Opcional: cambiar el color del borde */
+}
+
+#sidebar-title {
+    font-family: cursive;
+}
+
+.actions .button:hover {
+    box-shadow: 0 0px 4px #3730a3; /* Sombra suave al hacer hover */
+    transition: box-shadow 0.3s ease; /* Efecto de transición suave */
+}
+
+@media screen and (max-width: 500px) {
+    #header strong{
+        font-size: 25px;
+    }
+}
+
+.banner header h1 {
+    margin-bottom: 0 !important;
+    font-size: 1.5em !important;
+}
+
+.banner header{
+    margin-bottom: 0.5em;
+}
+
+/*última modificación para paginación*/
+
+.button.disabled {
+    color: #999;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+@media (max-width: 480px) {
+    /* Oculta todos los botones de página excepto el actual en pantallas pequeñas */
+    .pagination .page:not(.active) {
+      display: none;
+    }
+  
+    /* Mantén visibles solo los botones de salto y navegación */
+    .pagination .button {
+      display: inline-block;
+    }
+}
+  
+.pagination .button {
+    height: 2.5em;
+    line-height: 2.5em;
+    padding: 0 1em;
+}
+
+@media (max-width: 768px) {
+    .table-responsive {
+        overflow-x: auto; /* Habilita scroll horizontal solo en pantallas pequeñas */
+        -webkit-overflow-scrolling: touch; /* Suaviza el scroll en dispositivos móviles */
+    }
+}
+
+.page-link {
+    display: inline-block !important;
+    padding: 0 12px !important; /* Ajuste horizontal */
+    height: 40px !important; /* Altura total del botón */
+    line-height: 40px !important; /* Centra verticalmente el texto */
+    text-decoration: none !important;
+    color: #000000 !important; /* Azul especificado para el texto */
+    border: 1px solid #ddd !important;
+    border-radius: 4px !important;
+    transition: background-color 0.3s, color 0.3s !important;
+    box-shadow: none !important; /* Elimina cualquier sombra */
+}
+
+.page-link:hover {
+    background-color: #007bff !important; /* Fondo azul en hover */
+    color: #000000 !important; /* Texto blanco en hover */
+}
+
+/* Botón activo para la página seleccionada */
+.page-link.active {
+    background-color: #007bff !important; /* Fondo azul para el botón activo */
+    color: #fff !important; /* Texto blanco en el botón activo */
+    border-color: #007bff !important;
+}
+
+.dt-length, .dt-info {
+    display: none;
+}

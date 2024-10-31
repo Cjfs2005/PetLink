@@ -1,0 +1,272 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>PetLink</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/aditional.css">
+		<link rel="stylesheet" href="assets/css/popup-window.css">
+		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+		<!-- Estilo adicional para el botón azul -->
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+
+					<!-- Header -->
+					<header id="header">
+						<h1 class="logo"><strong>Donación de productos</strong></h1>
+					</header>
+
+					<!-- Banner -->
+					<section class="banner">
+						<div class="content">
+							<header>
+								<img src="images/form.png" class="icons">
+								<h2>Complete el siguiente formulario</h2>
+							</header>
+							<p><strong>Albergue solicitante:</strong> Huellitas PUCP</p>
+							<p style="margin-bottom: 1.5em;"><strong>Productos solicitados:</strong> colchones ortopédicos (2 unidades), collares isabelinos (10 unidades), mantas térmicas (5 unidades), botiquines de primeros auxilios (5 kits), camillas para transporte (3 unidades), cámaras de oxígeno portátiles (1 unidad), medicamentos antiinflamatorios y analgésicos (varios frascos), soluciones intravenosas (10 bolsas), alimentación especializada para convalecencia (varios paquetes)</p>					
+							<form style="margin: 0;">
+							<div class="row gtr-uniform">
+								<!-- Punto de acopio y horario de recepción -->
+								<div class="col-12">
+									<label for="puntoAcopio" class="input-label">Punto de acopio</label>
+									<select id="puntoAcopio" required>
+										<option value="">- Selecciona un punto de acopio -</option>
+										<option value="1">Jirón La Madrid 2033</option>
+										<option value="2">Calle Sneider Aguilera 111</option>
+										<option value="3">Calle Barcelona 553</option>
+									</select>
+								</div>
+								<!---->
+								<div class="col-6 col-12-xsmall">
+									<label for="fecha" class="input-label">Fecha de entrega</label>
+									<select id="fecha" disabled required>
+										<option value="">- Selecciona una fecha de entrega -</option>
+										<option value="1">Domingo 18 de diciembre del 2024</option>
+										<option value="2">Lunes 19 de diciembre del 2024</option>
+										<option value="3">Martes 20 de diciembre del 2024</option>
+									</select>
+								</div>
+								<div class="col-6 col-12-xsmall">
+									<label for="horario" class="input-label">Horario de entrega</label>
+									<select id="horario" disabled required>
+										<option value="">- Selecciona un horario de entrega -</option>
+										<option value="1">8:00 - 13:00</option>
+										<option value="2">15:00 - 18:00</option>	
+									</select>
+								</div>
+								<script>
+									// Obtenemos los elementos del DOM
+									const puntoAcopio = document.getElementById('puntoAcopio');
+									const fecha = document.getElementById('fecha');
+									const horario = document.getElementById('horario');
+									
+									// Deshabilitar los campos "Fecha" y "Horario" hasta que se seleccione un punto de acopio
+									puntoAcopio.addEventListener('change', function() {
+									  if (puntoAcopio.value !== "") {
+										// Habilitar el campo de fecha y limpiar su valor
+										fecha.disabled = false;
+										fecha.value = ""; // Restablecer selección de fecha
+										// Deshabilitar y limpiar el campo de horario
+										horario.disabled = true;
+										horario.value = ""; // Restablecer selección de horario
+									  } else {
+										// Si el punto de acopio no está seleccionado, deshabilitar y limpiar fecha y horario
+										fecha.disabled = true;
+										fecha.value = ""; // Restablecer selección de fecha
+										horario.disabled = true;
+										horario.value = ""; // Restablecer selección de horario
+									  }
+									});
+								  
+									// Al cambiar la fecha, deshabilitar el horario si no hay fecha, o limpiar el horario
+									fecha.addEventListener('change', function() {
+									  if (fecha.value !== "") {
+										// Habilitar el campo de horario y limpiar su valor
+										horario.disabled = false;
+										horario.value = ""; // Restablecer selección de horario al cambiar la fecha
+									  } else {
+										// Si no se selecciona fecha, deshabilitar el campo de horario
+										horario.disabled = true;
+										horario.value = ""; // Restablecer selección de horario
+									  }
+									});
+								  </script>
+								  
+								  
+								<!-- Donación -->
+								<div class="col-12">
+									<label for="descripcionDonacion" class="input-label">Productos a donar (máximo 500 carácteres):</label>
+									<textarea id="descripcionDonacion" name="descripcionDonacion" class="text-area" maxlength="500" placeholder="" required></textarea>
+									<span id="charCount" style="margin-right: 0;">0/500</span>
+								</div>
+								<script>
+									// Función para contar caracteres
+									const textarea = document.getElementById('descripcionDonacion');
+									const charCount = document.getElementById('charCount');
+						
+									textarea.addEventListener('input', function() {
+										const currentLength = textarea.value.length;
+										charCount.textContent = `${currentLength}/500`;
+									});
+								</script>
+								<style>
+									#charCount {
+										font-size: 12px;
+										color: #888;
+										float: right;
+									}
+								</style>
+								<!-- Botones de Inscribirse y Regresar -->
+								<div class="col-12">
+									<ul class="actions form-buttons">
+										<li><button type="button" class="button primary big" id="openModal">DONAR</button></li>
+										<li><a href="Donaciones1.html" class="button big">REGRESAR</a></li>
+									</ul>
+								</div>
+
+								<!-- Modal -->
+								<div id="modal" class="modal">
+									<div class="modal-content">
+										<!-- Botón cerrar -->
+										<span class="close-btn">&times;</span>
+										<p>¿Está seguro de su intención de donar?</p>
+										<!-- Botones de Aceptar y Cancelar -->
+										<ul class="actions modal-buttons">
+											<li><a href="Donaciones1.html" class="button primary big" id="acceptButton">Sí</a></li>
+											<li><a href="#" class="button big" id="cancelButton">No</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							</form>
+						</div>
+					</section>
+
+				</div>
+			</div>
+
+			<!-- Sidebar -->
+			<div id="sidebar">
+				<div class="inner">
+					
+					<!-- Logo -->
+					<section class="alt" id="sidebar-header">
+						<img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+						<p id ="sidebar-title">PetLink</p>
+					</section>
+				
+					<!-- Perfil -->
+	
+					<section class="perfil">
+										
+						<div class="mini-posts">
+							<article>
+								<img src="images/foto_perfil.jpg" alt="" id="image-perfil">
+								<h2 id="usuario">Ander Vilchez</h2>
+							</article>
+						</div>
+						
+					</section>
+
+					<!-- Menu -->
+						<nav id="menu">
+							<header class="major">
+								<h2>Menu</h2>
+							</header>
+							<ul>
+								<li><a href="perfil_usuario.html">PERFIL</a></li>
+								<li>
+									<span class="opener">ALBERGUES</span>
+									<ul>
+										<li><a href="albergue_usuario.html">LISTA DE ALBERGUES</a></li>
+										<li><a href="eventos.html">EVENTOS BENÉFICOS</a></li>
+										<li><a href="Donaciones1.html">SOLICITUDES DE DONACIÓN</a></li>
+										<li><a href="Donaciones_historial.html">HISTORIAL DE DONACIONES</a></li>
+										<li><a href="adopciones_usuario.html">MASCOTAS EN ADOPCIÓN</a></li>
+										<li><a href="adopciones_historial_usuario.html">HISTORIAL DE ADOPCIONES</a></li>
+									</ul>
+								</li>
+								<li><a href="Hogar_temporal.html">HOGAR TEMPORAL</a></li>
+								<li><a href="denuncias_usuario.html">DENUNCIAS POR MALTRATO ANIMAL</a></li>
+								<li><a href="mascotas_perdidas_usuario.html">MASCOTAS PERDIDAS</a></li>
+							</ul>
+						</nav>
+							<!-- Logout -->	
+
+							<nav id="logout">
+								<a href="../bienvenidos.html" id="cerrar-sesion">Cerrar Sesión</a>
+							</nav>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	
+		<!-- Script dentro del mismo HTML -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+			  // Obtener los elementos del DOM
+			  const openModalButton = document.getElementById('openModal'); // Botón que abre el modal
+			  const modal = document.getElementById('modal');               // El modal
+			  const closeModalButton = document.querySelector('.close-btn'); // Botón para cerrar el modal (X)
+			  const acceptButton = document.getElementById('acceptButton'); // Botón de Aceptar
+			  const cancelButton = document.getElementById('cancelButton'); // Botón de Cancelar
+		  
+			  // Seleccionar los campos del formulario
+			  const puntoAcopio = document.getElementById('puntoAcopio');
+			  const fecha = document.getElementById('fecha');
+			  const horario = document.getElementById('horario');
+			  const descripcionDonacion = document.getElementById('descripcionDonacion');
+		  
+			  // Función para validar los campos y mostrar el modal solo si todos están completos
+			  function validarYMostrarModal(event) {
+				// Prevenir el comportamiento por defecto
+				event.preventDefault();
+		  
+				// Verificar si todos los campos requeridos son válidos
+				if (puntoAcopio.checkValidity() && fecha.checkValidity() && horario.checkValidity() && descripcionDonacion.checkValidity()) {
+				  // Si todo está bien, mostrar el modal
+				  modal.classList.add('show');
+				} else {
+				  // Mostrar los mensajes de error nativos del navegador
+				  document.querySelector('form').reportValidity();
+				}
+			  }
+		  
+			  // Función para cerrar el modal al hacer clic en la "X"
+			  closeModalButton.addEventListener('click', function () {
+				modal.classList.remove('show');
+			  });
+		  
+			  // Redirigir cuando el usuario haga clic en el botón de Aceptar dentro del modal
+			  acceptButton.addEventListener('click', function () {
+				window.location.href = 'Donaciones1.html';
+			  });
+		  
+			  // Función para cerrar el modal al hacer clic en el botón "Cancelar"
+			  cancelButton.addEventListener('click', function () {
+				modal.classList.remove('show');
+			  });
+		  
+			  // Validar y abrir el modal solo si todos los campos están completos
+			  openModalButton.addEventListener('click', validarYMostrarModal);
+			});
+		  </script>
+		  
+	</body>
+</html>
