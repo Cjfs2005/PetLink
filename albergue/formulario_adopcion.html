@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="assets/css/popup-window.css">
 		<link rel="icon" href="images/favicon.png" type="image/x-icon">
 		<style>
-			#charCount {
+			.charCount {
 				font-size: 12px;
 				color: #888;
 				float: right;
@@ -45,32 +45,25 @@
 
 							<div class="row gtr-uniform">
 
-								<!-- Tipo de raza -->
 								<div class="col-12 col-12-xsmall">
 									<label for="tipoRaza" class="input-label">Tipo de raza</label>
-									<input type="text" id="tipoRaza" name="tipoRaza" placeholder="" required />
+									<input type="text" id="tipoRaza" name="tipoRaza" maxlength="45" required />
 								</div>
 
 								<!-- Dirección donde fue encontrado -->
 								<div class="col-12">
-									<label for="direccionEncontrado" class="input-label">Dirección donde fue encontrado</label>
-									<input type="text" id="direccionEncontrado" name="direccionEncontrado" placeholder="" required />
-								</div>
-
-								<!-- Adjuntar fotos de la mascota -->
-								<div class="col-12">
-									<label for="fotosMascota" class="input-label">Adjuntar fotos de la mascota (Máximo 3 fotos)</label>
-									<input type="file" id="fotosMascota" name="fotosMascota" accept="image/*" multiple max="3" required />
+									<label for="direccionEncontrado" class="input-label">Dirección donde fue encontrado (máximo 100 caracteres)</label>
+									<textarea id="direccionEncontrado" class="text-area" name="direccionEncontrado" maxlength="100" required></textarea>
+									<span class="charCount" id="charCountDireccion">0/100</span>
 								</div>
 
 								<!-- Descripción general -->
 								<div class="col-12">
 									<label for="descripcionGeneral" class="input-label">Descripción general (máximo 300 caracteres)</label>
 									<textarea id="descripcionGeneral" name="descripcionGeneral" class="text-area" maxlength="300" placeholder="" required></textarea>
-									<span id="charCount">0/300</span>
+									<span class="charCount" id="charCountDescripcion">0/300</span>
 								</div>
 
-								<!-- Género -->
 								<div class="col-6 col-12-xsmall">
 									<label for="generoMascota" class="input-label">Género</label>
 									<select id="generoMascota" name="generoMascota" required>
@@ -102,7 +95,14 @@
 								<!-- Condiciones para la adopción -->
 								<div class="col-12">
 									<label for="condicionesAdopcion" class="input-label">Condiciones para la adopción</label>
-									<textarea id="condicionesAdopcion" name="condicionesAdopcion" class="text-area" maxlength="300" placeholder="" required></textarea>
+									<textarea id="condicionesAdopcion" class="text-area" name="condicionesAdopcion" maxlength="300" required></textarea>
+									<span class="charCount" id="charCountCondiciones">0/300</span>
+								</div>
+
+								<!-- Adjuntar fotos de la mascota -->
+								<div class="col-12">
+									<label for="fotosMascota" class="input-label">Adjuntar fotos de la mascota (solo PNG)</label>
+									<input type="file" id="fotosMascota" name="fotosMascota" accept=".png" required />
 								</div>
 
 								<!-- Botones -->
@@ -187,34 +187,75 @@
             </div>
         </div>
 		
-		<!-- Contador de caracteres para el campo "Descripción general" -->
 		<script>
-			const textarea = document.getElementById('descripcionGeneral');
-			const charCount = document.getElementById('charCount');
-
-			textarea.addEventListener('input', function() {
-				const currentLength = textarea.value.length;
-				charCount.textContent = `${currentLength}/300`;
+			// Contadores de caracteres para los campos
+			document.getElementById('direccionEncontrado').addEventListener('input', function () {
+				document.getElementById('charCountDireccion').textContent = `${this.value.length}/100`;
 			});
-		</script>
-
-		<script>
-			// Esperamos a que todo el DOM esté cargado
-			document.addEventListener('DOMContentLoaded', function() {
-				// Obtener los elementos del DOM
-				const openModalButton = document.getElementById('openModal'); // Botón que abre el modal
-				const modal = document.getElementById('modal');               // El modal
-				const acceptButton = document.getElementById('acceptButton'); // Botón de Aceptar
-
-				// Función para abrir el modal
-				openModalButton.addEventListener('click', function() {
-					modal.classList.add('show'); // Mostrar el modal
-				});
-
-				// Función para cerrar el modal al hacer clic en el botón "Aceptar"
-				acceptButton.addEventListener('click', function() {
-					window.location.href = 'adopciones.html';
-				});
+	
+			document.getElementById('descripcionGeneral').addEventListener('input', function () {
+				document.getElementById('charCountDescripcion').textContent = `${this.value.length}/300`;
+			});
+	
+			document.getElementById('condicionesAdopcion').addEventListener('input', function () {
+				document.getElementById('charCountCondiciones').textContent = `${this.value.length}/300`;
+			});
+	
+			// Validación para la edad aproximada (solo números y menor que 100)
+			document.getElementById('edadAproximada').addEventListener('input', function () {
+				this.value = this.value.replace(/[^0-9]/g, ''); // Solo números
+				if (parseInt(this.value, 10) > 99) { // Máximo 99
+					alert("La edad debe ser un número menor a 100.");
+					this.value = '';
+				}
+			});
+	
+			// Validación para el formato de imagen PNG
+			document.getElementById('fotosMascota').addEventListener('change', function () {
+				if (this.files[0] && !this.files[0].name.endsWith('.png')) {
+					alert("Solo se permiten archivos en formato PNG.");
+					this.value = '';
+				}
+			});
+	
+			// Validación al presionar el botón Publicar
+			document.getElementById('openModal').addEventListener('click', function (event) {
+				event.preventDefault();
+	
+				// Campos obligatorios
+				const tipoRaza = document.getElementById('tipoRaza');
+				const direccionEncontrado = document.getElementById('direccionEncontrado');
+				const descripcionGeneral = document.getElementById('descripcionGeneral');
+				const generoMascota = document.getElementById('generoMascota');
+				const edadAproximada = document.getElementById('edadAproximada');
+				const condicionesAdopcion = document.getElementById('condicionesAdopcion');
+				const hogarTemporal = document.querySelector('input[name="hogarTemporal"]:checked');
+				const fotosMascota = document.getElementById('fotosMascota');
+	
+				const camposObligatorios = [
+					tipoRaza, direccionEncontrado, descripcionGeneral, generoMascota, edadAproximada, condicionesAdopcion, fotosMascota
+				];
+	
+				const camposIncompletos = camposObligatorios.some(campo => !campo.value.trim());
+	
+				// Verificar si se seleccionó una opción de hogar temporal
+				const hogarTemporalCompleto = hogarTemporal !== null;
+	
+				// Verificar si la edad es válida
+				const edadValida = parseInt(edadAproximada.value, 10) < 100;
+	
+				if (camposIncompletos || !hogarTemporalCompleto || !edadValida) {
+					alert("Por favor, complete todos los campos obligatorios y asegúrese de que la edad sea menor a 100.");
+					return;
+				}
+	
+				// Mostrar el modal si todos los campos están completos y válidos
+				document.getElementById('modal').classList.add('show');
+			});
+	
+			// Función para cerrar el modal cuando se hace clic en "Aceptar"
+			document.getElementById('acceptButton').addEventListener('click', function () {
+				window.location.href = 'adopciones.html';
 			});
 		</script>
 	</body>

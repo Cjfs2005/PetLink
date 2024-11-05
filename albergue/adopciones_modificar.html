@@ -6,10 +6,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/aditional.css">
-        <link rel="stylesheet" href="assets/css/popup-window.css">
+		<link rel="stylesheet" href="assets/css/popup-window.css">
 		<link rel="icon" href="images/favicon.png" type="image/x-icon">
 		<style>
-			#charCount {
+			.charCount {
 				font-size: 12px;
 				color: #888;
 				float: right;
@@ -29,7 +29,7 @@
 					<header id="header">
 						<h1 class="logo"><strong>Formulario de Adopción de Mascota</strong></h1>
 						<!-- Sección para el nombre y enlace al perfil -->
-						<a href="perfil_usuario.html" class="user-profile">
+						<a href="perfil.html" class="user-profile">
 							<span class="ocultar">Huellitas PUCP</span> <img src="images/logo_huellitas.png" style="border-radius: 100%; height: 45px; width: 45px;object-fit: cover;"></img>
 						</a>
 					</header>
@@ -45,37 +45,32 @@
 
 							<div class="row gtr-uniform">
 
-								<!-- Tipo de raza -->
 								<div class="col-12 col-12-xsmall">
 									<label for="tipoRaza" class="input-label">Tipo de raza</label>
-									<input type="text" id="tipoRaza" name="tipoRaza" placeholder="" value="Perro-Golder retriever" required />
+									<input type="text" id="tipoRaza" name="tipoRaza" maxlength="45" value="Perro-Golder retriever" required />
 								</div>
 
 								<!-- Dirección donde fue encontrado -->
 								<div class="col-12">
-									<label for="direccionEncontrado" class="input-label">Dirección donde fue encontrado</label>
-									<input type="text" id="direccionEncontrado" name="direccionEncontrado" placeholder="" value="Parque Las Américas" required />
-								</div>
-
-								<!-- Adjuntar fotos de la mascota -->
-								<div class="col-12">
-									<label for="fotosMascota" class="input-label">Adjuntar fotos de la mascota (Máximo 3 fotos)</label>
-									<input type="file" id="fotosMascota" name="fotosMascota" accept="image/*" multiple max="3" required />
+									<label for="direccionEncontrado" class="input-label">Dirección donde fue encontrado </label>
+									<textarea id="direccionEncontrado" class="text-area" name="direccionEncontrado" maxlength="100" required>Parque Las Américas</textarea>
+									<span class="charCount" id="charCountDireccion">0/100</span>
 								</div>
 
 								<!-- Descripción general -->
 								<div class="col-12">
 									<label for="descripcionGeneral" class="input-label">Descripción general (máximo 300 caracteres)</label>
 									<textarea id="descripcionGeneral" name="descripcionGeneral" class="text-area" maxlength="300" placeholder="" required>Lovecraft es un perro muy alegre. Fue encontrado en el parque de las Américas en muy mal estado, por lo que ha recibido tratamiento durante el último mes. Actualmente se encuentra saludable y a espera de una familia.</textarea>
-									<span id="charCount">0/300</span>
+									<span class="charCount" id="charCountDescripcion">0/300</span>
 								</div>
 
-								<!-- Género -->
+                                
+
 								<div class="col-6 col-12-xsmall">
 									<label for="generoMascota" class="input-label">Género</label>
 									<select id="generoMascota" name="generoMascota" required>
-										<option value="">- Selecciona un género -</option>	
-                                        <option value="Macho" selected>Macho</option>			
+										<option value="">- Selecciona un género -</option>
+										<option value="Macho" selected>Macho</option>
 										<option value="Hembra">Hembra</option>
 									</select>
 								</div>
@@ -83,7 +78,7 @@
 								<!-- Edad aproximada -->
 								<div class="col-6 col-12-xsmall">
 									<label for="edadAproximada" class="input-label">Edad aproximada</label>
-									<input type="text" id="edadAproximada" name="edadAproximada" placeholder="" value="2" maxlength="2" required />
+									<input type="text" id="edadAproximada" name="edadAproximada"  value="12" placeholder="" required />
 								</div>
 
 								<!-- Se encuentra en un hogar temporal -->
@@ -102,13 +97,20 @@
 								<!-- Condiciones para la adopción -->
 								<div class="col-12">
 									<label for="condicionesAdopcion" class="input-label">Condiciones para la adopción</label>
-									<textarea id="condicionesAdopcion" name="condicionesAdopcion" class="text-area" maxlength="300" placeholder="" required>Se necesita que sea un dueño que ame a los animales y pueda tener paciencia con este animalito ya que es un poco compulsivo.</textarea>
+									<textarea id="condicionesAdopcion" class="text-area" name="condicionesAdopcion" maxlength="300" required>Se necesita que sea un dueño que ame a los animales y pueda tener paciencia con este animalito ya que es un poco compulsivo.</textarea>
+									<span class="charCount" id="charCountCondiciones">0/300</span>
+								</div>
+
+								<!-- Adjuntar fotos de la mascota -->
+								<div class="col-12">
+									<label for="fotosMascota" class="input-label">Adjuntar fotos de la mascota (solo PNG)</label>
+									<input type="file" id="fotosMascota" name="fotosMascota" accept=".png" required />
 								</div>
 
 								<!-- Botones -->
 								<div class="col-12">
 									<ul class="actions form-buttons">
-										<li><a href="#" class="button primary big" id="openModal">Modificar</a></li>
+										<li><a href="#" class="button primary big" id="openModal">Publicar</a></li>
 										<li><a href="javascript:history.back()" class="button big">Cancelar</a></li> <!-- Botón Cancelar -->
 									</ul>
 								</div>
@@ -176,10 +178,10 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 
-        <!--Modal-->
+		<!--Modal-->
         <div id="modal" class="modal">
             <div class="modal-content">          
-                <p>Se ha modificado el post con éxito.</p>
+                <p>Se ha publicado el post con éxito.</p>
                 <!-- Botones de Aceptar y Cancelar -->
                 <ul class="actions modal-buttons">
                     <li><a href="adopciones.html" class="button primary big" id="acceptButton">Aceptar</a></li>
@@ -187,35 +189,76 @@
             </div>
         </div>
 		
-		<!-- Contador de caracteres para el campo "Sobre nosotros" -->
 		<script>
-			const textarea = document.getElementById('descripcionGeneral');
-			const charCount = document.getElementById('charCount');
-
-			textarea.addEventListener('input', function() {
-			const currentLength = textarea.value.length;
-				charCount.textContent = `${currentLength}/300`;
+			// Contadores de caracteres para los campos
+			document.getElementById('direccionEncontrado').addEventListener('input', function () {
+				document.getElementById('charCountDireccion').textContent = `${this.value.length}/100`;
+			});
+	
+			document.getElementById('descripcionGeneral').addEventListener('input', function () {
+				document.getElementById('charCountDescripcion').textContent = `${this.value.length}/300`;
+			});
+	
+			document.getElementById('condicionesAdopcion').addEventListener('input', function () {
+				document.getElementById('charCountCondiciones').textContent = `${this.value.length}/300`;
+			});
+	
+			// Validación para la edad aproximada (solo números y menor que 100)
+			document.getElementById('edadAproximada').addEventListener('input', function () {
+				this.value = this.value.replace(/[^0-9]/g, ''); // Solo números
+				if (parseInt(this.value, 10) > 99) { // Máximo 99
+					alert("La edad debe ser un número menor a 100.");
+					this.value = '';
+				}
+			});
+	
+			// Validación para el formato de imagen PNG
+			document.getElementById('fotosMascota').addEventListener('change', function () {
+				if (this.files[0] && !this.files[0].name.endsWith('.png')) {
+					alert("Solo se permiten archivos en formato PNG.");
+					this.value = '';
+				}
+			});
+	
+			// Validación al presionar el botón Publicar
+			document.getElementById('openModal').addEventListener('click', function (event) {
+				event.preventDefault();
+	
+				// Campos obligatorios
+				const tipoRaza = document.getElementById('tipoRaza');
+				const direccionEncontrado = document.getElementById('direccionEncontrado');
+				const descripcionGeneral = document.getElementById('descripcionGeneral');
+				const generoMascota = document.getElementById('generoMascota');
+				const edadAproximada = document.getElementById('edadAproximada');
+				const condicionesAdopcion = document.getElementById('condicionesAdopcion');
+				const hogarTemporal = document.querySelector('input[name="hogarTemporal"]:checked');
+				const fotosMascota = document.getElementById('fotosMascota');
+	
+				const camposObligatorios = [
+					tipoRaza, direccionEncontrado, descripcionGeneral, generoMascota, edadAproximada, condicionesAdopcion, fotosMascota
+				];
+	
+				const camposIncompletos = camposObligatorios.some(campo => !campo.value.trim());
+	
+				// Verificar si se seleccionó una opción de hogar temporal
+				const hogarTemporalCompleto = hogarTemporal !== null;
+	
+				// Verificar si la edad es válida
+				const edadValida = parseInt(edadAproximada.value, 10) < 100;
+	
+				if (camposIncompletos || !hogarTemporalCompleto || !edadValida) {
+					alert("Por favor, complete todos los campos obligatorios y asegúrese de que la edad sea menor a 100.");
+					return;
+				}
+	
+				// Mostrar el modal si todos los campos están completos y válidos
+				document.getElementById('modal').classList.add('show');
+			});
+	
+			// Función para cerrar el modal cuando se hace clic en "Aceptar"
+			document.getElementById('acceptButton').addEventListener('click', function () {
+				window.location.href = 'adopciones.html';
 			});
 		</script>
-
-        <script>
-            // Esperamos a que todo el DOM esté cargado
-            document.addEventListener('DOMContentLoaded', function() {
-                // Obtener los elementos del DOM
-                const openModalButton = document.getElementById('openModal'); // Botón que abre el modal
-                const modal = document.getElementById('modal');               // El modal
-                const acceptButton = document.getElementById('acceptButton'); // Botón de Aceptar
-
-                // Función para abrir el modal
-                openModalButton.addEventListener('click', function() {
-                    modal.classList.add('show'); // Mostrar el modal
-                });
-
-                // Función para cerrar el modal al hacer clic en el botón "Aceptar"
-                acceptButton.addEventListener('click', function() {
-                    window.location.href = 'adopciones.html';
-                });
-            });
-        </script>
 	</body>
 </html>
