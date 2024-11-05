@@ -632,6 +632,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`RegistroDonacionEconomica` (
   `id_solicitud_donacion_economica` INT UNSIGNED NOT NULL,
   `id_usuario_final` INT UNSIGNED NOT NULL,
   `id_estado` INT UNSIGNED NOT NULL,
+  `imagen_donacion_economica` BLOB NULL,
+  `nombre_imagen_donacion_economica` VARCHAR(100) NULL,
   PRIMARY KEY (`id_registro_donacion_economica`),
   INDEX `fk_RegistroDonacionEconomica_SolicitudDonacionEconomica1_idx` (`id_solicitud_donacion_economica` ASC) VISIBLE,
   INDEX `fk_RegistroDonacionEconomica_Usuario1_idx` (`id_usuario_final` ASC) VISIBLE,
