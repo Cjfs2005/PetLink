@@ -65,6 +65,7 @@
                                         <th>Nombres y apellidos</th>
                                         <th>Fecha de donación</th>
                                         <th>Monto donado</th>
+                                        <th>Ver QR</th>
                                         
                                     </tr>
                                 </thead>
@@ -74,6 +75,11 @@
                                         <td>Christian Jair Flores Soto</td>
                                         <td>12/02/2023</td>
                                         <td>S/. 500</td>
+                                        <td>
+                                            <ul class="icons">
+                                                <li><a href="#" class="icon fas fa-eye" id="verQRBtn" title="Ver detalles"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+                                            </ul>
+                                        </td>
                                         
                                        
                                     </tr>
@@ -82,20 +88,38 @@
                                         <td>Alejandro Emanuel Gutarra Bendezú</td>
                                         <td>12/02/2023</td>
                                         <td>S/. 500</td>
+                                        <td>
+                                            <ul class="icons">
+                                                <li><a href="#" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+                                            </ul>
+                                        </td>
                                        
                                     </tr>
-                                    
-                                    <td>Tony Lee Flores Aguirre</td>
-                                    <td>12/02/2023</td>
-                                    <td>S/. 500</td>
-                                            
-                                      
+                                        <td>Tony Lee Flores Aguirre</td>
+                                        <td>12/02/2023</td>
+                                        <td>S/. 500</td>
+                                        <td>
+                                            <ul class="icons">
+                                                <li><a href="#" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+                                            </ul>
+                                        </td>
                                     </tr>	
                                 </tbody>
                             </table>
                             <script>
-                                new DataTable('#example');
-                            </script>
+                                new DataTable('#example', {
+                                language: {
+                                    sSearch: "Buscar:",  // Cambia el texto del campo de búsqueda
+                                    sLengthMenu: "Mostrar _MENU_ registros",
+                                    sZeroRecords: "No se encontraron resultados",
+                                    sEmptyTable: "Ningún dato disponible en esta tabla",
+                                    sInfo: "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                                    sInfoEmpty: "Mostrando registros del 0 al 0 de un total de 0 registros",
+                                    sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
+                                    sLoadingRecords: "Cargando...",
+                                }
+                            });
+                            </script>   >
                         </div>
 
                         <div class="row gtr-uniform">
@@ -104,17 +128,17 @@
                             <div class="col-12">
                                 <ul class="actions form-buttons">
                                     <li><a href="donaciones_modificar.html" class="button primary big">Modificar</a></li>
-                                    <li><a href="#" class="button big">Eliminar</a></li> <!-- Aquí está el botón de regresar -->
+                                    <li><a href="#" class="button big" id="openModal">Eliminar</a></li> <!-- Aquí está el botón de regresar -->
                                 </ul>
                             </div>
                             <div id="modal" class="modal">
                                 <div class="modal-content">
                                     <!-- Botón cerrar -->
                                     <span class="close-btn">&times;</span>
-                                    <p>Usted se inscribió con éxito</p>
+                                    <p>¿Está seguro de eliminar esta publicación?<br>Se perderá toda la información publicada</p>
                                     <!-- Botones de Aceptar y Cancelar -->
                                     <ul class="actions modal-buttons">
-                                        <li><a href="index.html" class="button primary big" id="acceptButton">Aceptar</a></li>
+                                        <li><a href="donaciones.html" class="button primary big" id="acceptButton">Aceptar</a></li>
                                         <li><a href="#" class="button big" id="cancelButton">Cancelar</a></li>
                                     </ul>
                                 </div>
@@ -124,6 +148,84 @@
                 </section>
             </div>
         </div>
+
+        <!-- Modal para mostrar el QR -->
+				<div id="qrModal" class="modal1">
+					<div class="modal-content1">
+						<span class="close">&times;</span>
+						<h2>Código QR</h2>
+						<img src="images/foto_pago_yape.png" alt="Código QR" style="width: 100%; height: auto;">
+					</div>
+				</div>
+
+				<!-- Scripts para controlar el modal -->
+				<script>
+					// Obtener el modal
+					var modal = document.getElementById("qrModal");
+
+					// Obtener el botón que abre el modal
+					var btn = document.getElementById("verQRBtn");
+
+					// Obtener el <span> que cierra el modal
+					var span = document.getElementsByClassName("close")[0];
+
+					// Cuando el usuario haga clic en el botón, abrir el modal
+					btn.onclick = function() {
+						modal.style.display = "block";
+					}
+
+					// Cuando el usuario haga clic en <span> (x), cerrar el modal
+					span.onclick = function() {
+						modal.style.display = "none";
+					}
+
+					// Cuando el usuario haga clic fuera del modal, cerrarlo
+					window.onclick = function(event) {
+						if (event.target == modal) {
+							modal.style.display = "none";
+						}
+					}
+				</script>
+
+				<!-- Estilos adicionales para el modal -->
+				<style>
+					/* Estilo para el modal */
+					.modal1 {
+						display: none;
+						position: fixed;
+						z-index: 1;
+						left: 0;
+						top: 0;
+						width: 100%;
+						height: 100%;
+						overflow: auto;
+						background-color: rgba(0,0,0,0.4);
+					}
+
+					.modal-content1 {
+						background-color: white;
+						margin: 15% auto;
+						padding: 20px;
+						border: 1px solid #888;
+						width: 80%;
+						max-width: 500px;
+						text-align: center;
+					}
+
+					.close {
+						color: #aaa;
+						float: right;
+						font-size: 28px;
+						font-weight: bold;
+					}
+
+					.close:hover,
+					.close:focus {
+						color: black;
+						text-decoration: none;
+						cursor: pointer;
+					}
+				</style>
 
         <!-- Sidebar -->
         <div id="sidebar">
@@ -178,6 +280,38 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+        // Esperamos a que todo el DOM esté cargado
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener los elementos del DOM
+            const openModalButton = document.getElementById('openModal'); // Botón que abre el modal
+            const modal = document.getElementById('modal');               // El modal
+            const closeModalButton = document.querySelector('.close-btn'); // Botón para cerrar el modal (X)
+            const acceptButton = document.getElementById('acceptButton'); // Botón de Aceptar
+            const cancelButton = document.getElementById('cancelButton'); // Botón de Cancelar
+
+            // Función para abrir el modal
+            openModalButton.addEventListener('click', function() {
+                modal.classList.add('show'); // Mostrar el modal
+            });
+
+            // Función para cerrar el modal al hacer clic en la "X"
+            closeModalButton.addEventListener('click', function() {
+                modal.classList.remove('show'); // Ocultar el modal
+            });
+
+            // Deben modificar el link para que redirija afuera del formulario
+            acceptButton.addEventListener('click', function() {
+                window.location.href = 'index.html';
+            });
+
+            // Función para cerrar el modal al hacer clic en el botón "Cancelar"
+            cancelButton.addEventListener('click', function() {
+                modal.classList.remove('show'); // Ocultar el modal
+            });
+        });
+    </script>
 
 </body>
 </html>
