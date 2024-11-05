@@ -126,6 +126,8 @@
                             <ul>
                                 <li><a href="gestion_usuarios.html">Formulario Coordinador Zonal</a></li>
                                 <li><a href="lista_usuarios.html">Lista de Usuarios</a></li>
+                                <li><a href="lista_albergue.html">Lista de Albergues</a></li>
+                                <li><a href="lista_coordinador.html">Lista de Coordinadores zonales</a></li>
                                 <li><a href="solicitud_albergue.html">Solicitudes de Albergue</a></li>
                             </ul>
                         </li>
@@ -179,6 +181,112 @@
             });
         });
     </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Obtener elementos del formulario
+        const nombreInput = document.getElementById('nombre');
+        const apellidoInput = document.getElementById('apellido');
+        const dniInput = document.getElementById('dni');
+        const telefonoInput = document.getElementById('telefono');
+        const correoInput = document.getElementById('correo');
+        const fechaNacimientoInput = document.getElementById('fechaNacimiento');
+        const zonaAsignadaSelect = document.getElementById('zonaAsignada');
+        const creationButton = document.getElementById('creationButton');
+        const creationModal = document.getElementById('creationModal');
+        const closeCreationModalButton = document.getElementById('closeCreationModal');
+
+        // Inicialmente deshabilitar el botón de creación
+        creationButton.classList.add('disabled');
+        creationButton.style.pointerEvents = 'none'; // Deshabilitar clics
+
+        // Función para verificar todos los campos
+        function verificarCampos() {
+            const camposValidos = (
+                nombreInput.value.trim() !== "" &&
+                apellidoInput.value.trim() !== "" &&
+                dniInput.value.trim() !== "" &&
+                telefonoInput.value.trim().length === 9 && // Teléfono exactamente 9 dígitos
+                correoInput.value.trim() !== "" &&
+                fechaNacimientoInput.value.trim() !== "" &&
+                zonaAsignadaSelect.value !== "" && // Validación de zona asignada
+                correoInput.checkValidity() && // Correo válido
+                fechaNacimientoInput.value <= new Date().toISOString().split("T")[0] // Fecha válida
+            );
+
+            // Habilitar o deshabilitar el botón en función de la validez de los campos
+            if (camposValidos) {
+                creationButton.classList.remove('disabled');
+                creationButton.style.pointerEvents = 'auto'; // Permitir clics
+            } else {
+                creationButton.classList.add('disabled');
+                creationButton.style.pointerEvents = 'none'; // Deshabilitar clics
+            }
+        }
+
+        // Aplicar restricciones en tiempo real
+        function soloLetras(input) {
+            input.addEventListener('input', function () {
+                this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '');
+                verificarCampos(); // Verificar después de cada cambio
+            });
+        }
+
+        function soloNumeros(input, maxLength) {
+            input.addEventListener('input', function () {
+                this.value = this.value.replace(/\D/g, '');
+                if (this.value.length > maxLength) {
+                    this.value = this.value.slice(0, maxLength);
+                }
+                verificarCampos(); // Verificar después de cada cambio
+            });
+        }
+
+        function validarCorreo(input) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            input.addEventListener('input', function () {
+                input.setCustomValidity(regex.test(this.value) ? "" : "Correo electrónico no válido");
+                verificarCampos(); // Verificar después de cada cambio
+            });
+        }
+
+        function bloquearFechaFutura(input) {
+            const hoy = new Date().toISOString().split("T")[0];
+            input.setAttribute("max", hoy);
+            input.addEventListener('keydown', function(event) { event.preventDefault(); });
+            input.addEventListener('paste', function(event) { event.preventDefault(); });
+            input.addEventListener('input', verificarCampos); // Verificar después de cada cambio
+        }
+
+        // Aplicar restricciones a cada campo
+        soloLetras(nombreInput);
+        soloLetras(apellidoInput);
+        soloNumeros(dniInput, 8);
+        soloNumeros(telefonoInput, 9); // Teléfono: exactamente 9 dígitos
+        validarCorreo(correoInput);
+        bloquearFechaFutura(fechaNacimientoInput);
+        zonaAsignadaSelect.addEventListener('change', verificarCampos); // Validar zona asignada al cambiar
+
+        // Evitar recarga y mostrar el modal cuando los campos sean válidos
+        creationButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            creationModal.classList.add('show');
+        });
+
+        // Cerrar el modal al hacer clic en "Aceptar"
+        closeCreationModalButton.addEventListener('click', function() {
+            creationModal.classList.remove('show');
+            window.location.href = 'gestion_usuarios.html';
+        });
+    });
+</script>
+
+
+
+
+
+
+
 
 </body>
 </html>

@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>PetLink</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/aditional.css">
+    <link rel="stylesheet" href="assets/css/popup-window.css">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <h1 class="logo" style="display: inline-block;"><strong>DATOS DE JUAN PÉREZ</strong></h1>
+                </header>
+
+                <!-- Información de Juan Pérez -->
+                <section class="banner">
+                    <div class="content">
+                        <header>
+                            <img src="images/form.png" class="icons">
+                            <h2>Información Personal</h2>
+                        </header>
+                        <p>Estos son los detalles personales de Juan Pérez registrados en el sistema.</p>
+
+                        <div class="row gtr-uniform">
+                            <!-- Nombre -->
+                            <div class="col-6 col-12-xsmall">
+                                <label for="nombre" class="input-label">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" value="Juan" readonly required />
+                            </div>
+
+                            <!-- Apellido -->
+                            <div class="col-6 col-12-xsmall">
+                                <label for="apellido" class="input-label">Apellido</label>
+                                <input type="text" id="apellido" name="apellido" value="Pérez" readonly required />
+                            </div>
+
+                            <!-- DNI -->
+                            <div class="col-6 col-12-xsmall">
+                                <label for="dni" class="input-label">DNI</label>
+                                <input type="text" id="dni" name="dni" value="12345678" readonly required />
+                            </div>
+
+                            <!-- Dirección -->
+                            <div class="col-6 col-12-xsmall">
+                                <label for="direccion" class="input-label">Dirección</label>
+                                <input type="text" id="direccion" name="direccion" value="Calle Falsa 123, Lima" readonly />
+                            </div>
+
+                            <!-- Distrito -->
+                            <div class="col-6 col-12-xsmall">
+                                <label for="distrito" class="input-label">Distrito</label>
+                                <select id="distrito" name="distrito" disabled>
+                                    <option value="San Miguel" selected>San Miguel</option>
+                                    <option value="Ancon">Ancon</option>
+                                    <option value="Santa Rosa">Santa Rosa</option>
+                                    <!-- Añade más opciones aquí -->
+                                </select>
+                            </div>
+
+                            <!-- Correo Electrónico -->
+                            <div class="col-12">
+                                <label for="correo" class="input-label">Correo electrónico</label>
+                                <input type="email" id="correo" name="correo" value="juan.perez@gmail.com" readonly required />
+                            </div>
+
+                            <!-- Botones -->
+                            <div class="col-12">
+                                <ul class="actions form-buttons">
+                                    <li><a href="#" class="button primary big" id="editarBtn">Editar</a></li>
+                                    <li><a href="#" class="button primary big" id="guardarBtn" style="display: none;">Guardar</a></li>
+                                    <li><a href="lista_usuarios.html" class="button big">Regresar</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section class="alt" id="sidebar-header">
+                    <img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+                    <p id="sidebar-title">PetLink</p>
+                </section>
+
+                <!-- Perfil -->
+                <section class="perfil">
+                    <div class="mini-posts">
+                        <article>
+                            <img src="images/aa.png" alt="" id="image-perfil">
+                            <h2 id="usuario">Administrador</h2>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li>
+                            <span class="opener">Gestión de Usuarios</span>
+                            <ul>
+                                <li><a href="gestion_usuarios.html">Formulario Coordinador Zonal</a></li>
+                                <li><a href="lista_usuarios.html">Lista de Usuarios</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="historial.html">Gestión de Eventos</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Logout -->
+                <nav id="logout">
+                    <a href="../bienvenidos.html" id="cerrar-sesion">Cerrar Sesión</a>
+                </nav>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal para confirmación -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p id="modal-message">¿Estás seguro de guardar los cambios?</p>
+            <ul class="actions modal-buttons">
+                <li><a href="#" class="button primary big" id="confirmarGuardar">Sí</a></li>
+                <li><a href="#" class="button big" id="cancelarGuardar">No</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Script de validaciones y manejo de modales -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const nombreInput = document.getElementById('nombre');
+            const apellidoInput = document.getElementById('apellido');
+            const dniInput = document.getElementById('dni');
+            const correoInput = document.getElementById('correo');
+            const distritoSelect = document.getElementById('distrito');
+            const editarBtn = document.getElementById('editarBtn');
+            const guardarBtn = document.getElementById('guardarBtn');
+            const modal = document.getElementById('modal');
+            const confirmarGuardar = document.getElementById('confirmarGuardar');
+            const cancelarGuardar = document.getElementById('cancelarGuardar');
+
+            // Habilitar edición
+            editarBtn.addEventListener('click', function () {
+                document.querySelectorAll('input').forEach(input => input.removeAttribute('readonly'));
+                distritoSelect.removeAttribute('disabled');
+                guardarBtn.style.display = 'inline-block';
+            });
+
+            // Función para solo permitir letras
+            function soloLetras(input) {
+                input.addEventListener('input', function () {
+                    this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '');
+                });
+            }
+
+            // Validación de longitud del DNI (8 dígitos)
+            dniInput.addEventListener('input', function () {
+                this.value = this.value.replace(/\D/g, '');
+                if (this.value.length > 8) {
+                    this.value = this.value.slice(0, 8);
+                }
+            });
+
+            // Validación de correo
+            function validarCorreo(input) {
+                const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                input.addEventListener('input', function () {
+                    input.setCustomValidity(regex.test(this.value) ? "" : "Correo electrónico no válido");
+                });
+            }
+
+            // Aplicar validaciones
+            soloLetras(nombreInput);
+            soloLetras(apellidoInput);
+            validarCorreo(correoInput);
+
+            // Mostrar el modal al guardar
+            guardarBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+                modal.style.display = 'block';
+            });
+
+            // Confirmar guardado
+            confirmarGuardar.addEventListener('click', function () {
+                modal.style.display = 'none';
+                alert('Cambios guardados exitosamente.');
+                document.querySelectorAll('input').forEach(input => input.setAttribute('readonly', true));
+                distritoSelect.setAttribute('disabled', true);
+                guardarBtn.style.display = 'none';
+            });
+
+            // Cancelar guardado
+            cancelarGuardar.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+        });
+    </script>
+
+</body>
+
+</html>

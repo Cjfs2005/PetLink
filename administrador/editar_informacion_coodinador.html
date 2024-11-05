@@ -6,15 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/aditional.css">
+    <link rel="stylesheet" href="assets/css/popup-window.css">
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
-    <style>
-        /* Estilos del input bloqueado en gris */
-        input[readonly], select[readonly] {
-            background-color: #f0f0f0;
-            color: #555;
-            cursor: not-allowed;
-        }
-    </style>
 </head>
 <body class="is-preload">
 
@@ -27,42 +20,43 @@
 
                 <!-- Header -->
                 <header id="header">
-                    <h1 class="logo"><strong>Creación de Usuario</strong></h1>
+                    <h1 class="logo" style="display: inline-block;"><strong>EDITAR INFORMACIÓN DEL COORDINADOR JUAN PÉREZ</strong></h1>
                 </header>
 
-                <!-- Banner -->
+                <!-- Información Personal -->
                 <section class="banner">
                     <div class="content">
                         <header>
                             <img src="images/form.png" class="icons">
-                            <h2>Creación de Usuario del Coordinador Zonal</h2>
+                            <h2>Editar Información Personal del Coordinador</h2>
                         </header>
+                        <p>Modifique los detalles del coordinador Juan Pérez en el formulario a continuación.</p>
 
                         <div class="row gtr-uniform">
                             <div class="col-6 col-12-xsmall">
                                 <label for="nombres" class="input-label">Nombres</label>
-                                <input type="text" id="nombres" value="Juan" readonly required />
+                                <input type="text" id="nombre" value="Juan" required />
                             </div>
                             <div class="col-6 col-12-xsmall">
                                 <label for="apellidos" class="input-label">Apellidos</label>
-                                <input type="text" id="apellidos" value="Pérez" readonly required />
+                                <input type="text" id="apellido" value="Pérez" required />
                             </div>
                             <div class="col-6 col-12-xsmall">
                                 <label for="dni" class="input-label">DNI</label>
-                                <input type="text" id="dni" value="12345678" readonly required />
+                                <input type="text" id="dni" value="12345678" required />
                             </div>
                             <div class="col-6 col-12-xsmall">
                                 <label for="telefono" class="input-label">Número de teléfono</label>
-                                <input type="text" id="telefono" value="987654321" readonly required />
+                                <input type="text" id="telefono" value="987654321" required />
                             </div>
                             <div class="col-12">
                                 <label for="email" class="input-label">Correo Electrónico</label>
-                                <input type="email" id="email" value="juan.perez@gmail.com" readonly required />
+                                <input type="email" id="email" value="juan.perez@gmail.com" required />
                             </div>
                             <div class="col-6 col-12-xsmall">
                                 <label for="zona" class="input-label">Zona asignada</label>
-                                <select id="zona" readonly required>
-                                    <option value="Norte">Norte</option>
+                                <select id="zona" required>
+                                    <option value="Norte" selected>Norte</option>
                                     <option value="Sur">Sur</option>
                                     <option value="Este">Este</option>
                                     <option value="Oeste">Oeste</option>
@@ -70,30 +64,33 @@
                             </div>
                             <div class="col-6 col-12-xsmall">
                                 <label for="fechaNacimiento" class="input-label">Fecha de nacimiento</label>
-                                <input type="date" id="fechaNacimiento" value="1990-01-01" readonly required />
+                                <input type="date" id="fechaNacimiento" value="1990-01-01" required />
                             </div>
                             <div class="col-12">
                                 <ul class="actions form-buttons">
-                                    <li><a href="#" class="button primary big" id="editarBtn">Editar</a></li>
-                                    <li><a href="#" class="button primary big" id="guardarBtn" style="display: none;">Guardar</a></li>
-                                    <li><a href="lista_usuarios.html" class="button big">Regresar</a></li>
+                                    <li><a href="#" class="button primary big disabled" id="guardarBtn">Guardar</a></li>
+                                    <li><a href="informacion_personal_coordinador.html" class="button big">Cancelar</a></li>
                                 </ul>
                             </div>
                         </div>
+
                     </div>
                 </section>
 
             </div>
         </div>
 
+        
         <!-- Sidebar -->
         <div id="sidebar">
             <div class="inner">
+                <!-- Logo -->
                 <section class="alt" id="sidebar-header">
                     <img src="images/favicon.png" alt="Logo" id="sidebar-icon">
                     <p id="sidebar-title">PetLink</p>
                 </section>
 
+                <!-- Perfil -->
                 <section class="perfil">
                     <div class="mini-posts">
                         <article>
@@ -103,6 +100,7 @@
                     </div>
                 </section>
 
+                <!-- Menu -->
                 <nav id="menu">
                     <header class="major">
                         <h2>Menu</h2>
@@ -123,6 +121,7 @@
                     </ul>
                 </nav>
 
+                <!-- Logout -->    
                 <nav id="logout">
                     <a href="../bienvenidos.html" id="cerrar-sesion">Cerrar Sesión</a>
                 </nav>
@@ -132,16 +131,6 @@
 
     </div>
 
-    <!-- Ventana emergente -->
-    <div class="modal">
-        <div class="modal-content">
-            <p id="modal-message">¡Se creó el usuario con éxito!</p>
-            <ul class="actions modal-buttons">
-                <li><a href="#" class="button primary big" id="closeModal">Aceptar</a></li>
-            </ul>
-        </div>
-    </div>
-
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
@@ -149,35 +138,76 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Script para manejar la ventana emergente y validaciones -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const editarBtn = document.getElementById('editarBtn');
-            const guardarBtn = document.getElementById('guardarBtn');
-            const modal = document.getElementById('modal');
-            const closeModal = document.getElementById('closeModal');
+        document.addEventListener('DOMContentLoaded', function () {
+            const nombreInput = document.getElementById('nombre');
+            const apellidoInput = document.getElementById('apellido');
+            const dniInput = document.getElementById('dni');
+            const telefonoInput = document.getElementById('telefono');
+            const emailInput = document.getElementById('email');
             const zonaSelect = document.getElementById('zona');
-
-            // Habilitar edición y mostrar el botón Guardar
-            editarBtn.addEventListener('click', function() {
-                document.querySelectorAll('input').forEach(input => input.removeAttribute('readonly'));
-                zonaSelect.removeAttribute('readonly'); // Permitir seleccionar zona
-                zonaSelect.selectedIndex = 0; // Dejar la opción Norte seleccionada
-                guardarBtn.style.display = 'inline-block'; // Mostrar el botón Guardar
-            });
-
-            // Mostrar el modal cuando se presiona el botón "Aceptar"
-            guardarBtn.addEventListener('click', function(event) {
-                event.preventDefault(); // Evita que se envíe el formulario
-                // Mostrar el modal
-                modal.classList.add('show'); 
-            });
-
-            // Cerrar el modal al presionar el botón "Aceptar" dentro del modal
-            closeModal.addEventListener('click', function() {
-                modal.classList.remove('show'); // Oculta el modal
+            const fechaNacimientoInput = document.getElementById('fechaNacimiento');
+            const guardarBtn = document.getElementById('guardarBtn');
+    
+            function verificarCampos() {
+                const camposValidos = (
+                    nombreInput.value.trim() !== "" &&
+                    apellidoInput.value.trim() !== "" &&
+                    dniInput.value.length === 8 &&
+                    telefonoInput.value.length === 9 &&
+                    emailInput.checkValidity() &&
+                    zonaSelect.value !== "" &&
+                    fechaNacimientoInput.value !== ""
+                );
+    
+                if (camposValidos) {
+                    guardarBtn.classList.remove('disabled');
+                    guardarBtn.style.pointerEvents = 'auto';
+                } else {
+                    guardarBtn.classList.add('disabled');
+                    guardarBtn.style.pointerEvents = 'none';
+                }
+            }
+    
+            function soloLetras(input) {
+                input.addEventListener('input', () => {
+                    input.value = input.value.replace(/[^a-zA-Z\s]/g, ''); // Elimina números y caracteres especiales
+                    verificarCampos();
+                });
+            }
+    
+            function soloNumeros(input, maxLength) {
+                input.addEventListener('input', () => {
+                    input.value = input.value.replace(/\D/g, '').slice(0, maxLength); // Elimina letras y limita la longitud
+                    verificarCampos();
+                });
+            }
+    
+            // Aplicar las funciones de validación a cada campo correspondiente
+            soloLetras(nombreInput);
+            soloLetras(apellidoInput);
+            soloNumeros(dniInput, 8);
+            soloNumeros(telefonoInput, 9);
+            emailInput.addEventListener('input', verificarCampos);
+            zonaSelect.addEventListener('change', verificarCampos);
+            fechaNacimientoInput.addEventListener('change', verificarCampos);
+    
+            // Al hacer clic en "Editar", se habilita la edición de campos
+            document.getElementById('editarBtn').addEventListener('click', function (e) {
+                e.preventDefault();
+                nombreInput.removeAttribute('readonly');
+                apellidoInput.removeAttribute('readonly');
+                dniInput.removeAttribute('readonly');
+                telefonoInput.removeAttribute('readonly');
+                emailInput.removeAttribute('readonly');
+                zonaSelect.removeAttribute('readonly');
+                fechaNacimientoInput.removeAttribute('readonly');
+                guardarBtn.style.display = 'inline-block';
+                verificarCampos(); // Verifica la validez inicial al habilitar los campos
             });
         });
     </script>
+    
+    
 </body>
 </html>

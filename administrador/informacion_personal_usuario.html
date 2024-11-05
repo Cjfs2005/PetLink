@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>PetLink</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/aditional.css">
+    <link rel="stylesheet" href="assets/css/popup-window.css">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <img src="images/cjfs.png" class="icons">
+                    <h1 class="logo" style="display: inline-block;"><strong>DATOS DE JUAN PÉREZ</strong></h1>
+                </header>
+
+                <!-- Información Personal -->
+                <section class="banner">
+                    <div class="content">
+                        <header>
+                            <img src="images/form.png" class="icons">
+                            <h2>Información Personal</h2>
+                        </header>
+                        <p>Estos son los detalles personales de Juan Pérez registrados en el sistema.</p>
+
+                        <div class="row gtr-uniform">
+                            <!-- Nombre -->
+                            <div class="col-6 col-12-xsmall">
+                                <label for="nombre" class="input-label">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" value="Juan" readonly />
+                            </div>
+
+                            <!-- Apellido -->
+                            <div class="col-6 col-12-xsmall">
+                                <label for="apellido" class="input-label">Apellido</label>
+                                <input type="text" id="apellido" name="apellido" value="Pérez" readonly />
+                            </div>
+
+                            <!-- DNI -->
+                            <div class="col-6 col-12-xsmall">
+                                <label for="dni" class="input-label">DNI</label>
+                                <input type="text" id="dni" name="dni" value="12345678" readonly />
+                            </div>
+
+                            <!-- Dirección -->
+                            <div class="col-6 col-12-xsmall">
+                                <label for="direccion" class="input-label">Dirección</label>
+                                <input type="text" id="direccion" name="direccion" value="Calle Falsa 123, Lima" readonly />
+                            </div>
+
+                            <!-- Distrito -->
+                            <div class="col-6 col-12-xsmall">
+                                <label for="distrito" class="input-label">Distrito</label>
+                                <input type="text" id="distrito" name="distrito" value="San Miguel" readonly />
+                            </div>
+
+                            <!-- Correo Electrónico -->
+                            <div class="col-12">
+                                <label for="correo" class="input-label">Correo Electrónico</label>
+                                <input type="email" id="correo" name="correo" value="juan.perez@gmail.com" readonly />
+                            </div>
+
+                            <!-- Botones -->
+                            <div class="col-12">
+                                <ul class="actions form-buttons">
+                                    <li><a href="editar_informacion_usuario.html" class="button primary big">Editar</a></li>
+                                    <li><a href="lista_usuarios.html" class="button big">Regresar</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section class="alt" id="sidebar-header">
+                    <img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+                    <p id="sidebar-title">PetLink</p>
+                </section>
+
+                <!-- Perfil -->
+                <section class="perfil">
+                    <div class="mini-posts">
+                        <article>
+                            <img src="images/aa.png" alt="" id="image-perfil">
+                            <h2 id="usuario">Administrador</h2>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li>
+                            <span class="opener">Gestión de Usuarios</span>
+                            <ul>
+                                <li><a href="gestion_usuarios.html">Formulario Coordinador Zonal</a></li>
+                                <li><a href="lista_usuarios.html">Lista de Usuarios</a></li>
+                                <li><a href="lista_albergue.html">Lista de Albergues</a></li>
+                                <li><a href="lista_coordinador.html">Lista de Coordinadores zonales</a></li>
+                                <li><a href="solicitud_albergue.html">Solicitudes de Albergue</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="historial.html">Gestión de Eventos</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Logout -->    
+                <nav id="logout">
+                    <a href="../bienvenidos.html" id="cerrar-sesion">Cerrar Sesión</a>
+                </nav>
+
+            </div>
+        </div>
+
+                <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    </div>
+
+</body>
+</html>

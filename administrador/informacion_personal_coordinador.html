@@ -6,15 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/aditional.css">
+    <link rel="stylesheet" href="assets/css/popup-window.css">
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
-    <style>
-        /* Estilos del input bloqueado en gris */
-        input[readonly], select[readonly] {
-            background-color: #f0f0f0;
-            color: #555;
-            cursor: not-allowed;
-        }
-    </style>
 </head>
 <body class="is-preload">
 
@@ -27,16 +20,18 @@
 
                 <!-- Header -->
                 <header id="header">
-                    <h1 class="logo"><strong>Creación de Usuario</strong></h1>
+                    <img src="images/cjfs.png" class="icons">
+                    <h1 class="logo" style="display: inline-block;"><strong>DATOS DEL COORDINADOR ZONAL JUAN PEREZ</strong></h1>
                 </header>
 
-                <!-- Banner -->
+                <!-- Información Personal -->
                 <section class="banner">
                     <div class="content">
                         <header>
                             <img src="images/form.png" class="icons">
-                            <h2>Creación de Usuario del Coordinador Zonal</h2>
+                            <h2>Información Personal</h2>
                         </header>
+                        <p>Estos son los detalles personales del coordinador zonal Juan Pérez registrados en el sistema.</p>
 
                         <div class="row gtr-uniform">
                             <div class="col-6 col-12-xsmall">
@@ -74,7 +69,7 @@
                             </div>
                             <div class="col-12">
                                 <ul class="actions form-buttons">
-                                    <li><a href="#" class="button primary big" id="editarBtn">Editar</a></li>
+                                    <li><a href="editar_informacion_coodinador.html" class="button primary big" id="editarBtn">Editar</a></li>
                                     <li><a href="#" class="button primary big" id="guardarBtn" style="display: none;">Guardar</a></li>
                                     <li><a href="lista_usuarios.html" class="button big">Regresar</a></li>
                                 </ul>
@@ -86,14 +81,17 @@
             </div>
         </div>
 
+        
         <!-- Sidebar -->
         <div id="sidebar">
             <div class="inner">
+                <!-- Logo -->
                 <section class="alt" id="sidebar-header">
                     <img src="images/favicon.png" alt="Logo" id="sidebar-icon">
                     <p id="sidebar-title">PetLink</p>
                 </section>
 
+                <!-- Perfil -->
                 <section class="perfil">
                     <div class="mini-posts">
                         <article>
@@ -103,6 +101,7 @@
                     </div>
                 </section>
 
+                <!-- Menu -->
                 <nav id="menu">
                     <header class="major">
                         <h2>Menu</h2>
@@ -123,6 +122,7 @@
                     </ul>
                 </nav>
 
+                <!-- Logout -->    
                 <nav id="logout">
                     <a href="../bienvenidos.html" id="cerrar-sesion">Cerrar Sesión</a>
                 </nav>
@@ -130,54 +130,14 @@
             </div>
         </div>
 
-    </div>
-
-    <!-- Ventana emergente -->
-    <div class="modal">
-        <div class="modal-content">
-            <p id="modal-message">¡Se creó el usuario con éxito!</p>
-            <ul class="actions modal-buttons">
-                <li><a href="#" class="button primary big" id="closeModal">Aceptar</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Scripts -->
+                <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Script para manejar la ventana emergente y validaciones -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const editarBtn = document.getElementById('editarBtn');
-            const guardarBtn = document.getElementById('guardarBtn');
-            const modal = document.getElementById('modal');
-            const closeModal = document.getElementById('closeModal');
-            const zonaSelect = document.getElementById('zona');
+    </div>
 
-            // Habilitar edición y mostrar el botón Guardar
-            editarBtn.addEventListener('click', function() {
-                document.querySelectorAll('input').forEach(input => input.removeAttribute('readonly'));
-                zonaSelect.removeAttribute('readonly'); // Permitir seleccionar zona
-                zonaSelect.selectedIndex = 0; // Dejar la opción Norte seleccionada
-                guardarBtn.style.display = 'inline-block'; // Mostrar el botón Guardar
-            });
-
-            // Mostrar el modal cuando se presiona el botón "Aceptar"
-            guardarBtn.addEventListener('click', function(event) {
-                event.preventDefault(); // Evita que se envíe el formulario
-                // Mostrar el modal
-                modal.classList.add('show'); 
-            });
-
-            // Cerrar el modal al presionar el botón "Aceptar" dentro del modal
-            closeModal.addEventListener('click', function() {
-                modal.classList.remove('show'); // Oculta el modal
-            });
-        });
-    </script>
 </body>
 </html>

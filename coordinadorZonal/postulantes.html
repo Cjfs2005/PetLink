@@ -13,6 +13,16 @@
 		<link rel="stylesheet" href="assets/css/aditional.css">
 		<link rel="stylesheet" href="assets/css/popup-window.css">
 		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+		<!--Agregar-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css"/>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+		<!--Fin Agregar-->
+
 	</head>
 	<body class="is-preload">
 
@@ -30,154 +40,132 @@
 								</header>
 
 							<!-- Banner -->
-								<section class="banner">
-									<div class="content">
-										<p><strong>Descripción:</strong> En la siguiente tabla se muestra a los usuarios que desean ser hogares temporales. Usted tendrá que revisar su información, llamar al postulante y realizar una visita inopinada en el periodo acordado. Después de haber validado, aceptará o rechazará su postulación. Una vez aceptado, será visible su información para los albergues.</p>
-										
-										<div class="table-wrapper">
-											<table>
-												<thead>
-													<tr>
-														<th style="width: 20%;">Nombres y apellidos</th>
-														<th style="width: 15%">Celular</th>
-														<th style="width: 15%;">¿Se llamó al postulante?</th>
-														<th style="width: 15%;">Distrito</th>
-														<th style="width: 20%;">Fecha de visita</th>
-														<th style="width: 15%;">Acciones</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr style="background-color: #f2f2f2;">
-														
-														<td>Cristiano Ronaldo Aveiro Dos Santos</td>
-														<td>992 338 293</td>
-														<td>
-															<select id="llamada">
-																<option value="1">No</option>
-																<option value="2">Sí</option>
-															</select>
-														</td>
-														<td>Miraflores</td>
-														
-														<td>
-															<input type="date" id="fechaInicio" name="fechaInicio" />
-														</td>
-														<td>
-															<ul class="icons">
-																<li><a href="detalles_postulante.html" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
-
-																<li><a href="#" class="icon fas fa-check-circle" title="Aceptar postulación" id="openModal"><span class="label">Aceptar</span></a></li>
-
-																<li><a href="#" class="icon fas fa-trash-alt" title="Rechazar postulación" id="openModal1"><span class="label">Eliminar</span></a></li>
-
-															</ul>
-														</td>
-													</tr>
-													<tr style="background-color: #f2f2f2;">
-														
-														<td>Mariana Meng Cheng Gonzales</td>
-														<td>992 372 302</td>
-														<td>
-															<select id="llamada">
-																<option value="1">No</option>
-																<option value="2">Sí</option>
-															</select>
-														</td>
-														<td>Cercado de Lima</td>
-														
-														<td>
-															<input type="date" id="fechaInicio" name="fechaInicio" />
-														</td>
-														<td>
-															<ul class="icons">
-																<li><a href="#" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
-																<li><a href="#" class="icon fas fa-check-circle" title="Aceptar postulación" id="openModal"><span class="label">Aceptar</span></a></li>
-
-																<li><a href="#" class="icon fas fa-trash-alt" title="Rechazar postulación" id="openModal1"><span class="label">Eliminar</span></a></li>
-															</ul>
-														</td>
-                                                    </tr>
-
-													<tr style="background-color: #f2f2f2;">
-															
-														<td>Jair Sneider Aguilera Inca</td>
-														<td>923 028 382</td>
-														<td>
-															<select id="llamada">
-																<option value="1">No</option>
-																<option value="2">Sí</option>
-															</select>
-														</td>
-														<td>Santa Anita</td>
-														
-														<td>
-															<input type="date" id="fechaInicio" name="fechaInicio" />
-														</td>
-														<td>
-															<ul class="icons">
-																<li><a href="#" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
-																<li><a href="#" class="icon fas fa-check-circle" title="Aceptar postulación" id="openModal"><span class="label">Aceptar</span></a></li>
-
-																<li><a href="#" class="icon fas fa-trash-alt" title="Rechazar postulación" id="openModal1"><span class="label">Eliminar</span></a></li>
-															</ul>
-														</td>
-													</tr>
-
-													<tr style="background-color: #f2f2f2;">
-														
-														<td>Darío Rodrigo Gomez Alarcón</td>
-														<td>982 990 253</td>
-														<td>
-															<select id="llamada">
-																<option value="1">No</option>
-																<option value="2">Sí</option>
-															</select>
-														</td>
-														<td>El Agustino</td>
-														
-														<td>
-															<input type="date" id="fechaInicio" name="fechaInicio" />
-														</td>
-														<td>
-															<ul class="icons">
-																<li><a href="#" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
-																<li><a href="#" class="icon fas fa-check-circle" title="Aceptar postulación" id="openModal"><span class="label">Aceptar</span></a></li>
-
-																<li><a href="#" class="icon fas fa-trash-alt" title="Rechazar postulación" id="openModal1"><span class="label">Eliminar</span></a></li>
-															</ul>
-														</td>
-													</tr>
-
-													<tr style="background-color: #f2f2f2;">
-															
-														<td>Laura Mildre Risco Fernández</td>
-														<td>924 928 182</td>
-														<td>
-															<select id="llamada">
-																<option value="1">No</option>
-																<option value="2">Sí</option>
-															</select>
-														</td>
-														<td>Pueblo Libre</td>
-														
-														<td>
-															<input type="date" id="fechaInicio" name="fechaInicio" />
-														</td>
-														<td>
-															<ul class="icons">
-																<li><a href="#" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
-																<li><a href="#" class="icon fas fa-check-circle" title="Aceptar postulación" id="openModal"><span class="label">Aceptar</span></a></li>
-
-																<li><a href="#" class="icon fas fa-trash-alt" title="Rechazar postulación" id="openModal1"><span class="label">Eliminar</span></a></li>
-															</ul>
-														</td>
-													</tr>
-													
-												</tbody>
-											</table>
-										</div>
+							<section class="banner">
+								<div class="content">
+									<p><strong>Descripción:</strong> En la siguiente tabla se muestra a los usuarios que desean ser hogares temporales. 
+										Usted tendrá que revisar su información, llamar al postulante y realizar una visita inopinada en el periodo acordado. 
+										Después de haber validado, aceptará o rechazará su postulación. 
+										Una vez aceptado, será visible su información para los albergues.</p>
+									
+									<div class="table-responsive">
+										<table table id="example" class="table table-striped" style="width:100%;">
+											<thead>
+												<tr>
+													<th>DNI</th>
+													<th>Nombres y apellidos</th>
+													<th>Celular</th>
+													<th>¿Se llamó al postulante?</th>
+													<th>Distrito</th>
+													<th>Fecha de visita</th>
+													<th>Fecha de postulación</th>
+													<th>Acciones</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>12345678</td>
+													<td>Jair Sneider Aguilera Inca</td>
+													<td>997058063</td>
+													<td>
+														<select class="llamada">
+															<option value="1">No</option>
+															<option value="2">Sí</option>
+														</select>
+													</td>
+													<td>San Miguel</td>
+													<td>
+														<input type="date" class="fechaVisita" name="fechaVisita"/>
+													</td>
+													<td>26/03/07</td>
+													<td>
+														<ul class="icons">
+															<li><a href="#" class="icon fas fa-check-circle open-modal-found openModal" title="Aceptar postulación"><span class="label">Aceptar</span></a></li> <!-- fa-check para aceptar -->
+															<li><a href="#" class="icon fas fa-times-circle open-modal-update openModal1" title="Rechazar postulación"><span class="label">Rechazar</span></a></li> <!-- fa-times para rechazar -->
+															<li><a href="detalles_postulante.html" class="open-modal-info-trufa icon fas fa-eye" title="Ver más información"><span class="label">Ver detalles</span></a></li> <!-- fa-eye para ver -->
+															<li><a href="#" class="icon fas fa-edit"><span class="label">Modificar</span></a></li> <!-- fa-edit para modificar -->
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<td>12333243</td>
+													<td>Gianfranco Enriquez Soel</td>
+													<td>961928802</td>
+													<td>
+														<select class="llamada">
+															<option value="1">No</option>
+															<option value="2">Sí</option>
+														</select>
+													</td>
+													<td>Rimac</td>
+													<td>
+														<input type="date" class="fechaVisita" name="fechaVisita"/>
+													</td>
+													<td>13/09/07</td>
+													<td>
+														<ul class="icons">
+															<li><a href="#" class="icon fas fa-check-circle open-modal-found openModal" title="Aceptar postulación"><span class="label">Aceptar</span></a></li> <!-- fa-check para aceptar -->
+															<li><a href="#" class="icon fas fa-times-circle open-modal-update openModal1" title="Rechazar postulación"><span class="label">Rechazar</span></a></li> <!-- fa-times para rechazar -->
+															<li><a href="detalles_postulante.html" class="open-modal-info-trufa icon fas fa-eye" title="Ver más información"><span class="label">Ver detalles</span></a></li> <!-- fa-eye para ver -->
+															<li><a href="#" class="icon fas fa-edit"><span class="label">Modificar</span></a></li> <!-- fa-edit para modificar -->
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<td>12345678</td>
+													<td>Jair Sneider Aguilera Inca</td>
+													<td>997058063</td>
+													<td>
+														<select class="llamada">
+															<option value="1">No</option>
+															<option value="2">Sí</option>
+														</select>
+													</td>
+													<td>San Miguel</td>
+													<td>
+														<input type="date" class="fechaVisita" name="fechaVisita"/>
+													</td>
+													<td>26/03/07</td>
+													<td>
+														<ul class="icons">
+															<li><a href="#" class="icon fas fa-check-circle open-modal-found openModal" title="Aceptar postulación"><span class="label">Aceptar</span></a></li> <!-- fa-check para aceptar -->
+															<li><a href="#" class="icon fas fa-times-circle open-modal-update openModal1" title="Rechazar postulación"><span class="label">Rechazar</span></a></li> <!-- fa-times para rechazar -->
+															<li><a href="detalles_postulante.html" class="open-modal-info-trufa icon fas fa-eye" title="Ver más información"><span class="label">Ver detalles</span></a></li> <!-- fa-eye para ver -->
+															<li><a href="#" class="icon fas fa-edit"><span class="label">Modificar</span></a></li> <!-- fa-edit para modificar -->
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<td>12333243</td>
+													<td>Gianfranco Enriquez Soel</td>
+													<td>961928802</td>
+													<td>
+														<select class="llamada">
+															<option value="1">No</option>
+															<option value="2">Sí</option>
+														</select>
+													</td>
+													<td>Rimac</td>
+													<td>
+														<input type="date" class="fechaVisita" name="fechaVisita"/>
+													</td>
+													<td>13/09/07</td>
+													<td>
+														<ul class="icons">
+															<li><a href="#" class="icon fas fa-check-circle open-modal-found openModal" title="Aceptar postulación"><span class="label">Aceptar</span></a></li> <!-- fa-check para aceptar -->
+															<li><a href="#" class="icon fas fa-times-circle open-modal-update openModal1" title="Rechazar postulación"><span class="label">Rechazar</span></a></li> <!-- fa-times para rechazar -->
+															<li><a href="detalles_postulante.html" class="open-modal-info-trufa icon fas fa-eye" title="Ver más información"><span class="label">Ver detalles</span></a></li> <!-- fa-eye para ver -->
+															<li><a href="#" class="icon fas fa-edit"><span class="label">Modificar</span></a></li> <!-- fa-edit para modificar -->
+														</ul>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<script>
+											new DataTable('#example');
+										</script>
 									</div>
-								</section>
+								</div>
+							</section>
 
 						</div>
 					</div>
@@ -255,63 +243,86 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-		<!-- Modal -->
-		<div id="modal" class="modal">
+		<!-- Modal Aceptar -->
+		<div class="modal modal-accept">
 			<div class="modal-content">
-				<!-- Botón cerrar -->
 				<span class="close-btn">&times;</span>
 				<p>El postulante ha sido aceptado con éxito.</p>
-				<!-- Botones de Aceptar y Cancelar -->
 				<ul class="actions modal-buttons">
-					<li><a href="postulantes.html" class="button primary big" id="acceptButton">Aceptar</a></li>
+					<li><a href="postulantes.html" class="button primary big accept-action">Aceptar</a></li>
 				</ul>
 			</div>
 		</div>
 
-		<div id="modal1" class="modal1">
+		<!-- Modal Rechazar -->
+		<div class="modal modal-reject">
 			<div class="modal-content">
 				<span class="close-btn">&times;</span>
 				<p>Se ha rechazado la solicitud del postulante.</p>
 				<ul class="actions modal-buttons">
-					<li><a href="" class="button primary big" id="acceptButton1">OK</a></li>
+					<li><a href="#" class="button primary big reject-action">OK</a></li>
 				</ul>
 			</div>
 		</div>
+
 	
 		<!-- Script dentro del mismo HTML -->
 		<script>
-				// Esperamos a que todo el DOM esté cargado
 			document.addEventListener('DOMContentLoaded', function() {
-				// Función general para manejar modales
-				function handleModal(modalId, openModalId, closeModalClass, acceptButtonId) {
-					const openModalButton = document.getElementById(openModalId); // Botón que abre el modal
-					const modal = document.getElementById(modalId);               // El modal
-					const closeModalButton = modal.querySelector(closeModalClass); // Botón para cerrar el modal (X)
-					const acceptButton = document.getElementById(acceptButtonId); // Botón de Aceptar
-					 // Botón de Cancelar
+			// Función para abrir un modal
+			function openModal(modal) {
+				modal.classList.add('show');
+			}
 
-					// Función para abrir el modal
-					openModalButton.addEventListener('click', function() {
-						modal.classList.add('show'); // Mostrar el modal
-					});
+			// Función para cerrar un modal
+			function closeModal(modal) {
+				modal.classList.remove('show');
+			}
 
-					// Función para cerrar el modal al hacer clic en la "X"
-					closeModalButton.addEventListener('click', function() {
-						modal.classList.remove('show'); // Ocultar el modal
-					});
+			// Configuración del Modal Aceptar
+			const modalAccept = document.querySelector('.modal-accept');
+			const openModalAcceptButtons = document.querySelectorAll('.open-modal-found'); // Botones para abrir el modal de aceptar
+			const closeModalAcceptButton = modalAccept.querySelector('.close-btn');
+			const acceptActionButton = modalAccept.querySelector('.accept-action');
 
-					// Redirigir al hacer clic en el botón de aceptar
-					acceptButton.addEventListener('click', function() {
-						window.location.href = 'https://www.ejemplo.com';
-					});
-
-					
-				}
-
-				// Inicializar modales
-				handleModal('modal', 'openModal', '.close-btn', 'acceptButton');
-				handleModal('modal1', 'openModal1', '.close-btn', 'acceptButton1');
+			openModalAcceptButtons.forEach(button => {
+				button.addEventListener('click', function(event) {
+					event.preventDefault();
+					openModal(modalAccept);
+				});
 			});
+
+			closeModalAcceptButton.addEventListener('click', function() {
+				closeModal(modalAccept);
+			});
+
+			acceptActionButton.addEventListener('click', function(event) {
+				event.preventDefault();
+				closeModal(modalAccept); // O redirigir según tu necesidad
+			});
+
+			// Configuración del Modal Rechazar
+			const modalReject = document.querySelector('.modal-reject');
+			const openModalRejectButtons = document.querySelectorAll('.open-modal-update'); // Botones para abrir el modal de rechazar
+			const closeModalRejectButton = modalReject.querySelector('.close-btn');
+			const rejectActionButton = modalReject.querySelector('.reject-action');
+
+			openModalRejectButtons.forEach(button => {
+				button.addEventListener('click', function(event) {
+					event.preventDefault();
+					openModal(modalReject);
+				});
+			});
+
+			closeModalRejectButton.addEventListener('click', function() {
+				closeModal(modalReject);
+			});
+
+			rejectActionButton.addEventListener('click', function(event) {
+				event.preventDefault();
+				closeModal(modalReject);
+			});
+		});
 
 		</script>
 

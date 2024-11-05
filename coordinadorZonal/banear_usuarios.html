@@ -13,6 +13,16 @@
 		<link rel="stylesheet" href="assets/css/aditional.css">
 		<link rel="stylesheet" href="assets/css/popup-window.css">
 		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+		<!--Agregar-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css"/>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+		<!--Fin Agregar-->
+
 	</head>
 	<body class="is-preload">
 
@@ -29,72 +39,81 @@
 									<h1 class="logo"><strong>USUARIOS BANEADOS</strong></h1>
 								</header>
 
-							
-
 							<!-- Banner -->
-								<section class="banner">
-									<div class="content">
-										<p><strong>Descripción:</strong> Lista de usuarios que corresponden a su zona. Usted puede banear un usuario si considera que ha cometido actos discriminatorios o no</p>
-										
-										<div class="table-wrapper">
-											<table>
-												<thead>
-													<tr>
-														<th style="width: 40%;">Nombres y apellidos</th>
-														<th style="width: 20%">N° de rechazos</th>
-														<th style="width: 20%;">Acción</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr style="background-color: #f2f2f2;">
-														
-														<td>Jhon Nilo Reátegui Curto</td>
-														<td>2</td>
-														<td>
-															<li style="list-style: none;"><a href="escribir_motivo.html" class="button primary big">Banear usuario</a></li>
-														</td>
-														
-													</tr>
-													<tr style="background-color: #f2f2f2;">
-														
-														<td>Liliana Sully Núñez Balboa</td>
-														<td>0</td>
-														<td>
-															<li style="list-style: none;"><a href="escribir_motivo.html" class="button primary big">Banear usuario</a></li>
-														</td>
-											
-                                                    </tr>
-
-													<tr style="background-color: #f2f2f2;">
-															
-														<td>Ulises Christian Castillo Peralta</td>
-														<td>2</td>
-														<td>
-															<li style="list-style: none;"><a href="escribir_motivo.html" class="button primary big">Banear usuario</a></li>
-														</td>
-													</tr>
-
-													<tr style="background-color: #f2f2f2;">
-														
-														<td>Darío Rodrigo Gomez Alarcón</td>
-														<td>1</td>
-														<td>
-															<li style="list-style: none;"><a href="escribir_motivo.html" class="button primary big">Banear usuario</a></li>
-														</td>
-													</tr>
-
-													<tr style="background-color: #f2f2f2;">
-														<td>Laura Mildre Risco Fernández</td>
-														<td>0</td>
-														<td>
-															<li style="list-style: none;"><a href="escribir_motivo.html" class="button primary big">Banear usuario</a></li>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
+							<section class="banner">
+								<div class="content">
+									<p><strong>Descripción:</strong> Lista de usuarios que corresponden a su zona. 
+										Usted puede banear un usuario si considera que ha cometido actos discriminatorios o no</p>
+									
+									<div class="table-responsive">
+										<table table id="example" class="table table-striped" style="width:100%;">
+											<thead>
+												<tr>
+													<th>DNI</th>
+													<th>Nombres y apellidos</th>
+													<th>Celular</th>
+													<th>Distrito</th>
+													<th>N° de rechazos</th>
+													<th>Acciones</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>12345678</td>
+													<td>Jair Sneider Aguilera Inca</td>
+													<td>997058063</td>
+													<td>San Miguel</td>
+													<td>3</td>
+													<td>
+														<ul class="icons">
+															<li><a href="escribir_motivo.html" class="icon fas fa-times-circle" title="Rechazar postulación"><span class="label">Rechazar</span></a></li> <!-- fa-times para rechazar -->
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<td>12333243</td>
+													<td>Gianfranco Enriquez Soel</td>
+													<td>961928802</td>
+													<td>Rimac</td>
+													<td>1</td>
+													<td>
+														<ul class="icons">
+															<li><a href="escribir_motivo.html" class="icon fas fa-times-circle" title="Rechazar postulación"><span class="label">Rechazar</span></a></li> <!-- fa-times para rechazar -->
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<td>12345678</td>
+													<td>Jair Sneider Aguilera Inca</td>
+													<td>997058063</td>
+													<td>San Miguel</td>
+													<td>0</td>
+													<td>
+														<ul class="icons">
+															<li><a href="escribir_motivo.html" class="icon fas fa-times-circle" title="Rechazar postulación"><span class="label">Rechazar</span></a></li> <!-- fa-times para rechazar -->
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<td>12333243</td>
+													<td>Gianfranco Enriquez Soel</td>
+													<td>961928802</td>
+													<td>Rimac</td>
+													<td>1</td>
+													<td>
+														<ul class="icons">
+															<li><a href="escribir_motivo.html" class="icon fas fa-times-circle" title="Rechazar postulación"><span class="label">Rechazar</span></a></li> <!-- fa-times para rechazar -->
+														</ul>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<script>
+											new DataTable('#example');
+										</script>
 									</div>
-								</section>
+								</div>
+							</section>
 
 						</div>
 					</div>
@@ -173,6 +192,88 @@
 			<script src="assets/js/main.js"></script>
 
 			
+			<!-- Modal Aceptar -->
+		<div class="modal modal-accept">
+			<div class="modal-content">
+				<span class="close-btn">&times;</span>
+				<p>El postulante ha sido aceptado con éxito.</p>
+				<ul class="actions modal-buttons">
+					<li><a href="postulantes.html" class="button primary big accept-action">Aceptar</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Modal Rechazar -->
+		<div class="modal modal-reject">
+			<div class="modal-content">
+				<span class="close-btn">&times;</span>
+				<p>Se ha baneado al usuario</p>
+				<ul class="actions modal-buttons">
+					<li><a href="#" class="button primary big reject-action">OK</a></li>
+				</ul>
+			</div>
+		</div>
+
+	
+		<!-- Script dentro del mismo HTML -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+			// Función para abrir un modal
+			function openModal(modal) {
+				modal.classList.add('show');
+			}
+
+			// Función para cerrar un modal
+			function closeModal(modal) {
+				modal.classList.remove('show');
+			}
+
+			// Configuración del Modal Aceptar
+			const modalAccept = document.querySelector('.modal-accept');
+			const openModalAcceptButtons = document.querySelectorAll('.open-modal-found'); // Botones para abrir el modal de aceptar
+			const closeModalAcceptButton = modalAccept.querySelector('.close-btn');
+			const acceptActionButton = modalAccept.querySelector('.accept-action');
+
+			openModalAcceptButtons.forEach(button => {
+				button.addEventListener('click', function(event) {
+					event.preventDefault();
+					openModal(modalAccept);
+				});
+			});
+
+			closeModalAcceptButton.addEventListener('click', function() {
+				closeModal(modalAccept);
+			});
+
+			acceptActionButton.addEventListener('click', function(event) {
+				event.preventDefault();
+				closeModal(modalAccept); // O redirigir según tu necesidad
+			});
+
+			// Configuración del Modal Rechazar
+			const modalReject = document.querySelector('.modal-reject');
+			const openModalRejectButtons = document.querySelectorAll('.open-modal-update'); // Botones para abrir el modal de rechazar
+			const closeModalRejectButton = modalReject.querySelector('.close-btn');
+			const rejectActionButton = modalReject.querySelector('.reject-action');
+
+			openModalRejectButtons.forEach(button => {
+				button.addEventListener('click', function(event) {
+					event.preventDefault();
+					openModal(modalReject);
+				});
+			});
+
+			closeModalRejectButton.addEventListener('click', function() {
+				closeModal(modalReject);
+			});
+
+			rejectActionButton.addEventListener('click', function(event) {
+				event.preventDefault();
+				closeModal(modalReject);
+			});
+		});
+
+		</script>
 		
 			
 	</body>

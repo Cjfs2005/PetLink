@@ -8,6 +8,16 @@
 		<link rel="stylesheet" href="assets/css/aditional.css">
 		<link rel="stylesheet" href="assets/css/popup-window.css">
 		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+		<!--Agregar-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css"/>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+		<!--Fin Agregar-->
+
 	</head>
 	<body class="is-preload">
 
@@ -28,106 +38,63 @@
 					</header>
 
 					<!-- Banner -->
-					<div class="contenedor-banner">
-						<section class="banner">
-							<div class="content">
-								<header>
-									<h1>Trufa. ID: 10</h1>
-								</header>
-								<ul class="actions" style="display: flex; flex-direction: column; padding: 0; gap: 10px;">
-									<li style="width: 100%;">
-										<a href="#" class="button primary open-modal-found" style="display: flex; justify-content: center; align-items: center; padding: 10px 0; width: 100%;">ACEPTAR PUBLICACION</a>
-									</li>
-									<li style="width: 100%;">
-										<a href="#" class="button open-modal-update" style="display: flex; justify-content: center; align-items: center; padding: 10px 0; width: 100%;">RECHAZAR PUBLICACION</a>
-									</li>
-									<li style="width: 100%;">
-										<a href="#" class="button open-modal-info-trufa" style="display: flex; justify-content: center; align-items: center; padding: 10px 0; width: 100%;">VER INFORMACIÓN</a>
-									</li>
-								</ul>
+					<section class="banner">
+						<div class="content">
+							<p><strong>Descripción:</strong> Tabla que brinda información de actualizaciones hechas por usuarios sobre
+							cierta mascota perdida.
+							Se brinda al coordinador zonal DNI, nombres y apellidos del usuario, fecha en la que se realizó la publicación, fecha en la que 
+							la mascota se perdió, así como una sección de acciones para una gestión eficaz.</p>
+							
+							<div class="table-responsive">
+								<table table id="example" class="table table-striped" style="width:100%;">
+									<thead>
+										<tr>
+											<th>DNI</th>
+											<th>Nombres y apellidos</th>
+											<th>Teléfono</th>
+											<th>Fecha de pérdida</th>
+											<th>Fecha de publicación</th>
+											<th>Acciones</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>12345678</td>
+											<td>Jair Sneider Aguilera Inca</td>
+											<td>997058063</td>
+											<td>14/04/05</td>
+											<td>16/04/05</td>
+											<td>
+												<ul class="icons">
+													<li><a href="#" class="icon fas fa-check-circle open-modal-found"><span class="label">Aceptar</span></a></li> <!-- fa-check para aceptar -->
+													<li><a href="#" class="icon fas fa-times-circle open-modal-update"><span class="label">Rechazar</span></a></li> <!-- fa-times para rechazar -->
+													<li><a href="#" class="open-modal-info-trufa icon fas fa-eye"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td>12333243</td>
+											<td>Gianfranco Enriquez Soel</td>
+											<td>961928802</td>
+											<td>12/03/04</td>
+											<td>13/09/07</td>
+											<td>
+												<ul class="icons">
+													<li><a href="#" class="icon fas fa-check-circle open-modal-found"><span class="label">Aceptar</span></a></li> <!-- fa-check para aceptar -->
+													<li><a href="#" class="icon fas fa-times-circle open-modal-update"><span class="label">Rechazar</span></a></li> <!-- fa-times para rechazar -->
+													<li><a href="#" class="icon fas fa-eye open-modal-info-ramses"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+												</ul>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<script>
+									new DataTable('#example');
+								</script>
 							</div>
-							<span class="image object">
-								<img src="images/perro1.jpg" alt="" />
-							</span>
-						</section>
-						<section class="banner">
-							<div class="content">
-								<header>
-									<h1>Ramsés. ID: 13</h1>
-								</header>
-								<ul class="actions" style="display: flex; flex-direction: column; padding: 0; gap: 10px;">
-									<li style="width: 100%;">
-										<a href="#" class="button primary open-modal-found" style="display: flex; justify-content: center; align-items: center; padding: 10px 0; width: 100%;">ACEPTAR PUBLICACION</a>
-									</li>
-									<li style="width: 100%;">
-										<a href="#" class="button open-modal-update" style="display: flex; justify-content: center; align-items: center; padding: 10px 0; width: 100%;">RECHAZAR PUBLICACION</a>
-									</li>
-									<li style="width: 100%;">
-										<a href="#" class="button open-modal-info-ramses" style="display: flex; justify-content: center; align-items: center; padding: 10px 0; width: 100%;">VER INFORMACIÓN</a>
-									</li>
-								</ul>
-							</div>
-							<span class="image object">
-								<img src="images/perro2.jpg" alt="" />
-							</span>
-						</section>
-						<section class="banner">
-							<div class="content">
-								<header>
-									<h1>Spike. ID: 15</h1>
-								</header>
-								<ul class="actions" style="display: flex; flex-direction: column; padding: 0; gap: 10px;">
-									<li style="width: 100%;">
-										<a href="#" class="button primary open-modal-found" style="display: flex; justify-content: center; align-items: center; padding: 10px 0; width: 100%;">ACEPTAR PUBLICACION</a>
-									</li>
-									<li style="width: 100%;">
-										<a href="#" class="button open-modal-update" style="display: flex; justify-content: center; align-items: center; padding: 10px 0; width: 100%;">RECHAZAR PUBLICACION</a>
-									</li>
-									<li style="width: 100%;">
-										<a href="#" class="button open-modal-info-spike" style="display: flex; justify-content: center; align-items: center; padding: 10px 0; width: 100%;">VER INFORMACIÓN</a>
-									</li>
-								</ul>
-							</div>
-							<span class="image object">
-								<img src="images/perro3.jpg" alt="" />
-							</span>
-						</section>
-						<section class="banner">
-							<div class="content">
-								<header>
-									<h1>Judis. ID: 18</h1>
-								</header>
-								<ul class="actions" style="display: flex; flex-direction: column; padding: 0; gap: 10px;">
-									<li style="width: 100%;">
-										<a href="#" class="button primary open-modal-found" style="display: flex; justify-content: center; align-items: center; padding: 10px 0; width: 100%;">ACEPTAR PUBLICACION</a>
-									</li>
-									<li style="width: 100%;">
-										<a href="#" class="button open-modal-update" style="display: flex; justify-content: center; align-items: center; padding: 10px 0; width: 100%;">RECHAZAR PUBLICACION</a>
-									</li>
-									<li style="width: 100%;">
-										<a href="#" class="button open-modal-info-judis" style="display: flex; justify-content: center; align-items: center; padding: 10px 0; width: 100%;">VER INFORMACIÓN</a>
-									</li>
-								</ul>
-							</div>
-							<span class="image object">
-								<img src="images/doberman.jpg" alt="" />
-							</span>
-						</section>
-					</div>
-
-					<div style="display: flex; justify-content: center;">
-						<ul class="pagination">
-							<li><span class="button disabled">&laquo;</span></li>
-							<li><a href="#" class="page active">1</a></li>
-							<li><a href="#" class="page">2</a></li>
-							<li><a href="#" class="page">3</a></li>
-							<li><span>…</span></li>
-							<li><a href="#" class="page">8</a></li>
-							<li><a href="#" class="page">9</a></li>
-							<li><a href="#" class="page">10</a></li>
-							<li><a href="#" class="button">&raquo;</a></li>
-						</ul>
-					</div>
+						</div>
+					</section>
+					
 				</div>
 			</div>
 

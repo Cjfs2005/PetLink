@@ -13,6 +13,16 @@
 		<link rel="stylesheet" href="assets/css/aditional.css">
 		<link rel="stylesheet" href="assets/css/popup-window.css">
 		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+		<!--Agregar-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css"/>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+		<!--Fin Agregar-->
+
 	</head>
 	<body class="is-preload">
 
@@ -29,71 +39,50 @@
 									<h1 class="logo"><strong>USUARIOS BANEADOS</strong></h1>
 								</header>
 
-							
-
 							<!-- Banner -->
-								<section class="banner">
-									<div class="content">
-										<p><strong>Descripción:</strong> En la siguiente tabla se muestran a los usuarios que han sido baneados, los cuales ya no pueden ser solicitados por los albergues como hogar temporal.</p>
-										
-										<div class="table-wrapper">
-											<table>
-												<thead>
-													<tr>
-														<th style="width: 25%;">Nombres y apellidos</th>
-														<th style="width: 20%">Bloqueado por</th>
-														<th style="width: 15%">Fecha</th>
-														<th style="width: 40%;">Motivo</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr style="background-color: #f2f2f2;">
-														
-														<td>Jhon Nilo Reátegui Curto</td>
-														<td>Sistema</td>
-														<td>23/12/2024</td>
-														<td>Rechazó 3 veces como hogar temporal</td>
-														
-													</tr>
-													<tr style="background-color: #f2f2f2;">
-														
-														<td>Liliana Sully Núñez Balboa</td>
-														<td>Coordinador</td>
-														<td>03/11/2024</td>
-														<td>Entregó en mal estado con enfermedades al animal que lo cuidó como hogar temporal</td>
-                                                    </tr>
-
-													<tr style="background-color: #f2f2f2;">
-															
-														<td>Ulises Christian Castillo Peralta</td>
-														<td>Sistema</td>
-														<td>31/10/2024</td>
-														<td>Rechazó 3 veces como hogar temporal</td>
-														</td>
-													</tr>
-
-													<tr style="background-color: #f2f2f2;">
-														
-														<td>Darío Rodrigo Gomez Alarcón</td>
-														<td>Sistema</td>
-														<td>16/10/2024</td>
-														<td>Rechazó 3 veces como hogar temporal</td>
-														
-													</tr>
-
-													<tr style="background-color: #f2f2f2;">
-															
-														<td>Laura Mildre Risco Fernández</td>
-														<td>Coordinador</td>
-														<td>10/08/2024</td>
-														<td>No entregó la mascota</td>
-													</tr>
-													
-												</tbody>
-											</table>
-										</div>
+							<section class="banner">
+								<div class="content">
+									<p><strong>Descripción:</strong> En la siguiente tabla se muestran a los usuarios que han sido baneados, 
+										los cuales ya no pueden ser solicitados por los albergues como hogar temporal.</p>
+									
+									<div class="table-responsive">
+										<table table id="example" class="table table-striped" style="width:100%;">
+											<thead>
+												<tr>
+													<th>DNI</th>
+													<th>Nombres y apellidos</th>
+													<th>Celular</th>
+													<th>Bloqueado por</th>
+													<th>Fecha</th>
+													<th>Motivo</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>12345678</td>
+													<td>Jair Sneider Aguilera Inca</td>
+													<td>997058063</td>
+													<td>Sistema</td>
+													<td>19/10/04</td>
+													<td>Rechazó 3 veces ser hogar temporal</td>
+												</tr>
+												<tr>
+													<td>12333243</td>
+													<td>Gianfranco Enriquez Soel</td>
+													<td>961928802</td>
+													<td>Coordinador zonal</td>
+													<td>26/06/04</td>
+													<td>Flameo al jungla</td>
+												</tr>
+											</tbody>
+										</table>
+										<script>
+											new DataTable('#example');
+										</script>
 									</div>
-								</section>
+								</div>
+							</section>
+							
 
 						</div>
 					</div>

@@ -21,7 +21,6 @@
                 <!-- Header -->
                 <header id="header">
                     <h1 class="logo"><strong>Gestión de eventos</strong></h1>
-                   
                 </header>
 
                 <!-- Banner -->
@@ -188,25 +187,68 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Script de manejo de modales -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const nombreInput = document.getElementById('nombre-lugar');
+            const direccionInput = document.getElementById('direccion');
+            const aforoInput = document.getElementById('aforo');
+            const distritoSelect = document.getElementById('distrito');
             const creationButton = document.getElementById('creationButton');
             const creationModal = document.getElementById('creationModal');
             const closeCreationModalButton = document.getElementById('closeCreationModal');
-
-            // Abrir modal de "Creación de lugar"
+    
+            // Función para verificar si todos los campos son válidos
+            function verificarCampos() {
+                const camposValidos = (
+                    nombreInput.value.trim() !== "" && /^[a-zA-Z\s]+$/.test(nombreInput.value) &&
+                    direccionInput.value.trim() !== "" &&
+                    /^[0-9]{1,4}$/.test(aforoInput.value) &&
+                    distritoSelect.value !== ""
+                );
+    
+                if (camposValidos) {
+                    creationButton.classList.remove('disabled');
+                    creationButton.style.pointerEvents = 'auto';
+                } else {
+                    creationButton.classList.add('disabled');
+                    creationButton.style.pointerEvents = 'none';
+                }
+            }
+    
+            // Permitir solo letras en el campo "Nombre"
+            nombreInput.addEventListener('input', () => {
+                nombreInput.value = nombreInput.value.replace(/[^a-zA-Z\s]/g, ''); // Elimina números y caracteres especiales
+                verificarCampos();
+            });
+    
+            // Permitir solo números en el campo "Aforo máximo" y limitar a 4 dígitos
+            aforoInput.addEventListener('input', () => {
+                aforoInput.value = aforoInput.value.replace(/\D/g, '').slice(0, 4); // Elimina letras y limita la longitud
+                verificarCampos();
+            });
+    
+            // Verificar los demás campos al cambiar
+            direccionInput.addEventListener('input', verificarCampos);
+            distritoSelect.addEventListener('change', verificarCampos);
+    
+            // Llamado inicial para verificar el estado del botón al cargar la página
+            verificarCampos();
+    
+            // Manejo del modal de "Creación de lugar"
             creationButton.addEventListener('click', function(e) {
                 e.preventDefault(); // Evitar la recarga
-                creationModal.classList.add('show');
+                if (!creationButton.classList.contains('disabled')) {
+                    creationModal.classList.add('show');
+                }
             });
-
-            // Redirigir al hacer clic en "Aceptar" en el modal de creación
+    
+            // Cerrar modal y redirigir al hacer clic en "Aceptar" en el modal de creación
             closeCreationModalButton.addEventListener('click', function() {
-                window.location.href = 'historial.html'; // Cambia 'historial.html' si quieres redirigir a otro lado
+                window.location.href = 'historial.html';
             });
         });
     </script>
+    
 
 </body>
 </html>
