@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>PetLink</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/aditional.css">
+		<link rel="stylesheet" href="assets/css/popup-window.css">
+		<script src="assets/js/pagination.js"></script>
+		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<img src="images/logo_denuncia.png" class="icons">
+									<h1 class="logo"><strong>DENUNCIAS POR MALTRATO ANIMAL</strong></h1>
+
+									<!-- Sección para el nombre y enlace al perfil -->
+									<a href="perfil.html" class="user-profile">
+										<span class="ocultar">Huellitas PUCP</span> <img src="images/logo_huellitas.png" style="border-radius: 100%; height: 45px; width: 45px;object-fit: cover;"></img>
+									</a>
+								</header>
+
+																						
+
+							<!-- Banner -->
+								<div class="contenedor-banner">
+									<section class="banner">
+										<div class="content">
+											<header>
+												<img src="images/logo_denuncia_publicacion.png" class="icons">
+												<h2>Denuncia #201</h>
+											</header>
+											<ul class="actions">
+												<li><a href="denuncias_detalles.html" class="button primary big">Detalles</a></li>
+												
+											</ul>
+										</div>
+										<span class="image object">
+											<img src="images/maltrato1.jpg" alt="" />
+										</span>
+									</section>
+
+									<section class="banner">
+										<div class="content">
+											<header>
+												<img src="images/logo_denuncia_publicacion.png" class="icons">
+												<h2>Denuncia #121</h2>
+											</header>
+											<ul class="actions">
+												<li><a href="#" class="button primary big">Detalles</a></li>
+												
+											</ul>
+										</div>
+										<span class="image object">
+											<img src="images/maltrato2.jpeg" alt="" />
+										</span>
+									</section>
+									<section class="banner">
+										<div class="content">
+											<header>
+												<img src="images/logo_denuncia_publicacion.png" class="icons">
+												<h2>Denuncia #30</h2>
+											</header>
+											<ul class="actions">
+												<li><a href="#" class="button primary big">Detalles</a></li>
+												
+											</ul>
+										</div>
+										<span class="image object">
+											<img src="images/maltrato2.jpeg" alt="" />
+										</span>
+									</section>
+								</div>
+								<div class="pagination-container" style="display: flex; justify-content: center;">
+									<ul class="pagination"></ul>
+								</div>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							
+							<!-- Logo -->
+								
+								<section class="alt" id="sidebar-header">
+									<img src="images/favicon.png" alt="Logo" id="sidebar-icon">
+									<p id ="sidebar-title">PetLink</p>
+								</section>
+							
+							<!-- Perfil -->
+	
+							<section class="perfil">
+										
+								<div class="mini-posts">
+									<article>
+										<img src="images/logo_huellitas.png" alt="" id="image-perfil">
+										<h2 id="usuario">HUELLITAS PUCP</h2>
+									</article>
+								</div>
+								
+							</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+                                    <ul>
+                                        <li><a href="perfil.html">Perfil</a></li>
+                                        <li>
+                                            <span class="opener">Publicaciones</span>
+                                            <ul>
+                                                <li><a href="EventoBenefico.html">Eventos benéficos</a></li>
+                                                <li><a href="adopciones.html">Adopciones</a></li>
+                                                <li><a href="donaciones.html">Donaciones</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="hogar_temporal.html">Hogar Temporal</a></li>
+                                        <li><a href="denuncias.html">Denuncias por maltrato animal</a></li>
+                                    </ul>
+								</nav>
+							<!-- Logout -->	
+
+							<nav id="logout">
+								<a href="../bienvenidos.html" id="cerrar-sesion">Cerrar Sesión</a>
+							</nav>
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<!-- Añadido por Gianfranco -->
+			<!-- Modal -->
+			<div id="modal" class="modal">
+				<div class="modal-content">
+					<!-- Botón cerrar -->
+					<span class="close-btn">&times;</span>
+					<p>¿Estás seguro de que deseas eliminar la denuncia?</p>
+					<!-- Botones de Aceptar y Cancelar -->
+					<ul class="actions modal-buttons">
+						<li><a href="#" class="button primary big" id="acceptButton">Eliminar</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- Script dentro del mismo HTML -->
+			<script>
+				// Esperamos a que todo el DOM esté cargado
+				document.addEventListener('DOMContentLoaded', function() {
+					// Obtener los elementos del DOM
+					const openModalButton = document.getElementById('openModal'); // Botón que abre el modal
+					const modal = document.getElementById('modal');               // El modal
+					const closeModalButton = document.querySelector('.close-btn'); // Botón para cerrar el modal (X)
+					const acceptButton = document.getElementById('acceptButton'); // Botón de Aceptar
+					const cancelButton = document.getElementById('cancelButton'); // Botón de Cancelar
+		
+					// Función para abrir el modal
+					openModalButton.addEventListener('click', function() {
+						modal.classList.add('show'); // Mostrar el modal
+					});
+		
+					// Función para cerrar el modal al hacer clic en la "X"
+					closeModalButton.addEventListener('click', function() {
+						modal.classList.remove('show'); // Ocultar el modal
+					});
+		
+					// Deben modificar el link para que redirija afuera del formulario
+					acceptButton.addEventListener('click', function() {
+						window.location.href = 'denuncias_usuario.html';
+					});
+		
+					// Función para cerrar el modal al hacer clic en el botón "Cancelar"
+					cancelButton.addEventListener('click', function() {
+						modal.classList.remove('show'); // Ocultar el modal
+					});
+				});
+			</script>
+
+	</body>
+</html>
