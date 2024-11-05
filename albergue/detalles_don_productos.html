@@ -4,10 +4,39 @@
 		<title>PetLink</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"/>
+
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/aditional.css">
 		<link rel="stylesheet" href="assets/css/popup-window.css">
 		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css"/>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+
+		<style>
+			.modal1 {
+				display: none; /* Oculto por defecto */
+				position: fixed;
+				z-index: 100000; /* Para que esté por encima de todo */
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+				justify-content: center;
+				align-items: center;
+			}
+
+			.modal1.show {
+				display: flex;
+			}
+		</style>
+
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -46,7 +75,79 @@
 												<label for="horario" class="input-label">Horario de entrega</label>
 												<input type="text" id="horario" value="18:00 - 19:00" placeholder="" disabled/>
 											</div>
+										</div>
 
+										<br>
+										<p><strong>Lista de usuarios donantes</strong></p>
+										<div class="table-responsive">
+											<table table id="example" class="table table-striped" style="width:100%;">
+												<thead>
+													<tr>
+														<th>DNI</th>
+														<th>Nombres y apellidos</th>
+														<th>Punto de acopio</th>
+														<th>Fecha de donación</th>
+														<th>Productos a donar</th>
+														
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>22222222</td>
+														<td>Christian Jair Flores Soto</td>
+														<td>Av. Barcelona</td>
+														<td>12/02/2023</td>
+														<td>
+															<ul class="icons">
+																<li><a href="#" class="icon fas fa-eye" title="Ver la donación" id="details"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+															</ul>	
+														</td>
+														
+													   
+													</tr>
+													<tr>
+														<td>77777777</td>
+														<td>Alejandro Emanuel Gutarra Bendezú</td>
+														<td>Av. Real Madrid</td>
+														<td>12/02/2023</td>
+														<td>
+															<ul class="icons">
+																<li><a href="#" class="icon fas fa-eye" title="Ver la donación" id="details"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+															</ul>
+															
+														</td>
+													   
+													</tr>
+													<td>11111111</td>
+													<td>Tony Lee Flores Aguirre</td>
+													<td>Av. Universitaria</td>
+													<td>12/02/2023</td>
+													<td>
+														<ul class="icons">
+															<li><a href="#" class="icon fas fa-eye" title="Ver la donación" id="details"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+
+														</ul>
+														
+													</td>
+															
+													  
+													</tr>	
+												</tbody>
+											</table>
+											<script>
+												new DataTable('#example', {
+												language: {
+													sSearch: "Buscar:",  // Cambia el texto del campo de búsqueda
+													sLengthMenu: "Mostrar _MENU_ registros",
+													sZeroRecords: "No se encontraron resultados",
+													sEmptyTable: "Ningún dato disponible en esta tabla",
+													sInfo: "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+													sInfoEmpty: "Mostrando registros del 0 al 0 de un total de 0 registros",
+													sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
+													sLoadingRecords: "Cargando...",
+												}
+											});
+											</script>>
 										</div>
 
 										
@@ -68,7 +169,7 @@
                                                     <!-- Botones de Aceptar y Cancelar -->
                                                     <ul class="actions modal-buttons">
                                                         <li><a href="donaciones.html" class="button primary big" id="acceptButton">Aceptar</a></li>
-                                                        <li><a href="detalles_donaciones.html" class="button big" id="cancelButton">Cancelar</a></li>
+                                                        <li><a href="detalles_don_productos.html" class="button big" id="cancelButton">Cancelar</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -110,7 +211,7 @@
 								<li>
 									<span class="opener">Publicaciones</span>
 									<ul>
-										<li><a href="EventoBenéfico.html">Eventos benéficos</a></li>
+										<li><a href="EventoBenefico.html">Eventos benéficos</a></li>
 										<li><a href="adopciones.html">Adopciones</a></li>
 										<li><a href="donaciones.html">Donaciones</a></li>
 									</ul>
@@ -135,6 +236,23 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		
+
+			<div id="modal1" class="modal">
+				<div class="modal-content">
+					<!-- Botón cerrar -->
+					
+					<p>Botiquines de primeros auxilios (5 kits), camillas para transporte (3 unidades), cámaras de oxígeno portátiles (1 unidad).</p>
+					<!-- Botones de Aceptar y Cancelar -->
+					 
+					<ul class="actions modal-buttons">
+						<li><a href="detalles_don_productos.html" class="button primary big" id="acceptButton">OK</a></li>
+					</ul>
+					 
+					
+				</div>
+			</div>
 		
 			<!-- Script dentro del mismo HTML -->
 			<script>
@@ -162,6 +280,38 @@
 						window.location.href = 'index.html';
 					});
 		
+					// Función para cerrar el modal al hacer clic en el botón "Cancelar"
+					cancelButton.addEventListener('click', function() {
+						modal.classList.remove('show'); // Ocultar el modal
+					});
+				});
+			</script>
+
+			<script>
+				// Esperamos a que todo el DOM esté cargado
+				document.addEventListener('DOMContentLoaded', function() {
+					// Obtener los elementos del DOM
+					const openModalButton = document.getElementById('details'); // Botón que abre el modal
+					const modal = document.getElementById('modal1');               // El modal
+					const closeModalButton = document.querySelector('.close-btn'); // Botón para cerrar el modal (X)
+					const acceptButton = document.getElementById('acceptButton'); // Botón de Aceptar
+					const cancelButton = document.getElementById('cancelButton'); // Botón de Cancelar
+
+					// Función para abrir el modal
+					openModalButton.addEventListener('click', function() {
+						modal.classList.add('show'); // Mostrar el modal
+					});
+
+					// Función para cerrar el modal al hacer clic en la "X"
+					closeModalButton.addEventListener('click', function() {
+						modal.classList.remove('show'); // Ocultar el modal
+					});
+
+					// Deben modificar el link para que redirija afuera del formulario
+					acceptButton.addEventListener('click', function() {
+						window.location.href = 'index.html';
+					});
+
 					// Función para cerrar el modal al hacer clic en el botón "Cancelar"
 					cancelButton.addEventListener('click', function() {
 						modal.classList.remove('show'); // Ocultar el modal

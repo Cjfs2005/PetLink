@@ -4,11 +4,20 @@
     <title>PetLink - Solicitud de Colecta</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"/>
+    
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/aditional.css">
-    <!--<link rel="stylesheet" href="assets/css/perfil.css">-->
     <link rel="stylesheet" href="assets/css/popup-window.css">
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+    
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css"/>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
 </head>
 <body class="is-preload">
 
@@ -21,7 +30,7 @@
 
                 <!-- Header -->
                 <header id="header">
-                    <h1 class="logo"><strong>Solicitud de Colecta</strong></h1>
+                    <h1 class="logo"><strong>Detalles de la donación económica</strong></h1>
                     <!-- Sección para el nombre y enlace al perfil -->
 					<a href="perfil.html" class="user-profile">
 						<span class="ocultar">Huellitas PUCP</span> <img src="images/logo_huellitas.png" style="border-radius: 100%; height: 45px; width: 45px;object-fit: cover;"></img>
@@ -48,35 +57,45 @@
 
                         
                         <p><strong>Lista de usuarios donantes</strong></p>
-                        <div class="responsive-table">
-                            <div class="table-wrapper">
-                                <!-- Añadido border, cellpadding y colores alternos en las filas -->
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th style="width: 20%;">DNI</th>
-                                            <th style="width: 35%;">Nombres y apellidos</th>
-                                            <th style="width: 25%;">Fecha de donación</th>
-                                        </tr>
-                                    </thead>
+                        <div class="table-responsive">
+                            <table table id="example" class="table table-striped" style="width:100%;">
+                                <thead>
+                                    <tr>
+                                        
+                                        <th>Nombres y apellidos</th>
+                                        <th>Fecha de donación</th>
+                                        <th>Monto donado</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        
+                                        <td>Christian Jair Flores Soto</td>
+                                        <td>12/02/2023</td>
+                                        <td>S/. 500</td>
+                                        
+                                       
+                                    </tr>
+                                    <tr>
+                                        
+                                        <td>Alejandro Emanuel Gutarra Bendezú</td>
+                                        <td>12/02/2023</td>
+                                        <td>S/. 500</td>
+                                       
+                                    </tr>
                                     
-                                    <tbody>
-                                        <!-- Alternancia de colores en las filas para mejor legibilidad -->
-                                        <tr style="background-color: #f2f2f2;">
-                                            <th style="width: 15%;">75841235</th>
-                                            <th style="width: 35%;">Cesar Epifanio Santivañez Huaringa</th>
-                                            <th style="width: 25%;">16/04/24</th>
+                                    <td>Tony Lee Flores Aguirre</td>
+                                    <td>12/02/2023</td>
+                                    <td>S/. 500</td>
                                             
-                                        </tr>
-                                        <tr style="background-color: #f2f2f2;">
-                                            <th style="width: 15%;">63524789</th>
-                                            <th style="width: 35%;">Manuel Augusto Yarleque Medina</th>
-                                            <th style="width: 25%;">19/12/24</th>
-                                            
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                                      
+                                    </tr>	
+                                </tbody>
+                            </table>
+                            <script>
+                                new DataTable('#example');
+                            </script>
                         </div>
 
                         <div class="row gtr-uniform">
@@ -134,12 +153,12 @@
                         <li>
                             <span class="opener">Publicaciones</span>
                             <ul>
-                                <li><a href="EventoBenéfico.html">Eventos benéficos</a></li>
+                                <li><a href="EventoBenefico.html">Eventos benéficos</a></li>
                                 <li><a href="adopciones.html">Adopciones</a></li>
                                 <li><a href="donaciones.html">Donaciones</a></li>
                             </ul>
                         </li>
-                        <li><a href="hogarTemporal.html">Hogar Temporal</a></li>
+                        <li><a href="hogar_temporal.html">Hogar Temporal</a></li>
                     </ul>
                 </nav>
 

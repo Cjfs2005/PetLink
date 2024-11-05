@@ -8,6 +8,14 @@
 		<link rel="stylesheet" href="assets/css/aditional.css">
 		<link rel="stylesheet" href="assets/css/popup-window.css">
 		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+		<style>
+			#charCount {
+				font-size: 12px;
+				color: #888;
+				float: right;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -40,28 +48,29 @@
 
 								<div class="col-12">
 									<label for="nombre_mascota" class="input-label">Nombre de la mascota</label>
-									<input type="text" id="nombre_mascota" value="" placeholder="">
+									<input type="text" id="nombre_mascota" maxlength="45" placeholder="">
 								</div>
 
 								<div class="col-12">
 									<label for="text-area" class="input-label">Descripción de la mascota</label>
-									<textarea name="text-area" class="text-area" placeholder=""></textarea>
+									<textarea name="text-area" class="text-area" id="descripcion_mascota" maxlength="300" placeholder=""></textarea>
+									<span id="charCount">0/300</span>
 								</div>
 
 								<div class="col-6 col-12-xsmall">
 									<label for="fechaInicio" class="input-label">Fecha de inicio</label>
-									<input type="date" id="fechaInicio" name="fechaInicio" />
+									<input type="date" id="fechaInicio" name="fechaInicio" min="" onkeydown="return false;">
 								</div>
 								  
 								<div class="col-6 col-12-xsmall">
 									<label for="fechaFin" class="input-label">Fecha de fin</label>
-									<input type="date" id="fechaFin" name="fechaFin"  />
+									<input type="date" id="fechaFin" name="fechaFin" min="" onkeydown="return false;">
 								</div>
 
 								<!--Break-->
 								<div class="col-12">
 									<label for="archivo" class="input-label">Foto de la mascota</label>
-									<input type="file" id="archivo" name="archivo" class="contenedor-archivo"/>
+									<input type="file" id="archivo" name="archivo" class="contenedor-archivo" accept=".png"/>
 								</div>
 								
 								<!-- Break -->
@@ -108,7 +117,7 @@
 							<li>
 								<span class="opener">Publicaciones</span>
 								<ul>
-									<li><a href="EventoBenéfico.html">Eventos benéficos</a></li>
+									<li><a href="EventoBenefico.html">Eventos benéficos</a></li>
 									<li><a href="adopciones.html">Adopciones</a></li>
 									<li><a href="donaciones.html">Donaciones</a></li>
 								</ul>
@@ -149,6 +158,18 @@
 		</div>
 		
 		<!-- Script dentro del mismo HTML -->
+
+		<!--Para contar la cantidad de caracteres en la descripcion de la mascota-->
+		<script>
+			const textarea = document.getElementById('descripcion_mascota');
+			const charCount = document.getElementById('charCount');
+
+			textarea.addEventListener('input', function() {
+				const currentLength = textarea.value.length;
+				charCount.textContent = `${currentLength}/300`;
+			});
+		</script>
+
 		<script>
 			// Esperamos a que todo el DOM esté cargado
 			document.addEventListener('DOMContentLoaded', function() {
@@ -191,6 +212,44 @@
 				cancelButton.addEventListener('click', function() {
 					modal.classList.remove('show'); // Ocultar el modal
 				});
+			});
+		</script>
+
+		<!-- Validaciones personalizadas -->
+		<script>
+			// Validación de formato PNG
+			document.getElementById('archivo').addEventListener('change', function() {
+				if (!this.files[0].name.endsWith('.png')) {
+					alert("Solo se permiten archivos en formato PNG.");
+					this.value = ''; // Limpiar el campo si no es PNG
+				}
+			});
+
+	
+			// Validación de fechas
+			const fechaInicio = document.getElementById('fechaInicio');
+			const fechaFin = document.getElementById('fechaFin');
+	
+			document.addEventListener('DOMContentLoaded', function() {
+				// Configurar la fecha mínima para fechaInicio como la fecha actual
+				const hoy = new Date().toISOString().split("T")[0];
+				fechaInicio.setAttribute("min", hoy);
+	
+				// Validar que la fecha de fin sea posterior a la de inicio
+				fechaInicio.addEventListener('change', function() {
+					fechaFin.setAttribute('min', fechaInicio.value);
+				});
+			});
+	
+			// Validación de fechas al enviar
+			document.getElementById('openModal').addEventListener('click', function(event) {
+				const inicio = new Date(fechaInicio.value);
+				const fin = new Date(fechaFin.value);
+	
+				if (inicio && fin && fin <= inicio) {
+					alert("La fecha de fin debe ser posterior a la fecha de inicio.");
+					event.preventDefault(); // Evitar el envío si las fechas no son válidas
+				}
 			});
 		</script>
 	</body>

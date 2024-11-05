@@ -8,6 +8,14 @@
         <link rel="stylesheet" href="assets/css/aditional.css">
         <link rel="stylesheet" href="assets/css/popup-window.css">
         <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+        <style>
+            .charCount {
+				font-size: 12px;
+				color: #888;
+				float: right;
+			}
+        </style>
     </head>
     <body class="is-preload">
 
@@ -36,15 +44,17 @@
                             <p><strong>Términos y Condiciones:</strong> Toda la información proporcionada será utilizada únicamente para fines de la organización de donaciones y será tratada de acuerdo con nuestra política de privacidad. Nos comprometemos a no compartir tus datos con terceros sin tu consentimiento.</p>
 
                             <div class="row gtr-uniform">
-                                <!-- Monto requerido -->
+                                
                                 <div class="col-12">
                                     <label for="monto" class="input-label">Monto requerido</label>
-                                    <input type="text" id="monto" name="monto" placeholder="" minlength="3" required />
+                                    <input type="text" id="monto" name="monto" placeholder="" required />
                                 </div>
 
+                                <!-- Motivo -->
                                 <div class="col-12">
                                     <label for="motivo" class="input-label">Motivo</label>
-                                    <input type="text" id="motivo" name="motivo" placeholder="" minlength="3" required />
+                                    <textarea id="motivo" maxlength="300" class="text-area" placeholder=""></textarea>
+                                    <span class="charCount" id="charCount">0/300</span>
                                 </div>
 
                                 <!-- Botones -->
@@ -92,7 +102,7 @@
                             <li>
                                 <span class="opener">Publicaciones</span>
                                 <ul>
-                                    <li><a href="EventoBenéfico.html">Eventos benéficos</a></li>
+                                    <li><a href="EventoBenefico.html">Eventos benéficos</a></li>
                                     <li><a href="adopciones.html">Adopciones</a></li>
                                     <li><a href="donaciones.html">Donaciones</a></li>
                                 </ul>
@@ -147,42 +157,28 @@
             });
         </script>
 
-        <!-- Validación de solo números para el campo "Monto requerido" -->
+        <!-- Validaciones -->
         <script>
-            function validateNumber(event) {
-                var key = event.keyCode || event.which;
-                // Permitir solo números (0-9)
-                if (key < 48 || key > 57) {
-                    event.preventDefault();
-                }
-            }
-
-            // Añade la función al evento keypress del campo monto
-            document.getElementById('monto').addEventListener('keypress', validateNumber);
-        </script>
-
-        <!-- Mostrar campos adicionales según el tipo de donación -->
-        <script>
-            document.getElementById('tipoDonacion').addEventListener('change', function() {
-                var tipoDonacion = this.value;
-                document.getElementById('fondosFields').style.display = tipoDonacion === 'fondos' ? 'block' : 'none';
-            });
-
-            // Mostrar dinámicamente los campos de direcciones según el número seleccionado
-            document.getElementById('numDireccionesAcoplo').addEventListener('change', function() {
-                var numDirecciones = this.value;
-                var direccionesContainer = document.getElementById('direccionesContainer');
-                direccionesContainer.innerHTML = ''; // Limpiar contenido previo
-
-                for (var i = 1; i <= numDirecciones; i++) {
-                    direccionesContainer.innerHTML += `
-                        <div class="col-12">
-                            <label for="direccionAcoplo${i}" class="input-label">Dirección de acoplo ${i}</label>
-                            <input type="text" id="direccionAcoplo${i}" name="direccionAcoplo${i}" placeholder="Dirección ${i}" minlength="5" required />
-                        </div>
-                    `;
+            // Validación del campo Monto: solo números y máximo 8 dígitos
+            document.getElementById('monto').addEventListener('input', function() {
+                // Reemplazar cualquier carácter que no sea número
+                this.value = this.value.replace(/[^0-9]/g, '');
+                
+                // Mostrar alerta si el monto tiene más de 8 dígitos
+                if (this.value.length > 8) {
+                    alert('Cantidad excesiva, edite un monto menor');
+                    this.value = this.value.slice(0, 8); // Limitar a 8 dígitos
                 }
             });
+
+            // Contador de caracteres para el campo Motivo
+            document.getElementById('motivo').addEventListener('input', function() {
+                const charCount = document.getElementById('charCount');
+                charCount.textContent = `${this.value.length}/300`;
+            });
         </script>
+
+
+        
     </body>
 </html>

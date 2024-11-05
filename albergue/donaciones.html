@@ -4,9 +4,19 @@
 		<title>PetLink</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"/>
+		
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/aditional.css">
 		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+		
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css"/>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -19,7 +29,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<img src="images/logo_hogarTemporal.png" class="icons">
+									<img src="images/donaciones.png" class="icons">
 									<h1 class="logo" style="display: inline-block;"><strong>DONACIONES ECONÓMICAS</strong></h1>
 									
 									<!-- Sección para el nombre y enlace al perfil -->
@@ -38,69 +48,73 @@
 									</ul>
 								</section>
 
-							<!-- Search -->
+	
+
 							<section class="seccionPrueba" style="background-color: transparent !important; flex-wrap: wrap; gap:20px; justify-content: space-evenly;">
-								<a href="donaciones.html">Colecta de fondos</a>
-								<a href="donaciones_productos.html">Colecta de productos</a>
+								<a href="#"><strong>Colectas de fondos</strong></a>
+								<a href="donaciones_productos.html">Colectas de productos</a>
 							</section>
 
 							<!--Banner-->
 
 							<section class="banner">
 								<div class="content">
-									<div class="responsive-table">
-										<div class="table-wrapper">
-											<table>
-												<thead>
-													<tr>
-														<th style="width: 20%;">Fecha</th>
-														<th style="width: 30%;">Motivo</th>
-														<th style="width: 15%;">Estado</th>
-														<th style="width: 20%;">Monto Solicitado</th>
-														<th style="width: 15%;">Detalles</th>
-													</tr>
-												</thead>
-												<tbody>
-													<!-- Caso Aceptado -->
-													<tr style="background-color: #f2f2f2;">
-														<td>16/11/24</td>
-														<td>Reparación de refugio</td>
-														<td>Aprobado</td>
-														<td>S/. 500</td>
-														<td>
-															<ul class="icons">
-																<li><a href="borrador_aceptado.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver</span></a></li>
+									<div class="table-responsive">
+										<table table id="example" class="table table-striped" style="width:100%;">
+											<thead>
+												<tr>
+													<th>Fecha</th>
+													<th>Motivo</th>
+													<th>Estado</th>
+													<th>Monto solicitado</th>
+													<th>Detalles</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>16/11/24</td>
+													<td>Reparación de refugio</td>
+													<td style="text-transform: uppercase;">APROBADO</td>
+													<td>S/. 500</td>
+													
+													<td>
+														<ul class="icons">
+															<li><a href="detalles_don_economica.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+															<li><a href="#" class="icon fas fa-trash-alt" title="Eliminar donación"><span class="label">Eliminar</span></a></li> 
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<td>02/10/24</td>
+													<td>Compra de alimentos</td>
+													<td style="text-transform: uppercase;">PENDIENTE</td>
+													<td>S/. 300</td>
+													<td>
+														<ul class="icons">
+															<li><a href="detalles_don_economica.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver</span></a></li>
+															<li><a href="#" class="icon fas fa-trash-alt" title="Eliminar donación"><span class="label">Eliminar</span></a></li> 
+														</ul>
+													</td>
+												</tr>
+													<td>16/11/24</td>
+													<td>Tratamiento veterinario</td>
+													<td style="text-transform: uppercase;">RECHAZADO</td>
+													<td>S/. 400</td>
+														
+													<td>
+														<ul class="icons">
+															<li><a href="detalles_don_economica.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver</span></a></li>
+																<li><a href="#" class="icon fas fa-trash-alt" title="Eliminar donación"><span class="label">Eliminar</span></a></li> 
 															</ul>
-														</td>
-													</tr>
-													<!-- Caso Pendiente -->
-													<tr style="background-color: #f2f2f2;">
-														<td>02/10/24</td>
-														<td>Compra de alimento</td>
-														<td>Pendiente</td>
-														<td>S/. 300</td>
-														<td>
-															<ul class="icons">
-																<li><a href="borrador_pendiente.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver</span></a></li>
-															</ul>
-														</td>
-													</tr>
-													<!-- Caso Rechazado -->
-													<tr style="background-color: #f2f2f2;">
-														<td>16/11/24</td>
-														<td>Tratamiento veterinario</td>
-														<td>Rechazado</td>
-														<td>S/. 150</td>
-														<td>
-															<ul class="icons">
-																<li><a href="borrador_rechazado.html" class="icon fas fa-eye" title="Ver detalles"><span class="label">Ver</span></a></li>
-															</ul>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
+													</td>
+												</tr>	
+											</tbody>
+										</table>
+										<script>
+											new DataTable('#example');
+										</script>
 									</div>
+								
 								</div>
 							</section>
 						</div>
@@ -136,7 +150,7 @@
 										<li>
 											<span class="opener">Publicaciones</span>
 											<ul>
-												<li><a href="EventoBenéfico.html">Eventos benéficos</a></li>
+												<li><a href="EventoBenefico.html">Eventos benéficos</a></li>
 												<li><a href="adopciones.html">Adopciones</a></li>
 												<li><a href="donaciones.html">Donaciones</a></li>
 											</ul>
@@ -164,14 +178,3 @@
 
 	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

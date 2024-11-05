@@ -47,7 +47,7 @@
                                             <!-- Fecha programada para recepción -->
                                             <div class="col-12">
                                                 <label for="fechaRecepcion" class="input-label">Fecha programada para recepción</label>
-                                                <input type="date" id="fechaRecepcion" name="fechaRecepcion" required />
+                                                <input type="date" id="fechaRecepcion" name="fechaRecepcion" min="" required />
                                             </div>
 
                                             <!-- Hora de inicio de recepción -->
@@ -137,7 +137,7 @@
 								<li>
 									<span class="opener">Publicaciones</span>
 									<ul>
-										<li><a href="EventoBenéfico.html">Eventos benéficos</a></li>
+										<li><a href="EventoBenefico.html">Eventos benéficos</a></li>
 										<li><a href="adopciones.html">Adopciones</a></li>
 										<li><a href="donaciones.html">Donaciones</a></li>
 									</ul>
@@ -217,6 +217,19 @@
 				const currentLength = textarea.value.length;
 				charCount.textContent = `${currentLength}/500`;
 			});
+		</script>
+
+		<script>
+			// Validación de fechas
+			const fechaInicio = document.getElementById('fechaRecepcion');
+			
+			document.addEventListener('DOMContentLoaded', function() {
+				// Configurar la fecha mínima para fechaInicio como la fecha actual
+				const hoy = new Date().toISOString().split("T")[0];
+				fechaInicio.setAttribute("min", hoy);
+	
+			});
+		
 		</script>
 	</body>
 </html>

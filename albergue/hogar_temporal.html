@@ -9,10 +9,20 @@
 		<title>PetLink</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"/>
+		
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/aditional.css">
 		<link rel="stylesheet" href="assets/css/popup-window.css">
 		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+		
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css"/>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -33,31 +43,31 @@
 									</a>
 								</header>
 
-							<!-- Banner -->
+							
+
 								<section class="banner">
 									<div class="content">
 										<p><strong>Descripción:</strong> En la siguiente tabla se muestra los usuarios que han sido aceptados como hogar temporal. Presione el ojito para ver más información del usuario o el mensaje para enviarle una solicitud de temporal.</p>
 										
-										<div class="table-wrapper">
-											<table>
+										<div class="table-responsive">
+											<table table id="example" class="table table-striped" style="width:100%;">
 												<thead>
 													<tr>
-														<th style="width: 20%;">Nombres y apellidos</th>
-														<th style="width: 20%;">Celular</th>
-														<th style="width: 20%;">Distrito</th>
-														<th style="width: 15%;">Fecha inicio</th>
-														<th style="width: 15%;">Fecha fin</th>
-														<th style="width: 10%;">Acciones</th>
+														<th>DNI</th>
+														<th>Nombres y apellidos</th>
+														<th>Distrito</th>
+														<th>Fecha de inicio</th>
+														<th>Fecha fin</th>
+														<th>Acciones</th>
 													</tr>
 												</thead>
 												<tbody>
-													<tr style="background-color: #f2f2f2;">
-														
-														<td>Cristiano Ronaldo Aveiro Dos Santos</td>
-														<td>992 338 293</td>
-														<td>Miraflores</td>
-														<td>16/11/24</td>
-														<td>12/01/25</td>
+													<tr>
+														<td>12345678</td>
+														<td>Jair Sneider Aguilera Inca</td>
+														<td>Santa Anita</td>
+														<td>16/04/24</td>
+														<td>16/04/05</td>
 														<td>
 															<ul class="icons">
 																<li><a href="hogar_temporal_info1.html" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
@@ -65,68 +75,204 @@
 															</ul>
 														</td>
 													</tr>
-													<tr style="background-color: #f2f2f2;">
-														
-														<td>Mariana Meng Cheng Gonzales</td>
-														<td>992 372 302</td>
-														<td>Cercado de Lima</td>
-														<td>02/10/24</td>
-														<td>06/03/25</td>
-														<td>
-															<ul class="icons">
-																<li><a href="#" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
-																<li><a href="solic_hogar_temporal.html" class="icon fas fa-envelope" title="Enviar solicitud"><span class="label">Enviar></span></a></li>
-															</ul>
-														</td>
-													</tr>
-
-													<tr style="background-color: #f2f2f2;">
-															
+													<tr>
+														<td>12345678</td>
 														<td>Jair Sneider Aguilera Inca</td>
-														<td>923 028 382</td>
 														<td>Santa Anita</td>
-														<td>13/11/24</td>
-														<td>02/01/25</td>
+														<td>16/04/24</td>
+														<td>16/04/05</td>
 														<td>
 															<ul class="icons">
-																<li><a href="#" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+																<li><a href="hogar_temporal_info1.html" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
 																<li><a href="solic_hogar_temporal.html" class="icon fas fa-envelope" title="Enviar solicitud"><span class="label">Enviar></span></a></li>
 															</ul>
 														</td>
 													</tr>
-
-													<tr style="background-color: #f2f2f2;">
-															
-														<td>Darío Rodrigo Gomez Alarcón</td>
-														<td>982 990 253</td>
-														<td>El Agustino</td>
-														<td>16/11/24</td>
-														<td>16/03/25</td>
-														<td>
-															<ul class="icons">
-																<li><a href="#" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
-																<li><a href="solic_hogar_temporal.html" class="icon fas fa-envelope" title="Enviar solicitud"><span class="label">Enviar></span></a></li>
-															</ul>
-														</td>
-													</tr>
-
-													<tr style="background-color: #f2f2f2;">
-															
-															<td>Laura Mildre Risco Fernández</td>
-															<td>924 928 182</td>
-															<td>Pueblo Libre</td>
-															<td>02/11/24</td>
-															<td>17/02/25</td>
+														<tr>
+															<td>12345678</td>
+															<td>Jair Sneider Aguilera Inca</td>
+															<td>Santa Anita</td>
+															<td>16/04/24</td>
+															<td>16/04/05</td>
 															<td>
 																<ul class="icons">
-																	<li><a href="#" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+																	<li><a href="hogar_temporal_info1.html" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
 																	<li><a href="solic_hogar_temporal.html" class="icon fas fa-envelope" title="Enviar solicitud"><span class="label">Enviar></span></a></li>
 																</ul>
 															</td>
 														</tr>
-													</tr>
+														<tr>
+															<td>12345678</td>
+															<td>Jair Sneider Aguilera Inca</td>
+															<td>Santa Anita</td>
+															<td>19/04/24</td>
+															<td>16/04/05</td>
+															<td>
+																<ul class="icons">
+																	<li><a href="hogar_temporal_info1.html" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+																	<li><a href="solic_hogar_temporal.html" class="icon fas fa-envelope" title="Enviar solicitud"><span class="label">Enviar></span></a></li>
+																</ul>
+															</td>
+														</tr>
+														<tr>
+															<td>12345678</td>
+															<td>Jair Sneider Aguilera Inca</td>
+															<td>Santa Anita</td>
+															<td>16/03/24</td>
+															<td>16/04/05</td>
+															<td>
+																<ul class="icons">
+																	<li><a href="hogar_temporal_info1.html" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+																	<li><a href="solic_hogar_temporal.html" class="icon fas fa-envelope" title="Enviar solicitud"><span class="label">Enviar></span></a></li>
+																</ul>
+															</td>
+														</tr>
+														<tr>
+															<td>12345678</td>
+															<td>Jair Sneider Aguilera Inca</td>
+															<td>Santa Anita</td>
+															<td>16/02/24</td>
+															<td>16/04/25</td>
+															<td>
+																<ul class="icons">
+																	<li><a href="hogar_temporal_info1.html" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+																	<li><a href="solic_hogar_temporal.html" class="icon fas fa-envelope" title="Enviar solicitud"><span class="label">Enviar></span></a></li>
+																</ul>
+															</td>
+														</tr>
+														<tr>
+															<td>12345678</td>
+															<td>Jair Sneider Aguilera Inca</td>
+															<td>Santa Anita</td>
+															<td>16/01/24</td>
+															<td>16/04/25</td>
+															<td>
+																<ul class="icons">
+																	<li><a href="hogar_temporal_info1.html" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+																	<li><a href="solic_hogar_temporal.html" class="icon fas fa-envelope" title="Enviar solicitud"><span class="label">Enviar></span></a></li>
+																</ul>
+															</td>
+														</tr>
+														<tr>
+															<td>12345678</td>
+															<td>Jair Sneider Aguilera Inca</td>
+															<td>Santa Anita</td>
+															<td>16/10/23</td>
+															<td>16/04/05</td>
+															<td>
+																<ul class="icons">
+																	<li><a href="hogar_temporal_info1.html" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+																	<li><a href="solic_hogar_temporal.html" class="icon fas fa-envelope" title="Enviar solicitud"><span class="label">Enviar></span></a></li>
+																</ul>
+															</td>
+														</tr>
+														<tr>
+															<td>12345678</td>
+															<td>Jair Sneider Aguilera Inca</td>
+															<td>Santa Anita</td>
+															<td>16/02/24</td>
+															<td>16/04/05</td>
+															<td>
+																<ul class="icons">
+																	<li><a href="hogar_temporal_info1.html" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+																	<li><a href="solic_hogar_temporal.html" class="icon fas fa-envelope" title="Enviar solicitud"><span class="label">Enviar></span></a></li>
+																</ul>
+															</td>
+														</tr>
+														<tr>
+															<td>12345678</td>
+															<td>Jair Sneider Aguilera Inca</td>
+															<td>Santa Anita</td>
+															<td>11/01/24</td>
+															<td>16/04/05</td>
+															<td>
+																<ul class="icons">
+																	<li><a href="hogar_temporal_info1.html" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+																	<li><a href="solic_hogar_temporal.html" class="icon fas fa-envelope" title="Enviar solicitud"><span class="label">Enviar></span></a></li>
+																</ul>
+															</td>
+														</tr>
+														<tr>
+															<td>12333243</td>
+															<td>Gianfranco Enriquez Soel</td>
+															<td>Rimac</td>
+															<td>12/06/24</td>
+															<td>16/04/07</td>
+															<td>
+																<ul class="icons">
+																	<li><a href="hogar_temporal_info1.html" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+																	<li><a href="solic_hogar_temporal.html" class="icon fas fa-envelope" title="Enviar solicitud"><span class="label">Enviar></span></a></li>
+																</ul>
+															</td>
+														</tr>
+														<tr>
+															<td>12333243</td>
+															<td>Gianfranco Enriquez Soel</td>
+															<td>Rimac</td>
+															<td>12/03/24</td>
+															<td>16/04/07</td>
+															<td>
+																<ul class="icons">
+																	<li><a href="hogar_temporal_info1.html" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+																	<li><a href="solic_hogar_temporal.html" class="icon fas fa-envelope" title="Enviar solicitud"><span class="label">Enviar></span></a></li>	
+																</ul>	
+															</td>
+														</tr>
+														<tr>
+															<td>12333243</td>
+															<td>Gianfranco Enriquez Soel</td>
+															<td>Rimac</td>
+															<td>12/03/24</td>
+															<td>16/04/07</td>
+															<td>
+																<ul class="icons">
+																	<li><a href="hogar_temporal_info1.html" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+																	<li><a href="solic_hogar_temporal.html" class="icon fas fa-envelope" title="Enviar solicitud"><span class="label">Enviar></span></a></li>
+																</ul>
+															</td>
+														</tr>
+														<tr>
+															<td>12333243</td>
+															<td>Gianfranco Enriquez Soel</td>
+															<td>Rimac</td>
+															<td>12/02/24</td>
+															<td>16/04/07</td>
+															<td>
+																<ul class="icons">
+																	<li><a href="hogar_temporal_info1.html" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+																	<li><a href="solic_hogar_temporal.html" class="icon fas fa-envelope" title="Enviar solicitud"><span class="label">Enviar></span></a></li>
+																</ul>
+															</td>
+														</tr>
+														<tr>
+															<td>12333243</td>
+															<td>Gianfranco Enriquez Soel</td>
+															<td>Rimac</td>
+															<td>12/01/24</td>
+															<td>16/04/07</td>
+															<td>
+																<ul class="icons">
+																	<li><a href="hogar_temporal_info1.html" class="icon fas fa-eye" title="Ver más información"><span class="label">Ver</span></a></li> <!-- fa-eye para ver -->
+																	<li><a href="solic_hogar_temporal.html" class="icon fas fa-envelope" title="Enviar solicitud"><span class="label">Enviar></span></a></li>
+																</ul>
+															</td>
+														</tr>
 												</tbody>
 											</table>
+											<script>
+												new DataTable('#example', {
+												language: {
+													sSearch: "Buscar:",  // Cambia el texto del campo de búsqueda
+													sLengthMenu: "Mostrar _MENU_ registros",
+													sZeroRecords: "No se encontraron resultados",
+													sEmptyTable: "Ningún dato disponible en esta tabla",
+													sInfo: "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+													sInfoEmpty: "Mostrando registros del 0 al 0 de un total de 0 registros",
+													sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
+													sLoadingRecords: "Cargando...",
+												}
+											});
+											</script>
 										</div>
 									</div>
 								</section>
@@ -168,7 +314,7 @@
 										<li>
 											<span class="opener">Publicaciones</span>
 											<ul>
-												<li><a href="EventoBenéfico.html">Eventos benéficos</a></li>
+												<li><a href="EventoBenefico.html">Eventos benéficos</a></li>
 												<li><a href="adopciones.html">Adopciones</a></li>
 												<li><a href="donaciones.html">Donaciones</a></li>
 											</ul>

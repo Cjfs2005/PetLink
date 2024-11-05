@@ -4,10 +4,19 @@
 		<title>PetLink</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"/>
+
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/aditional.css">
 		<link rel="stylesheet" href="assets/css/popup-window.css">
 		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css"/>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -19,7 +28,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<h1 class="logo"><strong>Detalles</strong></h1>
+									<h1 class="logo"><strong>Detalles de la adopción</strong></h1>
 									<!-- Sección para el nombre y enlace al perfil -->
 									<a href="perfil.html" class="user-profile">
 										<span class="ocultar">Huellitas PUCP</span> <img src="images/logo_huellitas.png" style="border-radius: 100%; height: 45px; width: 45px;object-fit: cover;"></img>
@@ -47,9 +56,138 @@
 											<li><strong>Género: </strong>Macho</li>
 											<li><strong>Lugar de encuentro: </strong>Parque Las Américas</li>
                                             <li><strong>Se encuentra en un hogar temporal: </strong>Sí</li>
+											<li><strong>Estado: </strong>PENDIENTE</li>
 										</ul>
                                         <p><strong>Condiciones para la adopción:</strong></p>
                                         <p>Se necesita que sea un dueño que ame a los animales y pueda tener paciencia con este animalito ya que es un poco compulsivo.</p>
+
+										<p><strong>Postulantes:</strong></p>
+
+										<div class="table-responsive">
+											<table table id="example" class="table table-striped" style="width:100%;">
+												<thead>
+													<tr>
+														
+														<th>Nombres y apellidos</th>
+														<th>Número</th>
+														<th>Distrito</th>
+														<th>¿Ha sido sancionado?</th>
+														<th>Acciones</th>
+														
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														
+														<td>Christian Jair Flores Soto</td>
+														<td>938321029</td>
+														<td>Lurín</td>
+														<td>No</td>
+														<td>
+															<ul class="icons">
+																<li><a href="#" class="icon fas fa-check-circle"><span class="label">Aceptar</span></a></li> <!-- fa-check para aceptar -->
+																<li><a href="#" class="icon fas fa-times-circle"><span class="label">Rechazar</span></a></li> <!-- fa-times para rechazar -->
+															</ul>	
+														</td>
+														
+													   
+													</tr>
+													<tr>
+														
+														<td>Alejandro Emanuel Gutarra Bendezú</td>
+														<td>983456845</td>
+														<td>Chosica</td>
+														<td>No</td>
+														<td>
+															<ul class="icons">
+																<li><a href="#" class="icon fas fa-check-circle"><span class="label">Aceptar</span></a></li> <!-- fa-check para aceptar -->
+																<li><a href="#" class="icon fas fa-times-circle"><span class="label">Rechazar</span></a></li> <!-- fa-times para rechazar -->
+															</ul>
+															
+														</td>
+													   
+													</tr>
+													
+														<td>Tony Lee Flores Aguirre</td>
+														<td>983432100</td>
+														<td>Villa María del Triunfo</td>
+														<td>No</td>
+														<td>
+															<ul class="icons">
+																<li><a href="#" class="icon fas fa-check-circle"><span class="label">Aceptar</span></a></li> <!-- fa-check para aceptar -->
+																<li><a href="#" class="icon fas fa-times-circle"><span class="label">Rechazar</span></a></li> <!-- fa-times para rechazar -->
+
+															</ul>
+															
+														</td>
+															
+													  
+													</tr>
+													
+													<tr>
+														
+														<td>Christian Jair Flores Soto</td>
+														<td>938321029</td>
+														<td>Lurín</td>
+														<td>Sí</td>
+														<td>
+															<ul class="icons">
+																<li><a href="#" class="icon fas fa-check-circle"><span class="label">Aceptar</span></a></li> <!-- fa-check para aceptar -->
+																<li><a href="#" class="icon fas fa-times-circle"><span class="label">Rechazar</span></a></li> <!-- fa-times para rechazar -->
+															</ul>	
+														</td>
+														
+													   
+													</tr>
+													<tr>
+														
+														<td>Alejandro Emanuel Gutarra Bendezú</td>
+														<td>983456845</td>
+														<td>Chosica</td>
+														<td>Sí</td>
+														<td>
+															<ul class="icons">
+																<li><a href="#" class="icon fas fa-check-circle"><span class="label">Aceptar</span></a></li> <!-- fa-check para aceptar -->
+																<li><a href="#" class="icon fas fa-times-circle"><span class="label">Rechazar</span></a></li> <!-- fa-times para rechazar -->
+															</ul>
+															
+														</td>
+													   
+													</tr>
+													
+														<td>Tony Lee Flores Aguirre</td>
+														<td>983432100</td>
+														<td>Villa María del Triunfo</td>
+														<td>Sí</td>
+														<td>
+															<ul class="icons">
+																<li><a href="#" class="icon fas fa-check-circle"><span class="label">Aceptar</span></a></li> <!-- fa-check para aceptar -->
+																<li><a href="#" class="icon fas fa-times-circle"><span class="label">Rechazar</span></a></li> <!-- fa-times para rechazar -->
+
+															</ul>
+															
+														</td>
+															
+													  
+													</tr>
+												</tbody>
+											</table>
+											<script>
+												new DataTable('#example', {
+												language: {
+													sSearch: "Buscar:",  // Cambia el texto del campo de búsqueda
+													sLengthMenu: "Mostrar _MENU_ registros",
+													sZeroRecords: "No se encontraron resultados",
+													sEmptyTable: "Ningún dato disponible en esta tabla",
+													sInfo: "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+													sInfoEmpty: "Mostrando registros del 0 al 0 de un total de 0 registros",
+													sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
+													sLoadingRecords: "Cargando...",
+												}
+											});
+											</script>>
+										</div>
+										
                                        
                                         
 
@@ -97,7 +235,7 @@
 									<div class="mini-posts">
 										<article>
 											<img src="images/logo_huellitas.png" alt="" id="image-perfil">
-											<h2 id="usuario">HUELIITAS PUCP</h2>
+											<h2 id="usuario">HUELLITAS PUCP</h2>
 										</article>
 									</div>
 								</section>
@@ -113,7 +251,7 @@
 								<li>
 									<span class="opener">Publicaciones</span>
 									<ul>
-										<li><a href="EventoBenéfico.html">Eventos benéficos</a></li>
+										<li><a href="EventoBenefico.html">Eventos benéficos</a></li>
 										<li><a href="adopciones.html">Adopciones</a></li>
 										<li><a href="donaciones.html">Donaciones</a></li>
 									</ul>

@@ -4,10 +4,20 @@
 		<title>PetLink</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"/>
+
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/aditional.css">
 		<link rel="stylesheet" href="assets/css/popup-window.css">
 		<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+		
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css"/>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -52,37 +62,56 @@
                                             <li><strong>Entrada: </strong>Comida para perros o gatos.</li>
 											<li><strong>Estado: </strong>APROBADO</li>
 										</ul>
-                                        <p><strong>Lista de usuarios inscritos</strong></p>
-                                        <div class="responsive-table">
-                                            <div class="table-wrapper">
-                                                <!-- Añadido border, cellpadding y colores alternos en las filas -->
-                                                <table>
-                                                    <thead>
-                                                        <tr>
-                                                            <th style="width: 20%;">DNI</th>
-                                                            <th style="width: 35%;">Nombres y apellidos</th>
-                                                            <th style="width: 25%;">Fecha de inscripción</th>
-                                                        </tr>
-                                                    </thead>
-                                                    
-                                                    <tbody>
-                                                        <!-- Alternancia de colores en las filas para mejor legibilidad -->
-                                                        <tr style="background-color: #f2f2f2;">
-                                                            <th style="width: 15%;">75841235</th>
-                                                            <th style="width: 35%;">Cesar Epifanio Santivañez Huaringa</th>
-                                                            <th style="width: 25%;">16/04/24</th>
-                                                            
-                                                        </tr>
-                                                        <tr style="background-color: #f2f2f2;">
-                                                            <th style="width: 15%;">63524789</th>
-                                                            <th style="width: 35%;">Manuel Augusto Yarleque Medina</th>
-                                                            <th style="width: 25%;">19/12/24</th>
-                                                            
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
+                                        <p><strong>Lista de usuarios inscritos: </strong>3/100</p>
+                                        <div class="table-responsive">
+											<table table id="example" class="table table-striped" style="width:100%;">
+												<thead>
+													<tr>
+														
+														<th>Nombres y apellidos</th>
+														<th>Fecha de inscripción</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														
+														<td>Christian Jair Flores Soto</td>
+														<td>12/02/2023</td>
+														
+														
+													   
+													</tr>
+													<tr>
+														
+														<td>Alejandro Emanuel Gutarra Bendezú</td>
+														<td>12/02/2023</td>
+														
+													   
+													</tr>
+													
+													<td>Tony Lee Flores Aguirre</td>
+													<td>12/02/2023</td>
+													
+															
+													  
+													</tr>	
+												</tbody>
+											</table>
+											<script>
+												new DataTable('#example', {
+												language: {
+													sSearch: "Buscar:",  // Cambia el texto del campo de búsqueda
+													sLengthMenu: "Mostrar _MENU_ registros",
+													sZeroRecords: "No se encontraron resultados",
+													sEmptyTable: "Ningún dato disponible en esta tabla",
+													sInfo: "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+													sInfoEmpty: "Mostrando registros del 0 al 0 de un total de 0 registros",
+													sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
+													sLoadingRecords: "Cargando...",
+												}
+											});
+											</script>
+										</div>
 
 										<div class="row gtr-uniform">
 											
@@ -127,7 +156,7 @@
 									<div class="mini-posts">
 										<article>
 											<img src="images/logo_huellitas.png" alt="" id="image-perfil">
-											<h2 id="usuario">HUELIITAS PUCP</h2>
+											<h2 id="usuario">HUELLITAS PUCP</h2>
 										</article>
 									</div>
 								</section>
@@ -143,7 +172,7 @@
 								<li>
 									<span class="opener">Publicaciones</span>
 									<ul>
-										<li><a href="EventoBenéfico.html">Eventos benéficos</a></li>
+										<li><a href="EventoBenefico.html">Eventos benéficos</a></li>
 										<li><a href="adopciones.html">Adopciones</a></li>
 										<li><a href="donaciones.html">Donaciones</a></li>
 									</ul>
