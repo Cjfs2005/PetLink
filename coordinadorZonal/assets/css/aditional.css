@@ -599,6 +599,10 @@ select:disabled {
     border-color: #007bff !important;
 }
 
-.dt-length, .dt-info {
+/*.dt-length, .dt-info {
     display: none;
+}*/
+
+.dt-search label, .dt-length label{
+    display: inline-block !important;
 }

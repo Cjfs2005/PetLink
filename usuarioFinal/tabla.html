@@ -9,13 +9,15 @@
 		<title>PetLink</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"/>
+		
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/aditional.css">
 		<link rel="stylesheet" href="assets/css/popup-window.css">
 		<link rel="icon" href="images/favicon.png" type="image/x-icon">
 
 		<!--Agregar-->
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css"/>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
@@ -298,7 +300,18 @@
 												</tbody>
 											</table>
 											<script>
-												new DataTable('#example');
+												new DataTable('#example', {
+												language: {
+													sSearch: "Buscar:",  // Cambia el texto del campo de búsqueda
+													sLengthMenu: "Mostrar _MENU_ registros",
+													sZeroRecords: "No se encontraron resultados",
+													sEmptyTable: "Ningún dato disponible en esta tabla",
+													sInfo: "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+													sInfoEmpty: "Mostrando registros del 0 al 0 de un total de 0 registros",
+													sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
+													sLoadingRecords: "Cargando...",
+												}
+											});
 											</script>
 										</div>
 									</div>
