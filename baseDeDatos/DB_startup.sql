@@ -1,5 +1,3 @@
--- MySQL Workbench Forward Engineering
-
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
@@ -114,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Usuario` (
   `direccion` VARCHAR(100) NULL,
   `id_rol` INT NOT NULL,
   `correo_electronico` VARCHAR(100) NULL,
-  `foto_perfil` BLOB NULL,
+  `foto_perfil` LONGBLOB NULL,
   `nombre_foto_perfil` VARCHAR(100) NULL,
   `contrasenia` VARCHAR(100) NULL,
   `es_contrasenia_temporal` TINYINT NULL,
@@ -130,16 +128,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Usuario` (
   `cantidad_animales` INT NULL,
   `espacio_disponible` INT NULL,
   `url_instagram` VARCHAR(200) NULL,
-  `foto_de_portada_albergue` BLOB NULL,
+  `foto_de_portada_albergue` LONGBLOB NULL,
   `nombre_foto_de_portada` VARCHAR(100) NULL,
-  `logo_albergue` BLOB NULL,
+  `logo_albergue` LONGBLOB NULL,
   `nombre_logo_albergue` VARCHAR(100) NULL,
   `direccion_donaciones` VARCHAR(150) NULL,
   `nombre_contacto_donaciones` VARCHAR(45) NULL,
   `numero_contacto_donaciones` VARCHAR(9) NULL,
   `numero_yape_plin` VARCHAR(9) NULL,
   `nombre_imagen_qr` VARCHAR(100) NULL,
-  `imagen_qr` BLOB NULL,
+  `imagen_qr` LONGBLOB NULL,
   `tiene_registro_completo` TINYINT NULL,
   `nombres_coordinador` VARCHAR(45) NULL,
   `apellidos_coordinador` VARCHAR(45) NULL,
@@ -244,7 +242,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`DenunciaMaltratoAnimal` (
   `id_denuncia_maltrato_animal` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `nombre_foto_animal` VARCHAR(100) NULL,
-  `foto_animal` BLOB NULL,
+  `foto_animal` LONGBLOB NULL,
   `tamanio` VARCHAR(45) NULL,
   `raza` VARCHAR(45) NULL,
   `descripcion_maltrato` VARCHAR(300) NULL,
@@ -276,7 +274,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`FotoPostulacionHogarTemporal` (
   `id_foto_postulacion_hogar_temporal` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `foto_lugar_temporal` BLOB NULL,
+  `foto_lugar_temporal` LONGBLOB NULL,
   `nombre_foto_lugar_temporal` VARCHAR(45) NULL,
   `id_postulacion_hogar_temporal` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id_foto_postulacion_hogar_temporal`),
@@ -294,7 +292,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`SolicitudHogarTemporal` (
   `id_solicitud_hogar_temporal` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `foto_mascota` BLOB NULL,
+  `foto_mascota` LONGBLOB NULL,
   `nombre_foto_mascota` VARCHAR(45) NULL,
   `nombre_mascota` VARCHAR(45) NULL,
   `descripcion_mascota` VARCHAR(300) NULL,
@@ -336,7 +334,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`PublicacionMascotaAdopcion` (
   `descripcion_mascota` VARCHAR(300) NULL,
   `edad_aproximada` VARCHAR(2) NULL,
   `genero_mascota` VARCHAR(45) NULL,
-  `foto_mascota` BLOB NULL,
+  `foto_mascota` LONGBLOB NULL,
   `nombre_foto_mascota` VARCHAR(45) NULL,
   `esta_en_temporal` TINYINT NULL,
   `condiciones_adopcion` VARCHAR(300) NULL,
@@ -385,7 +383,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`PublicacionEventoBenefico` (
   `fecha_hora_registro` DATETIME NULL,
   `id_lugar_evento` INT UNSIGNED NOT NULL,
   `id_usuario_albergue` INT UNSIGNED NOT NULL,
-  `foto` BLOB NULL,
+  `foto` LONGBLOB NULL,
   `nombre_foto` VARCHAR(100) NULL,
   `id_estado` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id_publicacion_evento_benefico`),
@@ -524,7 +522,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`PublicacionMascotaPerdida` (
   `id_publicacion_mascota_perdida` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `descripcion_mascota` VARCHAR(300) NULL,
-  `foto_mascota` BLOB NULL,
+  `foto_mascota` LONGBLOB NULL,
   `nombre_foto_mascota` VARCHAR(100) NULL,
   `nombre` VARCHAR(45) NULL,
   `edad_mascota` VARCHAR(2) NULL,
@@ -632,7 +630,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`RegistroDonacionEconomica` (
   `id_solicitud_donacion_economica` INT UNSIGNED NOT NULL,
   `id_usuario_final` INT UNSIGNED NOT NULL,
   `id_estado` INT UNSIGNED NOT NULL,
-  `imagen_donacion_economica` BLOB NULL,
+  `imagen_donacion_economica` LONGBLOB NULL,
   `nombre_imagen_donacion_economica` VARCHAR(100) NULL,
   PRIMARY KEY (`id_registro_donacion_economica`),
   INDEX `fk_RegistroDonacionEconomica_SolicitudDonacionEconomica1_idx` (`id_solicitud_donacion_economica` ASC) VISIBLE,
