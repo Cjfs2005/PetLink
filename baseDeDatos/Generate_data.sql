@@ -83,8 +83,8 @@ insert into mydb.tipopublicacionmascotaperdida(tipo_publicacion) values ("Public
 -- Insertar 5 registros de Usuarios Finales 
 
 -- Usuario con contraseña temporal al registrarse por primera vez 
-insert into mydb.usuario(dni,nombres_usuario_final, apellidos_usuario_final, direccion, id_rol, correo_electronico, id_distrito, id_zona, id_ultima_postulacion_hogar_temporal, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion) 
-values ("72207089", "Tony Lee", "Flores Aguirre", "Av. Brasil 1791", 1, "tfa@pucp.edu.pe", 6, 4, NULL, "password_temporal", 1, date_add(now(),interval 30 minute), 1, 1, now());  
+insert into mydb.usuario(dni,nombres_usuario_final, apellidos_usuario_final, direccion, id_rol, correo_electronico, id_distrito, id_zona, id_ultima_postulacion_hogar_temporal, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, nombre_foto_perfil, foto_perfil, contrasenia_hashed) 
+values ("72207089", "Tony Lee", "Flores Aguirre", "Av. Brasil 1791", 1, "tfa@pucp.edu.pe", 6, 4, NULL, "password_temporal", 1, date_add(now(),interval 30 minute), 1, 1, now(),"foto_perfil.png", LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/foto_perfil.png'), sha2("password_temporal", 256));  
 
 insert into mydb.usuario(dni,nombres_usuario_final, apellidos_usuario_final, direccion, id_rol, correo_electronico, id_distrito, id_zona, id_ultima_postulacion_hogar_temporal, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion) 
 values ("03639814", "Daniel Agustin", "Yarlequé Medina", "Av. Argentina 1250", 1, "myarleq@pucp.edu.pe", 2, 4, NULL, "password_modified_1", 0, date_add(now(),interval 30 minute), 0, 1, now());  
@@ -99,8 +99,8 @@ insert into mydb.usuario(dni,nombres_usuario_final, apellidos_usuario_final, dir
 values ("71104377", "Alejandro Emanuel", "Gutarra Bendezu", "Av. Carlos Izaguirre 295", 1, "gutarra2805@pucp.edu.pe", 8, 1, NULL, "password_modified_4", 0, date_add(now(),interval 30 minute), 0, 1, now()); 
 
 -- Insertar 3 registros de Albergue 
-insert into mydb.usuario(nombre_albergue, nombres_encargado, apellidos_encargado, direccion, id_rol, correo_electronico, id_distrito, id_zona, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, anio_creacion, cantidad_animales, url_instagram, direccion_donaciones, nombre_contacto_donaciones, numero_contacto_donaciones, numero_yape_plin, tiene_registro_completo, espacio_disponible)  
-values ('Albergue Esperanza', 'Laura', 'García Pérez', 'Av. Siempre Viva 123', 2, 'esperanza@gmail.com', 6, 3, 'password123', 0, '2024-05-31 18:59:30', 0, 1, '2024-05-31 18:29:30', 2018, 25, 'https://instagram.com/albergueesperanza', 'Av. Donaciones 345', 'Laura García', '987654321', '937652321', 1, 20);
+insert into mydb.usuario(nombre_albergue, nombres_encargado, apellidos_encargado, direccion, id_rol, correo_electronico, id_distrito, id_zona, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, anio_creacion, cantidad_animales, url_instagram, direccion_donaciones, nombre_contacto_donaciones, numero_contacto_donaciones, numero_yape_plin, tiene_registro_completo, espacio_disponible, foto_perfil)  
+values ('Albergue Esperanza', 'Laura', 'García Pérez', 'Av. Siempre Viva 123', 2, 'esperanza@gmail.com', 6, 3, 'password123', 0, '2024-05-31 18:59:30', 0, 1, '2024-05-31 18:29:30', 2018, 25, 'https://instagram.com/albergueesperanza', 'Av. Donaciones 345', 'Laura García', '987654321', '937652321', 1, 20,LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/logo_huellitas.png'));
 
 insert into mydb.usuario(nombre_albergue, nombres_encargado, apellidos_encargado, direccion, id_rol, correo_electronico, id_distrito, id_zona, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, anio_creacion, cantidad_animales, url_instagram, direccion_donaciones, nombre_contacto_donaciones, numero_contacto_donaciones, numero_yape_plin, tiene_registro_completo, espacio_disponible)
 values ('Albergue Amigos Fieles', 'Carlos', 'Sánchez López', 'Calle Amistad 456', 2, 'amigosfieles@gmail.com', 3, 3, 'password456', 0, '2024-02-16 12:45:30', 0, 1, '2024-02-16 12:15:30', 2012, 135, 'https://instagram.com/amigosfieles', 'Calle Donaciones 789', 'Juan Jose', '987654322', '933692322', 1, 34);
@@ -207,26 +207,6 @@ VALUES
 ('Perro pequeño visto en la esquina de Calle Esperanza', NULL, 'foto_perro_calle.jpg', 'Charles', NULL, NULL, NULL, 'Calle Esperanza', NULL, NULL, NULL, NULL, 1, NOW(), 2, 3, 2, NULL, NULL, 0),
 ('Perro perdido en la zona del parque central', NULL, 'foto_perro_perdido.jpg', 'Firulais', '3', 'Labrador', 'Mediano', 'Parque Central', '2024-09-30', '987654321', 'Juan Pérez', 500, 1, '2024-09-30 10:00:00', 1, 1, 2, 1, '2024-10-01 18:00:00', 0);
 
--- Inserte 4 publicaciones de mascotas en adopcion
-INSERT INTO PublicacionMascotaAdopcion (nombre_mascota, tipo_raza, lugar_encontrado, descripcion_mascota, edad_aproximada, genero_mascota, foto_mascota, nombre_foto_mascota, esta_en_temporal, condiciones_adopcion, es_publicacion_activa, fecha_hora_registro, id_usuario_albergue, id_estado)
-VALUES 
-("Pepe", 'Mestizo', 'Parque Los Álamos', 'Perro juguetón y amigable, ideal para familias con niños', '3', 'Macho', NULL, 'foto_perro1.jpg', 0, 'Debe tener un patio grande', 1, '2024-10-02 12:00:00', 6, 2),
-
-("Trufa", 'Labrador', 'Calle Las Flores', 'Perro labrador muy cariñoso, le encanta jugar y es muy obediente', '2', 'Hembra', NULL, 'foto_perro2.jpg', 0, 'Debe tener espacio suficiente para correr', 1, '2024-10-02 12:10:00', 6, 2),
-
-("Alejandro", 'Siamés', 'Jr. Las Acacias', 'Gato siamés tranquilo, ideal para apartamentos y casas pequeñas', '4', 'Macho', NULL, 'foto_gato1.jpg', 1, 'Preferiblemente para personas sin otras mascotas', 1, '2024-10-02 12:20:00', 6, 2),
-
-("Maxwell", 'Mestizo', 'Av. La Paz', 'Gatito juguetón y curioso, ideal para familias que deseen compañía', '1', 'Hembra', NULL, 'foto_gato2.jpg', 0, 'Requiere espacio seguro dentro del hogar', 1, '2024-10-02 12:30:00', 6, 2);
-
--- Generamos 5 postulaciones para adopción para la primera publicación
-
-INSERT INTO PostulacionMascotaAdopcion (fecha_hora_registro, id_publicacion_mascota_adopcion, id_usuario_final, id_estado)
-VALUES 
-('2024-10-03 09:00:00', 1, 1, 1),  -- Postulación del usuario 1
-('2024-10-03 09:05:00', 1, 2, 1),  -- Postulación del usuario 2
-('2024-10-03 09:10:00', 1, 3, 1),  -- Postulación del usuario 3
-('2024-10-03 09:15:00', 1, 4, 1),  -- Postulación del usuario 4
-('2024-10-03 09:20:00', 1, 5, 1);  -- Postulación del usuario 5
 
 -- Generamos una postulación a hogar temporal para el usuario 1 y actualizamos su campo de última postulación a hogar temporal
 
@@ -249,6 +229,71 @@ INSERT INTO SolicitudHogarTemporal (foto_mascota, nombre_foto_mascota, nombre_ma
 VALUES 
 (NULL, 'foto_mascota1.jpg', 'Lucky', 'Perro pequeño y juguetón, ideal para familias con niños', '2024-11-05', '2024-11-25', '2024-10-02 14:00:00', 1, 6, 1);
 
--- Modificaciones 9/10/2024
+-- Modificaciones 12/11/2024
 
+-- Se agregaron las imagenes a las publicaciones de mascota adopcion 
+
+-- Inserte 12 publicaciones de mascotas en adopcion
+
+INSERT INTO PublicacionMascotaAdopcion (nombre_mascota, tipo_raza, lugar_encontrado, descripcion_mascota, edad_aproximada, genero_mascota, foto_mascota, nombre_foto_mascota, esta_en_temporal, condiciones_adopcion, es_publicacion_activa, fecha_hora_registro, id_usuario_albergue, id_estado)
+VALUES 
+("Pepe", 'Mestizo', 'Parque Los Álamos', 'Perro juguetón y amigable, ideal para familias con niños', '3', 'Macho', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/adopcion3.png'), 'foto_perro1.jpg', 0, 'Debe tener un patio grande', 1, '2024-10-02 12:00:00', 6, 2),
+
+("Trufa", 'Labrador', 'Calle Las Flores', 'Perro labrador muy cariñoso, le encanta jugar y es muy obediente', '2', 'Hembra', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/adopcion4.png'), 'foto_perro2.jpg', 0, 'Debe tener espacio suficiente para correr', 1, '2024-10-02 12:10:00', 6, 2),
+
+("Alejandro", 'Siamés', 'Jr. Las Acacias', 'Gato siamés tranquilo, ideal para apartamentos y casas pequeñas', '4', 'Macho', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/adopcion5.png'), 'foto_gato1.jpg', 1, 'Preferiblemente para personas sin otras mascotas', 1, '2024-10-02 12:20:00', 6, 2),
+
+("Maxwell", 'Mestizo', 'Av. La Paz', 'Gatito juguetón y curioso, ideal para familias que deseen compañía', '1', 'Hembra', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/adopcion6.png'), 'foto_gato2.jpg', 0, 'Requiere espacio seguro dentro del hogar', 1, '2024-10-02 12:30:00', 6, 2),
+
+("Luna", 'Golden Retriever', 'Parque San Martín', 'Golden juguetona y cariñosa, ideal para familias con niños', '5', 'Hembra', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/apolo.png'), 'foto_perro3.jpg', 0, 'Debe tener un patio amplio', 1, '2024-10-02 12:40:00', 6, 2),
+
+("Toby", 'Pastor Alemán', 'Calle Los Olivos', 'Pastor alemán leal y protector, requiere entrenamiento constante', '3', 'Macho', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/adopcion3.png'), 'foto_perro4.jpg', 1, 'Debe estar en un ambiente seguro', 1, '2024-10-02 12:50:00', 6, 2),
+
+("Mia", 'Persa', 'Av. Primavera', 'Gata persa dulce y tranquila, ideal para interiores', '2', 'Hembra', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/adopcion4.png'), 'foto_gato3.jpg', 0, 'Preferiblemente hogar sin otros gatos', 1, '2024-10-02 13:00:00', 6, 2),
+
+("Rocky", 'Pitbull', 'Parque Central', 'Pitbull amigable y enérgico, necesita actividad constante', '4', 'Macho', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/adopcion5.png'), 'foto_perro5.jpg', 0, 'Dueño con experiencia en perros', 1, '2024-10-02 13:10:00', 6, 2),
+
+("Bella", 'Beagle', 'Jr. Los Rosales', 'Beagle juguetona y exploradora, ideal para familias', '1', 'Hembra', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/adopcion6.png'), 'foto_perro6.jpg', 0, 'Debe tener supervisión constante', 1, '2024-10-02 13:20:00', 6, 2),
+
+("Simba", 'Bengala', 'Calle Primavera', 'Gato bengala curioso y activo, ideal para familias jóvenes', '3', 'Macho', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/apolo.png'), 'foto_gato4.jpg', 1, 'Requiere mucho entretenimiento', 1, '2024-10-02 13:30:00', 6, 2),
+
+("Canela", 'Bulldog Francés', 'Parque Kennedy', 'Bulldog francés amigable, ideal para departamentos', '2', 'Hembra', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/adopcion3.png'), 'foto_perro7.jpg', 0, 'Requiere supervisión por su raza', 1, '2024-10-02 13:40:00', 6, 2),
+
+("Oscar", 'Himalayo', 'Av. Los Pinos', 'Gato himalayo muy cariñoso, busca hogar tranquilo', '5', 'Macho', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/adopcion4.png'), 'foto_gato5.jpg', 1, 'Hogar sin niños pequeños', 1, '2024-10-02 13:50:00', 6, 2);
+
+-- Generamos 5 postulaciones para adopción
+
+INSERT INTO PostulacionMascotaAdopcion (fecha_hora_registro, id_publicacion_mascota_adopcion, id_usuario_final, id_estado)
+VALUES 
+('2024-10-03 09:00:00', 1, 1, 1),  -- Postulación del usuario 1
+('2024-10-03 09:05:00', 1, 2, 1),  -- Postulación del usuario 2
+('2024-10-03 09:10:00', 1, 3, 1),  -- Postulación del usuario 3
+('2024-10-03 09:15:00', 1, 4, 1),  -- Postulación del usuario 4
+('2024-10-03 09:20:00', 1, 5, 1),  -- Postulación del usuario 5
+('2024-10-03 09:00:00', 2, 1, 1),  -- Postulación del usuario 1
+('2024-10-03 09:15:00', 3, 1, 1),  -- Postulación del usuario 1
+('2024-10-03 09:40:00', 4, 1, 1),  -- Postulación del usuario 1
+('2024-10-03 09:31:00', 5, 1, 1);  -- Postulación del usuario 1
+
+-- Genero publicaciones de mascotas en adopcion adicionales 
+
+INSERT INTO PublicacionMascotaAdopcion (nombre_mascota, tipo_raza, lugar_encontrado, descripcion_mascota, edad_aproximada, genero_mascota, foto_mascota, nombre_foto_mascota, esta_en_temporal, condiciones_adopcion, es_publicacion_activa, fecha_hora_registro, id_usuario_albergue, id_estado)
+VALUES 
+("Lola", 'Bulldog Francés', 'Av. Independencia', 'Bulldog tranquila y cariñosa, ideal para espacios pequeños', '3', 'Hembra', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/adopcion3.png'), 'foto_perro7.jpg', 1, 'Debe tener supervisión médica regular', 1, '2024-10-02 13:40:00', 6, 2),
+
+("Coco", 'Husky Siberiano', 'Parque Primavera', 'Husky enérgico y amigable, ideal para personas activas', '2', 'Macho', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/adopcion4.png'), 'foto_perro8.jpg', 0, 'Necesita ejercicio diario', 1, '2024-10-02 13:50:00', 6, 2),
+
+("Nina", 'Mestizo', 'Jr. Los Tulipanes', 'Perrita dulce y juguetona, ideal para interiores', '1', 'Hembra', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/adopcion6.png'), 'foto_perro9.jpg', 0, 'Hogar tranquilo y sin niños pequeños', 1, '2024-10-02 14:00:00', 6, 2),
+
+("Zeus", 'Dóberman', 'Av. Libertad', 'Perro protector y leal, ideal para personas experimentadas', '4', 'Macho', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/adopcion5.png'), 'foto_perro10.jpg', 1, 'Requiere espacio amplio y entrenamiento', 1, '2024-10-02 14:10:00', 6, 2),
+
+("Kira", 'Ragdoll', 'Calle Los Pinos', 'Gata muy cariñosa, ideal para familias que busquen compañía', '2', 'Hembra', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/apolo.png'), 'foto_gato5.jpg', 1, 'Ideal en un hogar tranquilo', 1, '2024-10-02 14:20:00', 6, 2),
+
+("Buddy", 'Golden Retriever', 'Parque de la Amistad', 'Perro amistoso y leal, ideal para familias activas', '3', 'Macho', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/adopcion4.png'), 'foto_perro11.jpg', 0, 'Debe tener acceso a espacio al aire libre', 1, '2024-10-02 14:30:00', 6, 2),
+
+("Molly", 'Siberiano', 'Av. Los Laureles', 'Gato independiente y curioso, perfecto para interiores', '4', 'Hembra', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/adopcion3.png'), 'foto_gato6.jpg', 0, 'Ideal para personas que vivan solas', 1, '2024-10-02 14:40:00', 6, 2),
+
+("Thor", 'Rottweiler', 'Calle Amazonas', 'Perro fuerte y protector, necesita dueño experimentado', '5', 'Macho', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/apolo.png'), 'foto_perro12.jpg', 1, 'Debe tener un espacio cerrado y seguro', 1, '2024-10-02 14:50:00', 6, 2),
+
+("Olivia", 'Yorkshire Terrier', 'Parque Los Robles', 'Perrita pequeña y juguetona, ideal para interiores', '1', 'Hembra', LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/adopcion3.png'), 'foto_perro13.jpg', 0, 'Preferiblemente hogar sin niños', 1, '2024-10-02 15:00:00', 6, 2);
 

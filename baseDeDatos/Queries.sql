@@ -532,3 +532,25 @@ GROUP BY
 ORDER BY 
     total_donaciones DESC
 LIMIT 10;
+
+#Query de prueba 
+
+select * from mydb.usuario where usuario.id_usuario= 1; 
+
+select * from PublicacionMascotaAdopcion; 
+
+SELECT p.id_publicacion_mascota_adopcion, p.tipo_raza, p.lugar_encontrado, p.descripcion_mascota, 
+p.edad_aproximada, p.genero_mascota, p.foto_mascota, p.esta_en_temporal, p.condiciones_adopcion, 
+p.nombre_mascota FROM PublicacionMascotaAdopcion p 
+WHERE p.id_publicacion_mascota_adopcion = 1;
+
+SELECT po.id_publicacion_mascota_adopcion, po.fecha_hora_registro, po.id_estado, pu.nombre_mascota, pu.foto_mascota from postulacionmascotaadopcion po
+JOIN mydb.publicacionmascotaadopcion pu
+WHERE po.id_usuario_final = 1 and po.id_publicacion_mascota_adopcion = pu.id_publicacion_mascota_adopcion; 
+
+SELECT u.id_usuario, u.nombres_usuario_final, u.apellidos_usuario_final, u.foto_perfil FROM Usuario u WHERE u.id_usuario = 1; 
+
+SELECT pma.id_publicacion_mascota_adopcion, pma.nombre_mascota, pma.foto_mascota FROM PublicacionMascotaAdopcion pma
+WHERE pma.id_usuario_albergue = 6;
+
+SELECT * from usuario where usuario.id_usuario = 1; 
