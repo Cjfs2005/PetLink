@@ -105,6 +105,10 @@ values ('Albergue Amigos Fieles', 'Carlos', 'Sánchez López', 'Calle Amistad 45
 insert into mydb.usuario(nombre_albergue, nombres_encargado, apellidos_encargado, direccion, id_rol, correo_electronico, id_distrito, id_zona, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, anio_creacion, cantidad_animales, url_instagram, direccion_donaciones, nombre_contacto_donaciones, numero_contacto_donaciones, numero_yape_plin, tiene_registro_completo, espacio_disponible)  
 values('Refugio Patitas Felices', 'María', 'Rodríguez Salazar', 'Jr. Mascota 789', 2, 'patitasfelices@gmail.com', 4, 3, 'password789', 0, '2024-04-02 16:40:30', 0, 1, '2024-04-02 16:10:30',2020, 60, 'https://instagram.com/patitasfelices', 'Jr. Donaciones 012', 'María Rodríguez', '999888777', '999555333', 1, 9);
 
+-- Para administrador
+insert into mydb.usuario(nombres_coordinador, id_rol, contrasenia, contrasenia_hashed, correo_electronico, es_usuario_activo) 
+values("Administrador", 4, "passwd_Admin", sha2("passwd_Admin", 256), "petlink@gmail.com", 1);
+
 
 -- Insertar 5 registros de denuncias por maltrato animal
 INSERT INTO DenunciaMaltratoAnimal (nombre_foto_animal, foto_animal, tamanio, raza, descripcion_maltrato, nombre_maltratador, direccion_maltrato, es_denuncia_activa, fecha_hora_registro, id_usuario_final, id_estado)
