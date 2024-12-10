@@ -190,8 +190,9 @@ VALUES
 -- Insertar una publicación de evento benéfico
 INSERT INTO PublicacionEventoBenefico (nombre_evento, fecha_hora_inicio_evento, fecha_hora_fin_evento, aforo_evento, entrada_evento, descripcion_evento, artistas_provedores_invitados, razon_evento, es_evento_activo, fecha_hora_registro, id_lugar_evento, id_usuario_albergue, id_estado)
 VALUES 
-('Evento de Recaudación para Albergue Esperanza', '2024-11-02 10:00:00', '2024-11-02 15:00:00', 200, 'Entrada libre', 'Recaudación de fondos para ayudar a los animales del albergue', 'Banda local, proveedores de comida', 'Recaudar fondos para gastos médicos y alimentos para los animales', 1, '2024-10-02 12:00:00', 1, 6, 2),
-('Evento de Recaudación para Albergue Amigos Fieles', '2024-11-02 10:00:00', '2024-11-02 15:00:00', 200, 'Entrada libre', 'Recaudación de fondos para ayudar a los animales del albergue', 'Banda local, proveedores de comida', 'Recaudar fondos para gastos médicos y alimentos para los animales', 1, '2024-10-02 12:00:00', 1, 7, 1);
+('Evento de Recaudación para Albergue Esperanza', '2025-05-02 10:00:00', '2025-05-02 15:00:00', 200, 'Entrada libre', 'Recaudación de fondos para ayudar a los animales del albergue', 'Banda local, proveedores de comida', 'Recaudar fondos para gastos médicos y alimentos para los animales', 1, '2025-06-02 12:00:00', 1, 6, 2),
+('Evento Rifa de Mascotas de Esperanza', '2025-07-02 10:00:00', '2025-07-02 15:00:00', 200, 'Entrada libre', 'Recaudación de fondos para ayudar a los animales del albergue', 'Banda local, proveedores de comida', 'Recaudar vívives para las masoctas', 1, '2025-06-02 12:00:00', 1, 6, 2),
+('Evento de Recaudación para Albergue Amigos Fieles', '2025-11-11 10:00:00', '2025-11-11 15:00:00', 200, 'Entrada libre', 'Recaudación de fondos para ayudar a los animales del albergue', 'Banda local, proveedores de comida', 'Recaudar fondos para gastos médicos y alimentos para los animales', 1, '2025-04-02 12:00:00', 1, 7, 1);
 
 -- Insertar 5 inscripciones a eventos benéficos
 INSERT INTO InscripcionEventoBenefico (fecha_hora_registro, id_evento_benefico, id_usuario_final)
