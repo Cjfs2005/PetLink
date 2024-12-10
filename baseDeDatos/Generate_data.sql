@@ -2,107 +2,110 @@
 
 -- Insertar registros de zonas
 
-insert into mydb.zona(nombre_zona) values ("Norte");
-insert into mydb.zona(nombre_zona) values ("Sur");
-insert into mydb.zona(nombre_zona) values ("Este");
-insert into mydb.zona(nombre_zona) values ("Oeste");
+insert into mydb.Zona(nombre_zona) values ("Norte");
+insert into mydb.Zona(nombre_zona) values ("Sur");
+insert into mydb.Zona(nombre_zona) values ("Este");
+insert into mydb.Zona(nombre_zona) values ("Oeste");
 
 -- Insertar registros de distritos 
 
 -- Zona Norte
 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Ancon", 1); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Santa Rosa", 1); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Carabayllo", 1); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Puente Piedra", 1); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Comas", 1); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Los Olivos", 1); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("San Martin de Porres", 1); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Independencia", 1); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Ancon", 1); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Santa Rosa", 1); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Carabayllo", 1); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Puente Piedra", 1); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Comas", 1); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Los Olivos", 1); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("San Martin de Porres", 1); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Independencia", 1); 
 
 -- Zona Sur
 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("San Juan de Miraflores", 2); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Villa María del Triunfo", 2); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Villa el Salvador", 2); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Pachacamac", 2); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Lurin", 2); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Punta Hermosa", 2); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Punta Negra", 2); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("San Bartolo", 2); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Santa María del Mar", 2); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Pucusana", 2); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("San Juan de Miraflores", 2); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Villa María del Triunfo", 2); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Villa el Salvador", 2); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Pachacamac", 2); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Lurin", 2); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Punta Hermosa", 2); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Punta Negra", 2); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("San Bartolo", 2); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Santa María del Mar", 2); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Pucusana", 2); 
 
 -- Zona Este 
 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("San Juan de Lurigancho", 3); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Lurigancho/Chosica", 3); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Ate", 3); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("El Agustino", 3); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Santa Anita", 3); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("La Molina", 3); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Cieneguilla", 3); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("San Juan de Lurigancho", 3); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Lurigancho/Chosica", 3); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Ate", 3); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("El Agustino", 3); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Santa Anita", 3); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("La Molina", 3); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Cieneguilla", 3); 
 
 -- Zona Oeste
 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Rimac", 4); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Cercado de Lima", 4); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Breña", 4); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Pueblo Libre", 4); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Magdalena", 4); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Jesus María", 4); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("La Victoria", 4); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Lince", 4); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("San Isidro", 4); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("San Miguel", 4); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Surquillo", 4); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("San Borja", 4); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Santiago de Surco", 4); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Barranco", 4); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Chorrillos", 4); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("San Luis", 4); 
-insert into mydb.distrito(nombre_distrito, id_zona) values ("Miraflores", 4); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Rimac", 4); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Cercado de Lima", 4); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Breña", 4); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Pueblo Libre", 4); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Magdalena", 4); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Jesus María", 4); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("La Victoria", 4); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Lince", 4); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("San Isidro", 4); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("San Miguel", 4); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Surquillo", 4); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("San Borja", 4); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Santiago de Surco", 4); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Barranco", 4); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Chorrillos", 4); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("San Luis", 4); 
+insert into mydb.Distrito(nombre_distrito, id_zona) values ("Miraflores", 4); 
 
 -- Insertar roles 
 
-insert into mydb.rol(nombre_rol) values ("Usuario Final");  
-insert into mydb.rol(nombre_rol) values ("Albergue");
-insert into mydb.rol(nombre_rol) values ("Coordinador de Zona");
-insert into mydb.rol(nombre_rol) values ("Administrador");
+insert into mydb.Rol(nombre_rol) values ("Usuario Final");  
+insert into mydb.Rol(nombre_rol) values ("Albergue");
+insert into mydb.Rol(nombre_rol) values ("Coordinador de Zona");
+insert into mydb.Rol(nombre_rol) values ("Administrador");
 
 -- Insertar estados 
 
-insert into mydb.estado(id_estado, nombre_estado) values (1,"Pendiente");  
-insert into mydb.estado(id_estado, nombre_estado) values (2,"Aprobada"); 
-insert into mydb.estado(id_estado, nombre_estado) values (3,"Rechazada");
+insert into mydb.Estado(id_estado, nombre_estado) values (1,"Pendiente");  
+insert into mydb.Estado(id_estado, nombre_estado) values (2,"Aprobada"); 
+insert into mydb.Estado(id_estado, nombre_estado) values (3,"Rechazada");
 
 -- Insertar registros de los tipos de publicaciones de mascotas perdidad
 
-insert into mydb.tipopublicacionmascotaperdida(tipo_publicacion) values ("Publicación del dueño"),("Publicación de tercero");
+insert into mydb.TipoPublicacionMascotaPerdida(tipo_publicacion) values ("Publicación del dueño"),("Publicación de tercero");
 
 -- Insertar 5 registros de Usuarios Finales 
 
 -- Usuario con contraseña temporal al registrarse por primera vez 
-insert into mydb.usuario(dni,nombres_usuario_final, apellidos_usuario_final, direccion, id_rol, correo_electronico, id_distrito, id_zona, id_ultima_postulacion_hogar_temporal, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, nombre_foto_perfil, foto_perfil, contrasenia_hashed) 
+insert into mydb.Usuario(dni,nombres_usuario_final, apellidos_usuario_final, direccion, id_rol, correo_electronico, id_distrito, id_zona, id_ultima_postulacion_hogar_temporal, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, nombre_foto_perfil, foto_perfil, contrasenia_hashed) 
 values ("72207089", "Tony Lee", "Flores Aguirre", "Av. Brasil 1791", 1, "tfa@pucp.edu.pe", 6, 4, NULL, "password", 0, date_add(now(),interval 30 minute), 0, 1, now(),"foto_perfil.png", LOAD_FILE('D:\foto_perfil.png'), sha2("password", 256));  
 
-insert into mydb.usuario(dni,nombres_usuario_final, apellidos_usuario_final, direccion, id_rol, correo_electronico, id_distrito, id_zona, id_ultima_postulacion_hogar_temporal, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, nombre_foto_perfil, foto_perfil, contrasenia_hashed) 
+insert into mydb.Usuario(dni,nombres_usuario_final, apellidos_usuario_final, direccion, id_rol, correo_electronico, id_distrito, id_zona, id_ultima_postulacion_hogar_temporal, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, nombre_foto_perfil, foto_perfil, contrasenia_hashed) 
 values ("71200484", "Manuel Judá", "Aliaga Aliaga", "Av. Ricardo Elías Aparicio 715", 1, "maliagaa@pucp.edu.pe", 6, 3, NULL, "password", 0, date_add(now(),interval 30 minute), 0, 1, now(),"foto_perfil.png", LOAD_FILE('D:\foto_perfil.png'), sha2("password", 256));  
 
-insert into mydb.usuario(dni,nombres_usuario_final, apellidos_usuario_final, direccion, id_rol, correo_electronico, id_distrito, id_zona, id_ultima_postulacion_hogar_temporal, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, nombre_foto_perfil, foto_perfil, contrasenia_hashed) 
+insert into mydb.Usuario(dni,nombres_usuario_final, apellidos_usuario_final, direccion, id_rol, correo_electronico, id_distrito, id_zona, id_ultima_postulacion_hogar_temporal, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, nombre_foto_perfil, foto_perfil, contrasenia_hashed) 
 values ("77812045", "Christian Jair", "Flores Soto", "Jirón Huascar 436", 1, "cjfs@pucp.edu.pe", 5, 2, NULL, "password", 0, date_add(now(),interval 30 minute), 0, 1, now(),"foto_perfil.png", LOAD_FILE('D:\foto_perfil.png'), sha2("password", 256));   
 
-insert into mydb.usuario(dni,nombres_usuario_final, apellidos_usuario_final, direccion, id_rol, correo_electronico, id_distrito, id_zona, id_ultima_postulacion_hogar_temporal, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, nombre_foto_perfil, foto_perfil, contrasenia_hashed) 
+insert into mydb.Usuario(dni,nombres_usuario_final, apellidos_usuario_final, direccion, id_rol, correo_electronico, id_distrito, id_zona, id_ultima_postulacion_hogar_temporal, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, nombre_foto_perfil, foto_perfil, contrasenia_hashed) 
 values ("71104377", "Alejandro Emanuel", "Gutarra Bendezu", "Av. Carlos Izaguirre 295", 1, "gutarra2805@pucp.edu.pe", 8, 1, NULL, "password", 0, date_add(now(),interval 30 minute), 0, 1, now(),"foto_perfil.png", LOAD_FILE('D:\foto_perfil.png'), sha2("password", 256)); 
 
 -- Insertar 3 registros de Albergue 
-insert into mydb.usuario(nombre_albergue, nombres_encargado, apellidos_encargado, direccion, id_rol, correo_electronico, id_distrito, id_zona, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, anio_creacion, cantidad_animales, url_instagram, direccion_donaciones, nombre_contacto_donaciones, numero_contacto_donaciones, numero_yape_plin, tiene_registro_completo, espacio_disponible, foto_perfil)  
+insert into mydb.Usuario(nombre_albergue, nombres_encargado, apellidos_encargado, direccion, id_rol, correo_electronico, id_distrito, id_zona, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, anio_creacion, cantidad_animales, url_instagram, direccion_donaciones, nombre_contacto_donaciones, numero_contacto_donaciones, numero_yape_plin, tiene_registro_completo, espacio_disponible, foto_perfil)  
 values ('Albergue Esperanza', 'Laura', 'García Pérez', 'Av. Siempre Viva 123', 2, 'esperanza@gmail.com', 6, 3, 'password123', 0, '2024-05-31 18:59:30', 0, 1, '2024-05-31 18:29:30', 2018, 25, 'https://instagram.com/albergueesperanza', 'Av. Donaciones 345', 'Laura García', '987654321', '937652321', 1, 20,LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/logo_huellitas.png'));
 
-insert into mydb.usuario(nombre_albergue, nombres_encargado, apellidos_encargado, direccion, id_rol, correo_electronico, id_distrito, id_zona, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, anio_creacion, cantidad_animales, url_instagram, direccion_donaciones, nombre_contacto_donaciones, numero_contacto_donaciones, numero_yape_plin, tiene_registro_completo, espacio_disponible)
+insert into mydb.Usuario(nombre_albergue, nombres_encargado, apellidos_encargado, direccion, id_rol, correo_electronico, id_distrito, id_zona, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, anio_creacion, cantidad_animales, url_instagram, direccion_donaciones, nombre_contacto_donaciones, numero_contacto_donaciones, numero_yape_plin, tiene_registro_completo, espacio_disponible, foto_perfil,contrasenia_hashed)  
+values ('Albergue Esperanza', 'Laura', 'García Pérez', 'Av. Siempre Viva 123', 2, 'esperanza@gmail.com', 6, 3, 'password123', 0, '2024-05-31 18:59:30', 0, 1, '2024-05-31 18:29:30', 2018, 25, 'https://instagram.com/albergueesperanza', 'Av. Donaciones 345', 'Laura García', '987654321', '937652321', 1, 20,LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/logo_huellitas.png'),sha2("password", 256));
+
+insert into mydb.Usuario(nombre_albergue, nombres_encargado, apellidos_encargado, direccion, id_rol, correo_electronico, id_distrito, id_zona, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, anio_creacion, cantidad_animales, url_instagram, direccion_donaciones, nombre_contacto_donaciones, numero_contacto_donaciones, numero_yape_plin, tiene_registro_completo, espacio_disponible)
 values ('Albergue Amigos Fieles', 'Carlos', 'Sánchez López', 'Calle Amistad 456', 2, 'amigosfieles@gmail.com', 3, 3, 'password456', 0, '2024-02-16 12:45:30', 0, 1, '2024-02-16 12:15:30', 2012, 135, 'https://instagram.com/amigosfieles', 'Calle Donaciones 789', 'Juan Jose', '987654322', '933692322', 1, 34);
 
-insert into mydb.usuario(nombre_albergue, nombres_encargado, apellidos_encargado, direccion, id_rol, correo_electronico, id_distrito, id_zona, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, anio_creacion, cantidad_animales, url_instagram, direccion_donaciones, nombre_contacto_donaciones, numero_contacto_donaciones, numero_yape_plin, tiene_registro_completo, espacio_disponible)  
+insert into mydb.Usuario(nombre_albergue, nombres_encargado, apellidos_encargado, direccion, id_rol, correo_electronico, id_distrito, id_zona, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, anio_creacion, cantidad_animales, url_instagram, direccion_donaciones, nombre_contacto_donaciones, numero_contacto_donaciones, numero_yape_plin, tiene_registro_completo, espacio_disponible)  
 values('Refugio Patitas Felices', 'María', 'Rodríguez Salazar', 'Jr. Mascota 789', 2, 'patitasfelices@gmail.com', 4, 3, 'password789', 0, '2024-04-02 16:40:30', 0, 1, '2024-04-02 16:10:30',2020, 60, 'https://instagram.com/patitasfelices', 'Jr. Donaciones 012', 'María Rodríguez', '999888777', '999555333', 1, 9);
 
 
@@ -214,7 +217,7 @@ UPDATE Usuario
 SET id_ultima_postulacion_hogar_temporal = 1
 WHERE id_usuario = 3;
 
-insert into fotopostulacionhogartemporal(nombre_foto_lugar_temporal, id_postulacion_hogar_temporal) values
+insert into FotoPostulacionHogarTemporal(nombre_foto_lugar_temporal, id_postulacion_hogar_temporal) values
 ("foto_1_hogar_temporal.jpg", 1),
 ("foto_2_hogar_temporal.jpg", 1),
 ("foto_3_hogar_temporal.jpg", 1),
