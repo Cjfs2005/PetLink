@@ -108,6 +108,10 @@ values ('Albergue Amigos Fieles', 'Carlos', 'Sánchez López', 'Calle Amistad 45
 insert into mydb.Usuario(nombre_albergue, nombres_encargado, apellidos_encargado, direccion, id_rol, correo_electronico, id_distrito, id_zona, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, anio_creacion, cantidad_animales, url_instagram, direccion_donaciones, nombre_contacto_donaciones, numero_contacto_donaciones, numero_yape_plin, tiene_registro_completo, espacio_disponible)  
 values('Refugio Patitas Felices', 'María', 'Rodríguez Salazar', 'Jr. Mascota 789', 2, 'patitasfelices@gmail.com', 4, 3, 'password789', 0, '2024-04-02 16:40:30', 0, 1, '2024-04-02 16:10:30',2020, 60, 'https://instagram.com/patitasfelices', 'Jr. Donaciones 012', 'María Rodríguez', '999888777', '999555333', 1, 9);
 
+-- Para administrador
+insert into mydb.usuario(nombres_coordinador, id_rol, contrasenia, contrasenia_hashed, correo_electronico, es_usuario_activo) 
+values("Administrador", 4, "passwd_Admin", sha2("passwd_Admin", 256), "petlink@gmail.com", 1);
+
 
 -- Insertar 5 registros de denuncias por maltrato animal
 INSERT INTO DenunciaMaltratoAnimal (nombre_foto_animal, foto_animal, tamanio, raza, descripcion_maltrato, nombre_maltratador, direccion_maltrato, es_denuncia_activa, fecha_hora_registro, id_usuario_final, id_estado)
@@ -189,8 +193,9 @@ VALUES
 -- Insertar una publicación de evento benéfico
 INSERT INTO PublicacionEventoBenefico (nombre_evento, fecha_hora_inicio_evento, fecha_hora_fin_evento, aforo_evento, entrada_evento, descripcion_evento, artistas_provedores_invitados, razon_evento, es_evento_activo, fecha_hora_registro, id_lugar_evento, id_usuario_albergue, id_estado)
 VALUES 
-('Evento de Recaudación para Albergue Esperanza', '2024-11-02 10:00:00', '2024-11-02 15:00:00', 200, 'Entrada libre', 'Recaudación de fondos para ayudar a los animales del albergue', 'Banda local, proveedores de comida', 'Recaudar fondos para gastos médicos y alimentos para los animales', 1, '2024-10-02 12:00:00', 1, 6, 2),
-('Evento de Recaudación para Albergue Amigos Fieles', '2024-11-02 10:00:00', '2024-11-02 15:00:00', 200, 'Entrada libre', 'Recaudación de fondos para ayudar a los animales del albergue', 'Banda local, proveedores de comida', 'Recaudar fondos para gastos médicos y alimentos para los animales', 1, '2024-10-02 12:00:00', 1, 7, 1);
+('Evento de Recaudación para Albergue Esperanza', '2025-05-02 10:00:00', '2025-05-02 15:00:00', 200, 'Entrada libre', 'Recaudación de fondos para ayudar a los animales del albergue', 'Banda local, proveedores de comida', 'Recaudar fondos para gastos médicos y alimentos para los animales', 1, '2025-06-02 12:00:00', 1, 6, 2),
+('Evento Rifa de Mascotas de Esperanza', '2025-07-02 10:00:00', '2025-07-02 15:00:00', 200, 'Entrada libre', 'Recaudación de fondos para ayudar a los animales del albergue', 'Banda local, proveedores de comida', 'Recaudar vívives para las masoctas', 1, '2025-06-02 12:00:00', 1, 6, 2),
+('Evento de Recaudación para Albergue Amigos Fieles', '2025-11-11 10:00:00', '2025-11-11 15:00:00', 200, 'Entrada libre', 'Recaudación de fondos para ayudar a los animales del albergue', 'Banda local, proveedores de comida', 'Recaudar fondos para gastos médicos y alimentos para los animales', 1, '2025-04-02 12:00:00', 1, 7, 1);
 
 -- Insertar 5 inscripciones a eventos benéficos
 INSERT INTO InscripcionEventoBenefico (fecha_hora_registro, id_evento_benefico, id_usuario_final)

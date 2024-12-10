@@ -145,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Usuario` (
   `apellidos_coordinador` VARCHAR(45) NULL,
   `fecha_nacimiento` DATE NULL,
   `id_distrito` INT NULL,
-  `id_zona` INT UNSIGNED NOT NULL,
+  `id_zona` INT UNSIGNED NULL,
   `id_ultima_postulacion_hogar_temporal` INT UNSIGNED NULL,
   `descripcion_perfil` VARCHAR(1000) NULL,
   `contrasenia_hashed` VARCHAR(64) NULL,
