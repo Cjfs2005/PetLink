@@ -84,38 +84,38 @@ insert into mydb.TipoPublicacionMascotaPerdida(tipo_publicacion) values ("Public
 
 -- Usuario con contraseña temporal al registrarse por primera vez 
 insert into mydb.Usuario(dni,nombres_usuario_final, apellidos_usuario_final, direccion, id_rol, correo_electronico, id_distrito, id_zona, id_ultima_postulacion_hogar_temporal, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, nombre_foto_perfil, foto_perfil, contrasenia_hashed) 
-values ("72207089", "Tony Lee", "Flores Aguirre", "Av. Brasil 1791", 1, "tfa@pucp.edu.pe", 6, 4, NULL, "password", 0, date_add(now(),interval 30 minute), 0, 1, now(),"foto_perfil.png", LOAD_FILE("C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\foto_perfil.png"), sha2("password", 256));  
+values ("72207089", "Tony Lee", "Flores Aguirre", "Av. Brasil 1791", 1, "tfa@pucp.edu.pe", 6, 4, NULL, "tony1212", 0, date_add(now(),interval 30 minute), 0, 1, now(),"foto_perfil.png", LOAD_FILE("C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\foto_perfil.png"), sha2("tony1212", 256));  
 
 insert into mydb.Usuario(dni,nombres_usuario_final, apellidos_usuario_final, direccion, id_rol, correo_electronico, id_distrito, id_zona, id_ultima_postulacion_hogar_temporal, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, nombre_foto_perfil, foto_perfil, contrasenia_hashed) 
-values ("71200484", "Manuel Judá", "Aliaga Aliaga", "Av. Ricardo Elías Aparicio 715", 1, "maliagaa@pucp.edu.pe", 6, 3, NULL, "password", 0, date_add(now(),interval 30 minute), 0, 1, now(),"foto_perfil.png", LOAD_FILE("C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\foto_perfil.png"), sha2("password", 256));  
+values ("71200484", "Manuel Judá", "Aliaga Aliaga", "Av. Ricardo Elías Aparicio 715", 1, "maliagaa@pucp.edu.pe", 6, 3, NULL, "manuel3434", 0, date_add(now(),interval 30 minute), 0, 1, now(),"foto_perfil.png", LOAD_FILE("C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\foto_perfil.png"), sha2("manuel3434", 256));  
 
 insert into mydb.Usuario(dni,nombres_usuario_final, apellidos_usuario_final, direccion, id_rol, correo_electronico, id_distrito, id_zona, id_ultima_postulacion_hogar_temporal, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, nombre_foto_perfil, foto_perfil, contrasenia_hashed) 
-values ("77812045", "Christian Jair", "Flores Soto", "Jirón Huascar 436", 1, "cjfs@pucp.edu.pe", 5, 2, NULL, "password", 0, date_add(now(),interval 30 minute), 0, 1, now(),"foto_perfil.png", LOAD_FILE("C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\foto_perfil.png"), sha2("password", 256));   
+values ("77812045", "Christian Jair", "Flores Soto", "Jirón Huascar 436", 1, "cjfs@pucp.edu.pe", 5, 2, NULL, "christian5656", 0, date_add(now(),interval 30 minute), 0, 1, now(),"foto_perfil.png", LOAD_FILE("C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\foto_perfil.png"), sha2("christian5656", 256));   
 
 insert into mydb.Usuario(dni,nombres_usuario_final, apellidos_usuario_final, direccion, id_rol, correo_electronico, id_distrito, id_zona, id_ultima_postulacion_hogar_temporal, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, nombre_foto_perfil, foto_perfil, contrasenia_hashed) 
-values ("71104377", "Alejandro Emanuel", "Gutarra Bendezu", "Av. Carlos Izaguirre 295", 1, "gutarra2805@pucp.edu.pe", 8, 1, NULL, "password", 0, date_add(now(),interval 30 minute), 0, 1, now(),"foto_perfil.png", LOAD_FILE("C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\foto_perfil.png"), sha2("password", 256)); 
+values ("71104377", "Alejandro Emanuel", "Gutarra Bendezu", "Av. Carlos Izaguirre 295", 1, "gutarra2805@pucp.edu.pe", 8, 1, NULL, "alejandro7878", 0, date_add(now(),interval 30 minute), 0, 1, now(),"foto_perfil.png", LOAD_FILE("C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\foto_perfil.png"), sha2("alejandro7878", 256)); 
 
 -- Insertar 3 registros de Albergue 
 
 insert into mydb.Usuario(nombre_albergue, nombres_encargado, apellidos_encargado, direccion, id_rol, correo_electronico, id_distrito, id_zona, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, anio_creacion, cantidad_animales, url_instagram, direccion_donaciones, nombre_contacto_donaciones, numero_contacto_donaciones, numero_yape_plin, tiene_registro_completo, espacio_disponible, foto_perfil, contrasenia_hashed)  
-values ('Albergue Esperanza', 'Laura', 'García Pérez', 'Av. Siempre Viva 123', 2, 'esperanza@gmail.com', 6, 3, 'password', 0, '2024-05-31 18:59:30', 0, 1, '2024-05-31 18:29:30', 2018, 25, 'https://instagram.com/albergueesperanza', 'Av. Donaciones 345', 'Laura García', '987654321', '937652321', 1, 20,LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/logo_huellitas.png'),sha2("password", 256));
+values ('Albergue Amigos Fieles', 'Laura', 'García Pérez', 'Av. Siempre Viva 123', 2, 'amigosfieles@gmail.com', 6, 3, 'qwer1234', 0, '2024-05-31 18:59:30', 0, 1, '2024-05-31 18:29:30', 2018, 25, 'https://instagram.com/amigosfieles', 'Av. Donaciones 345', 'Laura García', '987654321', '937652321', 1, 20,LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/logo_huellitas.png'),sha2("qwer1234", 256));
 
 insert into mydb.Usuario(nombre_albergue, nombres_encargado, apellidos_encargado, direccion, id_rol, correo_electronico, id_distrito, id_zona, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, anio_creacion, cantidad_animales, url_instagram, direccion_donaciones, nombre_contacto_donaciones, numero_contacto_donaciones, numero_yape_plin, tiene_registro_completo, espacio_disponible, foto_perfil, contrasenia_hashed)
-values ('Albergue Amigos Fieles', 'Carlos', 'Sánchez López', 'Calle Amistad 456', 2, 'amigosfieles@gmail.com', 3, 3, 'password', 0, '2024-02-16 12:45:30', 0, 1, '2024-02-16 12:15:30', 2012, 135, 'https://instagram.com/amigosfieles', 'Calle Donaciones 789', 'Juan Jose', '987654322', '933692322', 1, 34,LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/logo_huellitas.png'),sha2("password", 256));
+values ('Albergue Esperanza', 'Carlos', 'Sánchez López', 'Calle Amistad 456', 2, 'esperanza@gmail.com', 3, 3, 'qwer1234', 0, '2024-02-16 12:45:30', 0, 1, '2024-02-16 12:15:30', 2012, 135, 'https://instagram.com/albergueesperanza', 'Calle Donaciones 789', 'Juan Jose', '987654322', '933692322', 1, 34,LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/logo_huellitas.png'),sha2("qwer1234", 256));
 
 insert into mydb.Usuario(nombre_albergue, nombres_encargado, apellidos_encargado, direccion, id_rol, correo_electronico, id_distrito, id_zona, contrasenia, es_contrasenia_temporal, fecha_hora_expiracion_contrasenia, es_primera_contrasenia_temporal, es_usuario_activo, fecha_hora_creacion, anio_creacion, cantidad_animales, url_instagram, direccion_donaciones, nombre_contacto_donaciones, numero_contacto_donaciones, numero_yape_plin, tiene_registro_completo, espacio_disponible, foto_perfil, contrasenia_hashed)  
-values('Refugio Patitas Felices', 'María', 'Rodríguez Salazar', 'Jr. Mascota 789', 2, 'patitasfelices@gmail.com', 4, 3, 'password', 0, '2024-04-02 16:40:30', 0, 1, '2024-04-02 16:10:30',2020, 60, 'https://instagram.com/patitasfelices', 'Jr. Donaciones 012', 'María Rodríguez', '999888777', '999555333', 1, 9,LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/logo_huellitas.png'),sha2("password", 256));
+values('Refugio Patitas Felices', 'María', 'Rodríguez Salazar', 'Jr. Mascota 789', 2, 'patitasfelices@gmail.com', 4, 3, 'qwer1234', 0, '2024-04-02 16:40:30', 0, 1, '2024-04-02 16:10:30',2020, 60, 'https://instagram.com/patitasfelices', 'Jr. Donaciones 012', 'María Rodríguez', '999888777', '999555333', 1, 9,LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/logo_huellitas.png'),sha2("qwer1234", 256));
 
 insert into mydb.Usuario(id_rol,nombres_coordinador, apellidos_coordinador,dni, numero_yape_plin,correo_electronico, id_zona, fecha_nacimiento,contrasenia, contrasenia_hashed, es_usuario_activo)
-values	(3,'Jair Sneider', 'Aguilera Inca', '12345678','987654321','jasnai@gmail.com',1,'2004-02-13','password',sha2("password", 256),1),
-		(3,'Diego Arturo', 'García Chávez', '12345672','987654321','diego@gmail.com',2,'2004-02-13','password',sha2("password", 256),1),
-		(3,'David Matthew', 'Iturrizaga Robles', '12345673','987654321','david@gmail.com',3,'2004-02-13','password',sha2("password", 256),1),
-        (3,'Alejaxander Manuel', 'Gutierrez Benavides', '12345674','987654321','alexander@gmail.com',4,'2004-02-13','password',sha2("password", 256),1);
+values	(3,'Jair Sneider', 'Aguilera Inca', '12345678','987654321','jasnai@gmail.com',1,'2004-02-13','jair1212',sha2("jair1212", 256),1),
+		(3,'Diego Arturo', 'García Chávez', '12345672','987654321','diego@gmail.com',2,'2004-02-13','diego3434',sha2("diego3434", 256),1),
+		(3,'David Matthew', 'Iturrizaga Robles', '12345673','987654321','david@gmail.com',3,'2004-02-13','david5656',sha2("david5656", 256),1),
+        (3,'Alejaxander Manuel', 'Gutierrez Benavides', '12345674','987654321','alexander@gmail.com',4,'2004-02-13','alex7878',sha2("alex7878", 256),1);
 
 -- Para administrador
 
 insert into mydb.Usuario(id_rol, contrasenia, contrasenia_hashed, correo_electronico, es_usuario_activo) 
-values(4, "password", sha2("password", 256), "petlink@gmail.com", 1);
+values(4, "petlink@2024", sha2("petlink@2024", 256), "petlink@gmail.com", 1);
 
 
 -- Insertar 5 registros de denuncias por maltrato animal
