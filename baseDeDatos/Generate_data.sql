@@ -125,10 +125,7 @@ VALUES
 -- Insertar dos registros de puntos de acopio para dos albergues
 INSERT INTO PuntoAcopio (direccion_punto_acopio, id_distrito, id_usuario_albergue)
 VALUES 
--- Primer albergue (id_usuario_albergue = 7)
-('Av. Solidaridad 123', 6, 7),
-('Jr. Ayacucho 456', 3, 7),
-('Jr. Mexico 126', 4, 7),
+
 
 -- Segundo albergue (id_usuario_albergue = 6)
 ('Calle Esperanza 789', 6, 6),
