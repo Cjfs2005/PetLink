@@ -74,6 +74,11 @@
 												<input type="text" id="cantidad_animales" maxlength="5" placeholder="" />
 											</div>
 
+											<div class="col-6 col-12-xsmall">
+												<label for="espacio_disponible" class="input-label">Espacio disponible para albergar más animales:</label>
+												<input type="text" id="espacio_disponible" maxlength="5" value="" placeholder=""/>
+											</div>
+
                                             <div class="col-6 col-12-xsmall">
 												<label for="anio_creacion" class="input-label">Año de creación</label>
 												<input type="text" id="anio_creacion" value="" placeholder="" />
@@ -281,6 +286,10 @@
 					validarSoloNumeros(this);
 				});
 
+				document.getElementById('espacio_disponible').addEventListener('input', function() {
+					validarSoloNumeros(this);
+				});
+
 
 				document.getElementById('anio_creacion').addEventListener('input', function() {
 					validarSoloNumeros(this);
@@ -348,6 +357,7 @@
 
                     // Obtener los campos obligatorios
                     const cantidadAnimales = document.getElementById('cantidad_animales');
+					const espacioDisponible = document.getElementById('espacio_disponible');
                     const anioCreacion = document.getElementById('anio_creacion');
                     const distrito = document.getElementById('distrito');
                     const direccion = document.getElementById('direccion');
@@ -364,7 +374,7 @@
 
                     // Verificar si los campos están vacíos y crear un array con todos los campos obligatorios
                     const camposObligatorios = [
-                        cantidadAnimales, anioCreacion, distrito, direccion, sobreNosotros,
+                        cantidadAnimales, espacioDisponible, anioCreacion, distrito, direccion, sobreNosotros,
                         fotoPerfil, fotoPortada, puntoAcopio1, dirDonaciones, nombreContacto,
                         numeroContacto, numeroYape, fotoQR, urlInstagram
                     ];
